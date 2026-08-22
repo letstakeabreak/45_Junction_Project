@@ -109,6 +109,24 @@ export class StandbyApi {
     });
   }
 
+  uploadSourceContent(
+    caseId: string,
+    role: SourceRole,
+    content: unknown,
+    options: { origin?: SourceOrigin; mediaType?: string; originalFilename?: string } = {},
+  ) {
+    return this.request<SourceVersion>(`/v1/cases/${caseId}/sources/${role}`, {
+      method: "POST",
+      body: JSON.stringify({
+        origin: options.origin ?? "CONTROLLED_FIXTURE",
+        content,
+        media_type: options.mediaType ?? "application/json",
+        original_filename: options.originalFilename ?? `${role.toLowerCase()}.fixture.json`,
+      }),
+      idempotent: true,
+    });
+  }
+
   startExtraction(caseId: string, adapter: ExtractionAdapter = "UPSTAGE_AGENT") {
     return this.request<ExtractionOperation>(`/v1/cases/${caseId}/extraction-runs`, {
       method: "POST",

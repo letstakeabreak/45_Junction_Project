@@ -18,6 +18,7 @@ import { parseCueSheetJson } from '@/lib/cue-sheet-json';
 import { useI18n, type Locale } from '@/lib/i18n';
 import { cn } from '@/lib/utils';
 import { useNavigate } from '@tanstack/react-router';
+import { IDEAL_DEMO_SOURCES, idealDemoNormalizer } from '@/fixtures/ideal-demo';
 
 const MAX_SOURCE_BYTES = 50 * 1024 * 1024;
 const SOURCE_ORIGIN: SourceOrigin = 'USER_PROVIDED';
@@ -258,6 +259,33 @@ export function InputScreen() {
       setPhase('UPLOADING');
       setMessage(t('input.status.upload'));
       const createdCase = await api.createCase(`STANDBY ${new Date().toLocaleString('ko-KR')}`);
+      const demoMode = import.meta.env.VITE_STANDBY_DEMO_MODE === 'ideal';
+
+      if (demoMode) {
+        await Promise.all([
+          api.uploadSourceContent(createdCase.case_id, 'SCRIPT', IDEAL_DEMO_SOURCES.SCRIPT),
+          api.uploadSourceContent(createdCase.case_id, 'MASTER_CUE', IDEAL_DEMO_SOURCES.MASTER_CUE),
+          api.uploadSourceContent(createdCase.case_id, 'STAGE_SPEC', IDEAL_DEMO_SOURCES.STAGE_SPEC),
+        ]);
+        setPhase('EXTRACTING');
+        setMessage(t('input.status.extract'));
+        const operation = await api.startExtraction(createdCase.case_id, 'CONTROLLED_FIXTURE');
+        await api.waitForOperation(operation.operation_id);
+        const queue = await api.getReviewQueue(createdCase.case_id);
+        setPhase('NORMALIZING');
+        setMessage(t('input.status.normalize'));
+        await new Promise((resolve) => window.setTimeout(resolve, 1_200));
+        setReviewFlowContext({
+          caseId: createdCase.case_id,
+          facts: queue.items,
+          normalizerArtifact: idealDemoNormalizer(queue.items),
+        });
+        setPhase('REVIEW');
+        setMessage(t('input.status.review', { count: queue.items.length }));
+        await navigate({ to: '/review/mode' });
+        return;
+      }
+
       const uploads = [
         api.uploadSourceFile(createdCase.case_id, 'MASTER_CUE', masterCue.file, masterCue.origin),
       ];
