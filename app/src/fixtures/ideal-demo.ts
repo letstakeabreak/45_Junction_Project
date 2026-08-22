@@ -1,4 +1,5 @@
-import type { FactCandidate, FactNormalizerArtifact, StageEntityState } from '@/types/standby';
+import type { FactCandidate, FactNormalizerArtifact, StageEntityState, StoryboardAgentState } from '@/types/standby';
+import type { ScriptProjection } from '@/types/script';
 
 const rows = [
   ['R1', 'E1 / Q54', '-', '혜원 퇴장', '-', '우주복 A', 'LX Q54', 'SFX 12', '-', '00:00', 'S#16 종료'],
@@ -87,5 +88,41 @@ export function idealDemoNormalizer(facts: FactCandidate[]): FactNormalizerArtif
       })),
       missing_evidence: [],
     },
+  };
+}
+
+export function idealDemoScriptProjection(caseId: string): ScriptProjection {
+  const lines = [
+    ['E1', 'STAGE_DIRECTION', 'HYEWON exits Stage Right as the final line lands.', null],
+    ['E2', 'STAGE_DIRECTION', 'Blackout. The change crew stands by.', null],
+    ['E3', 'DIALOGUE', 'I will be back before the stars move.', 'HYEWON'],
+    ['E4', 'STAGE_DIRECTION', 'The quick-change continues offstage.', null],
+    ['E5', 'DIALOGUE', 'Bag ready at Stage Left.', 'CREW'],
+    ['E6', 'STAGE_DIRECTION', 'HYEWON and the run crew share the crossover.', null],
+    ['E7', 'DIALOGUE', 'I am ready. Open the light.', 'HYEWON'],
+    ['E8', 'STAGE_DIRECTION', 'The bag enters and the scene resumes.', null],
+  ] as const;
+  return {
+    contract_version: 'standby.script-projection.v1', projection_id: 'demo_script_projection', case_id: caseId,
+    authority: 'NON_AUTHORITATIVE',
+    source: { filename: 'ideal-demo-script.docx', media_type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', sha256: 'demo-script-source' },
+    provenance: {
+      provider: 'UPSTAGE_AGENT', source_role: 'SCRIPT', origin: 'USER_PROVIDED', provider_job_id: 'controlled-demo',
+      agent_id: 'CONTROLLED_DEMO', config_id: 'ideal-v1', adapter_version: 'controlled-demo.v1', raw_response_sha256: 'demo-script-response',
+    },
+    segments: lines.map(([eventId, kind, text, speaker], index) => ({
+      segment_id: `demo_segment_${index + 1}`, sequence_index: index, kind, text, speaker, event_id: eventId,
+      section_marker: eventId, locator: `SCRIPT p.${42 + Math.floor(index / 2)} L.${index + 1}`, source_quote: text,
+      provenance: { raw_fact_id: `demo_script_fact_${index + 1}`, raw_fact_sha256: `demo-script-fact-${index + 1}` },
+    })),
+    created_at: new Date(0).toISOString(),
+  };
+}
+
+export function idealDemoStoryboard(eventId: string): StoryboardAgentState {
+  return {
+    status: 'READY', eventId, version: 'ideal-v1', authority: 'NON_AUTHORITATIVE',
+    summary: `Verified snapshot ${eventId} is ready. Only the adjacent reviewed state change is animated.`,
+    beats: [], missingEvidence: [],
   };
 }

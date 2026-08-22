@@ -20,6 +20,7 @@ import { useNavigate } from '@tanstack/react-router';
 import { useI18n } from '@/lib/i18n';
 import { buildScriptSidebarEntries, unlinkedScriptSegments } from '@/lib/script-projection';
 import type { ScriptEventLinks, ScriptProjection } from '@/types/script';
+import { idealDemoScriptProjection, idealDemoStoryboard } from '@/fixtures/ideal-demo';
 
 // ─── Helpers ───────────────────────────────────────────────
 
@@ -272,6 +273,10 @@ export function WorkspaceScreen() {
 
   useEffect(() => {
     if (!verifiedCaseId || script) return;
+    if (import.meta.env.VITE_STANDBY_DEMO_MODE === 'ideal') {
+      setScript(idealDemoScriptProjection(verifiedCaseId));
+      return;
+    }
     const api = createStandbyBrowserApi();
     if (!api) return;
     void api.getCaseScriptProjection(verifiedCaseId)
@@ -292,6 +297,15 @@ export function WorkspaceScreen() {
 
   const requestStoryboard = async (eventId: string) => {
     const requestVersion = ++storyboardRequestVersion.current;
+    if (import.meta.env.VITE_STANDBY_DEMO_MODE === 'ideal') {
+      setStoryboardState({ status: 'RECONSTRUCTING', version: eventId });
+      window.setTimeout(() => {
+        if (requestVersion === storyboardRequestVersion.current) {
+          setStoryboardState(idealDemoStoryboard(eventId));
+        }
+      }, 240);
+      return;
+    }
     const api = createStandbyBrowserApi();
     if (!api || !verifiedCaseId) {
       setStoryboardState({ status: 'FAILED', summary: 'Storyboard Agent is not connected.' });
