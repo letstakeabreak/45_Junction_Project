@@ -72,13 +72,15 @@ export function ReviewScreen() {
           <div>
             <h1 className="text-xl font-medium">{t('review.title')}</h1>
           </div>
-          <button
-            type="button"
-            onClick={() => void navigate({ to: '/review/mode' })}
-            className="border border-border px-3 py-2 text-xs"
-          >
-            {t('review.changeMode')}
-          </button>
+          {import.meta.env.VITE_STANDBY_DEMO_MODE !== 'ideal' && (
+            <button
+              type="button"
+              onClick={() => void navigate({ to: '/review/mode' })}
+              className="border border-border px-3 py-2 text-xs"
+            >
+              {t('review.changeMode')}
+            </button>
+          )}
         </div>
 
         <FactReviewPanel

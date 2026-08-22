@@ -140,6 +140,7 @@ export function InputScreen() {
   const clearWorkspace = useStandbyWorkspaceStore((state) => state.clear);
   const clearCueSheet = useCueSheetStore((state) => state.clearCueSheet);
   const setReviewFlowContext = useReviewFlowStore((state) => state.setReviewContext);
+  const setReviewMode = useReviewFlowStore((state) => state.setMode);
   const clearReviewFlow = useReviewFlowStore((state) => state.clear);
   const [masterCue, setMasterCue] = useState<SelectedSource | null>(null);
   const [sourceErrors, setSourceErrors] = useState<Partial<Record<SourceInputKind, string>>>({});
@@ -280,9 +281,10 @@ export function InputScreen() {
           facts: queue.items,
           normalizerArtifact: idealDemoNormalizer(queue.items),
         });
+        setReviewMode('RECOMMENDED');
         setPhase('REVIEW');
         setMessage(t('input.status.review', { count: queue.items.length }));
-        await navigate({ to: '/review/mode' });
+        await navigate({ to: '/review' });
         return;
       }
 

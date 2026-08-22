@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useNavigate } from '@tanstack/react-router';
 import { useI18n } from '@/lib/i18n';
 import { useReviewFlowStore } from '@/store';
@@ -9,6 +10,15 @@ export function ReviewModeScreen() {
   const hasContext = useReviewFlowStore((state) =>
     Boolean(state.caseId) && state.facts.length > 0,
   );
+  const demoMode = import.meta.env.VITE_STANDBY_DEMO_MODE === 'ideal';
+
+  useEffect(() => {
+    if (!demoMode || !hasContext) return;
+    setMode('RECOMMENDED');
+    void navigate({ to: '/review' });
+  }, [demoMode, hasContext, navigate, setMode]);
+
+  if (demoMode && hasContext) return null;
 
   if (!hasContext) {
     return (
