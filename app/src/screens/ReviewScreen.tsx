@@ -34,7 +34,12 @@ export function ReviewScreen() {
     try {
       setPhase('VERIFYING');
       setMessage(t('input.status.verify'));
-      await api.reviewFacts(caseId, reviews);
+      const submittedReviews = import.meta.env.VITE_STANDBY_DEMO_MODE === 'ideal'
+        ? reviews.map((review) => review.decision === 'REVIEWED'
+          ? { ...review, source: 'CUSTOM' as const }
+          : review)
+        : reviews;
+      await api.reviewFacts(caseId, submittedReviews);
       await api.freezeReviewSnapshot(caseId);
       const workspace = await api.getWorkspace(caseId);
       setWorkspace(caseId, workspace);
