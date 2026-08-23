@@ -186,11 +186,16 @@ available = 다음 입장 시각 − 이전 퇴장 시각
 
 세 문서를 받고 역할을 확정한다. `STAGE_SPEC`은 파일 대신 **폼 입력**을 허용한다.
 심사위원·첫 사용자가 별도의 큐시트를 갖고 있지 않아도 흐름을 시작할 수 있게
-`MASTER_CUE` 카드에 **예시 큐시트 첨부** 버튼을 둔다. 버튼은 제품에 포함된 통제 샘플을
-실제 `File` 입력처럼 로드하며, origin은 `CONTROLLED_FIXTURE`로 남겨 실제 공연 문서와 구분한다.
-첫 방문의 **90초 둘러보기**는 같은 통제 샘플의 Editor·이벤트·2D 무대를 로컬에서 즉시 여는
-미리보기와 기존 Upstage 추출·검토 경로를 함께 제공한다. 즉시 미리보기는 AI 검증 완료를 뜻하지 않으며,
-실제 추출 결과를 확인하는 경로에서는 review와 deterministic verifier를 생략하지 않는다.
+`MASTER_CUE` 카드에 **별마루 예시 프로젝트 열기** 버튼을 둔다. 예시는 허가받은 원본 대본·마스터 큐의
+S#16→S#17 구간을 로컬에서 대조해 만든 8-event 통제 fixture와, 모든 event에 정확히 연결된 읽기 전용
+Script Projection을 함께 연다. 원본 DOCX/XLSX 자체는 공개 저장소에 넣지 않으며 source hash와 locator를
+보존한다. 첫 방문의 **90초 둘러보기**도 같은 로컬 예시를 여는 단일 CTA만 제공한다. 이 경로는 네트워크나
+Upstage job을 시작하지 않아 무한 로딩이 없어야 하며, provenance는 `CONTROLLED_FIXTURE`로 명시한다.
+실제 파일의 Upstage 추출·review·deterministic verifier 경로는 별도이며 생략하지 않는다.
+
+통제 예시는 대본의 “우주복을 이미 착용한 채 등장” 지문과 마스터 큐의 “같은 event에서 무대 위 환복”
+지시를 결정론적으로 대조해 `ACTION REQUIRED`를 표시한다. 이는 사고 예측이 아니라 두 문서의 상태 괴리를
+보여 주는 review 신호다.
 
 ### 화면 2 — 워크스페이스 (메인)
 
