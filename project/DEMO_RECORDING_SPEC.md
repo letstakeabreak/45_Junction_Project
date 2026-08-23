@@ -6,7 +6,7 @@
 
 | 항목 | 값 |
 |---|---|
-| 목표 길이 | 75초, 최대 90초 |
+| 목표 길이 | 75초 기준 |
 | 데모 URL | `https://standby-demo-junctionx.vercel.app` |
 | 고정 스냅샷 | `b9208a4` — Git 자동배포 없음 |
 | 입력 파일 | 팀이 승인한 reference XLSX (`SHA-256 f8a8d43d…c0419`) |
