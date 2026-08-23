@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import {
   AlertTriangle,
+  FileDown,
   FileSpreadsheet,
   Info,
   LoaderCircle,
@@ -13,6 +14,7 @@ import {
   createStandbyBrowserApi,
   type SourceOrigin,
 } from '@/lib/standby-api';
+import exampleMasterCueText from '@/assets/standby-example-master-cue.json?raw';
 import { useCueSheetStore, useReviewFlowStore, useStandbyWorkspaceStore } from '@/store';
 import { parseCueSheetJson } from '@/lib/cue-sheet-json';
 import { useI18n, type Locale } from '@/lib/i18n';
@@ -109,7 +111,12 @@ async function sha256(bytes: BufferSource) {
   return bytesToHex(await crypto.subtle.digest('SHA-256', bytes));
 }
 
-async function inspectSourceFile(kind: SourceInputKind, file: File, locale: Locale): Promise<SelectedSource> {
+async function inspectSourceFile(
+  kind: SourceInputKind,
+  file: File,
+  locale: Locale,
+  origin: SourceOrigin = SOURCE_ORIGIN,
+): Promise<SelectedSource> {
   const config = SOURCE_CONFIG[kind];
   const extension = extensionOf(file.name);
 
@@ -131,7 +138,7 @@ async function inspectSourceFile(kind: SourceInputKind, file: File, locale: Loca
     throw new Error(locale === 'ko' ? '확장자와 Office 파일 서명이 일치하지 않습니다.' : 'The extension does not match the Office file signature.');
   }
   if (extension === 'json') parseCueSheetJson(text, locale);
-  return { file, sha256: await sha256(bytes), origin: SOURCE_ORIGIN, batchSize: 1 };
+  return { file, sha256: await sha256(bytes), origin, batchSize: 1 };
 }
 
 export function InputScreen() {
@@ -222,7 +229,11 @@ export function InputScreen() {
     return () => { active = false; };
   }, [stageSpec]);
 
-  const selectSources = async (kind: SourceInputKind, files: File[]) => {
+  const selectSources = async (
+    kind: SourceInputKind,
+    files: File[],
+    origin: SourceOrigin = SOURCE_ORIGIN,
+  ) => {
     setPhase('IDLE');
     setMessage(null);
     clearReviewFlow();
@@ -238,7 +249,7 @@ export function InputScreen() {
       let selected: SelectedSource | null = null;
       for (const candidate of candidates) {
         try {
-          selected = await inspectSourceFile(kind, candidate, locale);
+          selected = await inspectSourceFile(kind, candidate, locale, origin);
           break;
         } catch {
           // A mixed batch may contain unrelated files with a supported extension.
@@ -257,6 +268,15 @@ export function InputScreen() {
         [kind]: error instanceof Error ? error.message : locale === 'ko' ? '파일을 확인할 수 없습니다.' : 'Could not inspect the file.',
       }));
     }
+  };
+
+  const attachExampleMasterCue = () => {
+    const file = new File(
+      [exampleMasterCueText],
+      'STANDBY_example_master_cue.json',
+      { type: 'application/json', lastModified: 0 },
+    );
+    void selectSources('MASTER_CUE', [file], 'CONTROLLED_FIXTURE');
   };
 
   const openRawJson = async (file: File) => {
@@ -384,6 +404,7 @@ export function InputScreen() {
               error={sourceErrors.MASTER_CUE}
               batchFiles={masterCueBatchFiles}
               onFiles={(files) => void selectSources('MASTER_CUE', files)}
+              onUseExample={attachExampleMasterCue}
             />
             <RawJsonCard
               error={sourceErrors.RAW_JSON}
@@ -576,12 +597,14 @@ function SourceCard({
   error,
   batchFiles,
   onFiles,
+  onUseExample,
 }: {
   kind: SourceInputKind;
   source: SelectedSource | null;
   error?: string;
   batchFiles: File[];
   onFiles: (files: File[]) => void;
+  onUseExample: () => void;
 }) {
   const { t } = useI18n();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -635,6 +658,17 @@ function SourceCard({
           event.target.value = '';
         }}
       />
+
+      <div className="mx-4 mb-4 flex justify-end">
+        <button
+          type="button"
+          onClick={onUseExample}
+          className="flex items-center gap-2 border border-border bg-background px-3 py-2 text-xs font-medium hover:border-foreground"
+        >
+          <FileDown className="h-4 w-4" />
+          {t('input.cue.useExample')}
+        </button>
+      </div>
 
       <div className="border-t border-border p-4">
         {error ? (

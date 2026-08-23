@@ -36,7 +36,7 @@ UUID 세션으로 case 소유권을 분리한다. 이 값은 사용자 신원을
 | 두 화면 라우팅 | **구현** | `/` 입력, `/workspace` 워크스페이스만 존재 |
 | KOR/ENG i18n | **구현** | 헤더 선택 메뉴로 M3 입력·review·workspace·2D 무대 카피를 전환하고 선택을 localStorage에 보존 |
 | UI 카피 정리 | **구현** | 설명형 슬로건·면책·중복 제목을 제거하고, 선택 화면은 선택지만 남김. 오류·제약·상태와 provenance/hash는 유지하되 provenance는 요청 시 펼침 |
-| 입력 | **구현** | MASTER_CUE는 다중 선택·드롭을 허용하되 단일 authority 계약에 따라 첫 번째 유효 XLSX/PDF/JSON만 정본으로 사용. 선택한 파일 수와 각 파일의 아이콘·이름·용량만 카드 목록으로 표시하며 내부 authority/ignored 분류는 노출하지 않음. 다중 선택은 실제 추출을 수행하면서 최소 12초 loading scene을 보장. STAGE_SPEC은 폼으로 받음 |
+| 입력 | **구현** | MASTER_CUE는 다중 선택·드롭을 허용하되 단일 authority 계약에 따라 첫 번째 유효 XLSX/PDF/JSON만 정본으로 사용. 선택한 파일 수와 각 파일의 아이콘·이름·용량만 카드 목록으로 표시하며 내부 authority/ignored 분류는 노출하지 않음. `예시 큐시트 첨부`는 제품에 포함된 통제 JSON 샘플을 실제 파일처럼 로드하고 `CONTROLLED_FIXTURE` origin을 보존. 다중 선택은 실제 추출을 수행하면서 최소 12초 loading scene을 보장. STAGE_SPEC은 폼으로 받음 |
 | Script Sidebar | **case·RAW JSON 구현** | DOCX 우선·PDF 보조. verified case에서는 `SCRIPT` source와 review queue에 통합한다. RAW JSON Editor에서는 standalone Upstage projection을 만들고 exact event ID·유일한 장면명은 자동 연결한다. 나머지는 장면·화자·대사/트리거·공연 순서 기반 추천과 신뢰도·근거를 표시하며, 개별 적용 또는 사람이 누르는 `추천 모두 적용`으로 확정한다 |
 | 로컬 파일 방어 | **구현** | 확장자·signature·50 MiB·SHA-256 검사. 미리 정한 파일명 없음 |
 | XLSX 호환성 | **구현** | 병합 원본이 사라진 빈 셀은 Excel 표시와 같이 빈칸으로 읽고, revision 변환 성공 전에 source slot을 저장하지 않는다. Upstage 응답에 근거 없는 행이 일부 섞이면 그 행만 authority에서 제외하고 locator·quote가 완전한 fact는 유지한다 |
@@ -50,7 +50,7 @@ UUID 세션으로 case 소유권을 분리한다. 이 값은 사용자 신원을
 | Rehearsal Brief | **Studio 설정·서버 배선·fallback 구현 / 전체 live smoke 재확인 대기** | Config #1 `agt_9iLkb7fqwdEtaBv48t9tQA`. 결정론적 finding과 evidence를 무대감독용 확인 질문·unknown으로 요약. 허용 목록 밖 event/finding 참조는 거부하고 provenance를 남긴 빈 결정론적 brief로 격리 |
 | 인접 event semantic transition | **구현·운영 배포** | 인접한 다음 event의 바뀐 entity만 짧게 전환. jump/back·초기 로드는 정적, reduced-motion은 정적 |
 | 장시간 추출 | **구현·개선** | Master Cue Extractor 완료 즉시 raw fact review로 진입하며 Fact Normalizer는 background에서 추천을 합류시킨다. 서버 최대 10분·브라우저 최대 11분 polling, 순차 점등 `S T A N D B Y`, reduced-motion 고정 wordmark를 유지한다 |
-| 촬영용 XLSX fast path | **운영 코드 제거** | 특정 SHA-256에 의한 클라이언트 분기와 8-event 로컬 fixture를 제거했다. XLSX/PDF/JSON은 모두 실제 API 경로를 사용하며 `CONTROLLED_FIXTURE`는 서버 자동 테스트에서만 사용한다 |
+| 촬영용 XLSX fast path | **운영 코드 제거** | 특정 SHA-256에 의한 클라이언트 분기와 8-event 로컬 fixture를 제거했다. XLSX/PDF/JSON과 입력 화면의 통제 샘플은 모두 실제 API 경로를 사용하며, `CONTROLLED_FIXTURE` origin은 우회가 아니라 샘플 provenance만 표시한다 |
 | Extraction Review | **구현** | 추천값 mode는 Agent Recommendation 패널 없이 Master Cue Extracted Fields 한 건만 표시하고 필드 옆 Chevron으로 이동. `일괄 승인 후 큐시트로 이동`은 별도 개별 검토가 없어도 적용 가능한 normalized 추천 전체를 REVIEWED로 batch 기록한다. 추천 생성 중 눌렀다면 결과 도착 즉시 자동 승인·이동하며, schema-invalid/추천 부재 fact를 가짜 값으로 승인하지는 않는다. 사용자화 mode에서 13개 normalized fact와 EVENT_STATE snapshot 구조화 편집 |
 | Review snapshot | **구현** | 현재 결정을 불변 digest로 동결. 미결정 fact는 authority를 얻지 않음 |
 | Compiler | **구현** | 승인된 normalized envelope만 event graph·stage snapshot으로 변환 |

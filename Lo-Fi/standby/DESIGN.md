@@ -91,6 +91,8 @@ P0는 화면 **두 개**뿐이다.
 - 각 카드: 파일명, revision/hash, origin 배지(`REAL_REFERENCE` / `CONTROLLED_FIXTURE` / `MUTATED_FIXTURE`), `REVIEWED | UNREVIEWED`
 - `STAGE_SPEC` 카드는 파일 업로드 대신 **폼 입력**을 허용한다 (아래 무대 최소 입력 참조)
 - Primary CTA: `Upstage 추출 시작` → 완료되면 화면 2로 전환
+- `MASTER_CUE` 카드에 보조 액션 `예시 큐시트 첨부`를 둔다. 클릭 시 제품 내 통제 JSON 샘플을
+  실제 파일처럼 선택하고 파일명·용량·`CONTROLLED_FIXTURE` origin을 같은 UI에서 보존한다
 - **제외**: 입력 계약 체크리스트, `Source 교체`, `EXPORT LOG`, revision lineage, 5단계 진행 표시
 
 ### Extraction loading scene

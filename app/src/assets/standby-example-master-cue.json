@@ -1,0 +1,1607 @@
+{
+  "metadata": {
+    "title": "별마루",
+    "version": "26S 전체큐시트",
+    "created_at": "",
+    "updated_at": "",
+    "notes": "최신 기준 보수 복원본. D#/S#/N#는 모두 독립 cue로 분리했다. 최소 단위는 event이며, 문서에서 직접 확인되는 입장/퇴장/상하수 이동/소품 in-out/환복만 actions로 기록했다. 조명/음향은 기존 스키마 유지에 따라 trigger.description 또는 notes에만 기록했다. 캐스트는 전체 배우를 의미한다."
+  },
+  "venue": {
+    "has_backstage_crossover": true,
+    "backstage_crossover_time_sec": 0
+  },
+  "characters": [
+    { "id": "char_hyewon", "name": "혜원", "actor": "" },
+    { "id": "char_jungwon", "name": "정원", "actor": "" },
+    { "id": "char_eunbi", "name": "은비", "actor": "" },
+    { "id": "char_yurim", "name": "유림", "actor": "" },
+    { "id": "char_yunseo", "name": "윤서", "actor": "" },
+    { "id": "char_minseo", "name": "민서", "actor": "" },
+    { "id": "char_hyunseo", "name": "현서", "actor": "" },
+    { "id": "char_jungmin", "name": "정민", "actor": "" }
+  ],
+  "props": [
+    { "id": "prop_bed", "name": "침대", "is_set_piece": true },
+    { "id": "prop_blanket", "name": "이불", "is_set_piece": false },
+    { "id": "prop_pillow", "name": "베개", "is_set_piece": false },
+    { "id": "prop_storybook", "name": "동화책", "is_set_piece": false },
+    { "id": "prop_table", "name": "식탁", "is_set_piece": true },
+    { "id": "prop_chair_1", "name": "의자 1", "is_set_piece": true },
+    { "id": "prop_chair_2", "name": "의자 2", "is_set_piece": true },
+    { "id": "prop_towel", "name": "수건", "is_set_piece": false },
+    { "id": "prop_phone_jungwon", "name": "정원휴대폰", "is_set_piece": false },
+    { "id": "prop_phone_minseo_dummy", "name": "민서휴대폰 공기계", "is_set_piece": false },
+    { "id": "prop_basket", "name": "장바구니", "is_set_piece": false },
+    { "id": "prop_small_light", "name": "작은조명", "is_set_piece": false },
+    { "id": "prop_cheer_solo", "name": "치어리딩 솔", "is_set_piece": false },
+    { "id": "prop_party_hat", "name": "생일꼬깔모자", "is_set_piece": false },
+    { "id": "prop_maru_bag", "name": "마루가방", "is_set_piece": false },
+    { "id": "prop_vocab_book", "name": "영단어장", "is_set_piece": false }
+  ],
+  "cues": [
+    {
+      "cue_id": "cue_001",
+      "scene_number": "N#1",
+      "scene_type": "number",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_001_001",
+          "trigger": {
+            "type": "scene_change",
+            "character_id": "",
+            "description": "안내멘트 종료 후 막 open, N#1 시작, 캐스트 무대대기 및 등장"
+          },
+          "actions": [
+            { "type": "character_enter", "character_id": "char_hyewon", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_jungwon", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_eunbi", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_yurim", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_yunseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_minseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_hyunseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_jungmin", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" }
+          ],
+          "notes": "캐스트 등장"
+        }
+      ],
+      "notes": "We're all adventurers"
+    },
+    {
+      "cue_id": "cue_002",
+      "scene_number": "D#1",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_002_001",
+          "trigger": {
+            "type": "scene_change",
+            "character_id": "",
+            "description": "N#1 종료 후 캐스트 퇴장"
+          },
+          "actions": [
+            { "type": "character_exit", "character_id": "char_hyewon", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_jungwon", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_eunbi", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_yurim", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_yunseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_minseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_hyunseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_jungmin", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" }
+          ],
+          "notes": "캐스트 퇴장"
+        },
+        {
+          "event_id": "evt_002_002",
+          "trigger": {
+            "type": "lighting_cue",
+            "character_id": "",
+            "description": "정원 하수 무대대기 완료, 식탁 의자 수건 준비, 하수 조명 in"
+          },
+          "actions": [
+            {
+              "type": "character_enter",
+              "character_id": "char_jungwon",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "prop_in",
+              "character_id": "",
+              "direction": "stage_right",
+              "prop_id": "prop_table",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "prop_in",
+              "character_id": "",
+              "direction": "stage_right",
+              "prop_id": "prop_chair_1",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "prop_in",
+              "character_id": "",
+              "direction": "stage_right",
+              "prop_id": "prop_chair_2",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "prop_in",
+              "character_id": "",
+              "direction": "stage_right",
+              "prop_id": "prop_towel",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            }
+          ],
+          "notes": "정원 하수 무대대기 완료와 식탁 의자 수건 준비"
+        }
+      ],
+      "notes": "암전 cue"
+    },
+    {
+      "cue_id": "cue_003",
+      "scene_number": "S#1",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_003_001",
+          "trigger": {
+            "type": "scene_change",
+            "character_id": "",
+            "description": "S#1 시작, 혜원 바로 입장"
+          },
+          "actions": [
+            {
+              "type": "character_enter",
+              "character_id": "char_hyewon",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            }
+          ],
+          "notes": ""
+        }
+      ],
+      "notes": "마루, 우현의 우주이야기"
+    },
+    {
+      "cue_id": "cue_004",
+      "scene_number": "N#2",
+      "scene_type": "number",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_004_001",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_jungwon",
+            "description": "정원 대사 후 N#2 전주 시작, 캐스트 입장"
+          },
+          "actions": [
+            { "type": "character_enter", "character_id": "char_hyewon", "direction": "stage_right", "prop_id": "", "carried_by": "", "from": "stage_right", "to": "stage_right", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_jungwon", "direction": "stage_right", "prop_id": "", "carried_by": "", "from": "stage_right", "to": "stage_right", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_eunbi", "direction": "stage_right", "prop_id": "", "carried_by": "", "from": "stage_right", "to": "stage_right", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_yurim", "direction": "stage_right", "prop_id": "", "carried_by": "", "from": "stage_right", "to": "stage_right", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_yunseo", "direction": "stage_right", "prop_id": "", "carried_by": "", "from": "stage_right", "to": "stage_right", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_minseo", "direction": "stage_right", "prop_id": "", "carried_by": "", "from": "stage_right", "to": "stage_right", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_hyunseo", "direction": "stage_right", "prop_id": "", "carried_by": "", "from": "stage_right", "to": "stage_right", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_jungmin", "direction": "stage_right", "prop_id": "", "carried_by": "", "from": "stage_right", "to": "stage_right", "costume_description": "" }
+          ],
+          "notes": "캐스트 입장"
+        },
+        {
+          "event_id": "evt_004_002",
+          "trigger": {
+            "type": "scene_change",
+            "character_id": "",
+            "description": "N#2 후주 종료 후 하수 조명 in"
+          },
+          "actions": [],
+          "notes": "다음 장면 전환"
+        }
+      ],
+      "notes": "A million miles away"
+    },
+    {
+      "cue_id": "cue_005",
+      "scene_number": "S#2",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_005_001",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_jungwon",
+            "description": "정원: 마루야, 방에 들어가서 동화책 골라놔"
+          },
+          "actions": [
+            {
+              "type": "backstage_crossover",
+              "character_id": "char_hyewon",
+              "direction": "stage_left",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_left",
+              "costume_description": ""
+            },
+            {
+              "type": "backstage_crossover",
+              "character_id": "char_eunbi",
+              "direction": "stage_left",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_left",
+              "costume_description": ""
+            },
+            {
+              "type": "prop_in",
+              "character_id": "",
+              "direction": "stage_left",
+              "prop_id": "prop_basket",
+              "carried_by": "char_eunbi",
+              "from": "stage_left",
+              "to": "stage_left",
+              "costume_description": ""
+            }
+          ],
+          "notes": "은비와 혜원 상수 침대 이동"
+        }
+      ],
+      "notes": "수연의 등장, 마루 침실이동"
+    },
+    {
+      "cue_id": "cue_006",
+      "scene_number": "S#3",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_006_001",
+          "trigger": {
+            "type": "sound_cue",
+            "character_id": "",
+            "description": "전화벨 S.E."
+          },
+          "actions": [
+            {
+              "type": "character_enter",
+              "character_id": "char_minseo",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "prop_in",
+              "character_id": "",
+              "direction": "stage_right",
+              "prop_id": "prop_phone_minseo_dummy",
+              "carried_by": "char_minseo",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "costume_change",
+              "character_id": "char_minseo",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": "의사가운"
+            }
+          ],
+          "notes": "민서 입장 및 의사 연기"
+        }
+      ],
+      "notes": "우현과 의사의 통화"
+    },
+    {
+      "cue_id": "cue_007",
+      "scene_number": "S#4",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_007_001",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_jungwon",
+            "description": "정원: 아빠가 손 꼭 잡아줄 테니까, 아무 걱정 하지 말고 편안하게 자자"
+          },
+          "actions": [],
+          "notes": "유림, 윤서 무대 등장 메모"
+        }
+      ],
+      "notes": "마루의 방으로 들어간 우현"
+    },
+    {
+      "cue_id": "cue_008",
+      "scene_number": "N#3",
+      "scene_type": "number",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_008_001",
+          "trigger": {
+            "type": "scene_change",
+            "character_id": "",
+            "description": "전주 시작, 캐스트 입장"
+          },
+          "actions": [
+            { "type": "character_enter", "character_id": "char_hyewon", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_jungwon", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_eunbi", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_yurim", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_yunseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_minseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_hyunseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_jungmin", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" }
+          ],
+          "notes": "캐스트 입장"
+        },
+        {
+          "event_id": "evt_008_002",
+          "trigger": {
+            "type": "scene_change",
+            "character_id": "",
+            "description": "노래 끝나면 캐스트 퇴장"
+          },
+          "actions": [
+            { "type": "character_exit", "character_id": "char_hyewon", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_jungwon", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_eunbi", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_yurim", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_yunseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_minseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_hyunseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_jungmin", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" }
+          ],
+          "notes": "캐스트 퇴장"
+        }
+      ],
+      "notes": "기쁨, 슬픔, 아름다운 마음"
+    },
+    {
+      "cue_id": "cue_009",
+      "scene_number": "D#2",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_009_001",
+          "trigger": {
+            "type": "lighting_cue",
+            "character_id": "",
+            "description": "노래 끝나면 암전, 은비 혜원 유림 윤서 하수 무대대기 완료, 하수 조명 in"
+          },
+          "actions": [
+            {
+              "type": "character_enter",
+              "character_id": "char_eunbi",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "character_enter",
+              "character_id": "char_hyewon",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "character_enter",
+              "character_id": "char_yurim",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "character_enter",
+              "character_id": "char_yunseo",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            }
+          ],
+          "notes": "하수 무대대기 완료"
+        }
+      ],
+      "notes": "암전 cue"
+    },
+    {
+      "cue_id": "cue_010",
+      "scene_number": "S#5",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_010_001",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_hyewon",
+            "description": "혜원: 필요 없어! 선물 같은 거 다 필요 없다고! 아빠 진짜 치사해!"
+          },
+          "actions": [
+            {
+              "type": "character_exit",
+              "character_id": "char_eunbi",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            }
+          ],
+          "notes": "은비 퇴장"
+        },
+        {
+          "event_id": "evt_010_002",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_jungwon",
+            "description": "정원: 오지 말 걸 그랬나"
+          },
+          "actions": [
+            {
+              "type": "character_exit",
+              "character_id": "char_jungwon",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            }
+          ],
+          "notes": "정원 퇴장"
+        },
+        {
+          "event_id": "evt_010_003",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_yunseo",
+            "description": "윤서: 야 좀 조용해졌다. 나가보자."
+          },
+          "actions": [
+            {
+              "type": "character_enter",
+              "character_id": "char_yurim",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "character_enter",
+              "character_id": "char_yunseo",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            }
+          ],
+          "notes": "정원 퇴장 후 유림, 윤서 입장"
+        },
+        {
+          "event_id": "evt_010_004",
+          "trigger": {
+            "type": "scene_change",
+            "character_id": "",
+            "description": "생일파티 장면 세팅"
+          },
+          "actions": [
+            {
+              "type": "prop_out",
+              "character_id": "",
+              "direction": "stage_left",
+              "prop_id": "prop_bed",
+              "carried_by": "",
+              "from": "stage_left",
+              "to": "stage_left",
+              "costume_description": ""
+            },
+            {
+              "type": "prop_out",
+              "character_id": "",
+              "direction": "stage_left",
+              "prop_id": "prop_blanket",
+              "carried_by": "",
+              "from": "stage_left",
+              "to": "stage_left",
+              "costume_description": ""
+            },
+            {
+              "type": "prop_out",
+              "character_id": "",
+              "direction": "stage_left",
+              "prop_id": "prop_pillow",
+              "carried_by": "",
+              "from": "stage_left",
+              "to": "stage_left",
+              "costume_description": ""
+            },
+            {
+              "type": "prop_out",
+              "character_id": "",
+              "direction": "stage_left",
+              "prop_id": "prop_storybook",
+              "carried_by": "",
+              "from": "stage_left",
+              "to": "stage_left",
+              "costume_description": ""
+            },
+            {
+              "type": "prop_in",
+              "character_id": "",
+              "direction": "stage_right",
+              "prop_id": "prop_table",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "prop_in",
+              "character_id": "",
+              "direction": "stage_right",
+              "prop_id": "prop_chair_1",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "prop_in",
+              "character_id": "",
+              "direction": "stage_right",
+              "prop_id": "prop_chair_2",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "prop_in",
+              "character_id": "",
+              "direction": "stage_right",
+              "prop_id": "prop_party_hat",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "prop_out",
+              "character_id": "",
+              "direction": "stage_right",
+              "prop_id": "prop_party_hat",
+              "carried_by": "char_hyewon",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "prop_in",
+              "character_id": "",
+              "direction": "stage_right",
+              "prop_id": "prop_maru_bag",
+              "carried_by": "char_jungwon",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            }
+          ],
+          "notes": "침대 세트 out, 식탁 의자 꼬깔모자 in"
+        }
+      ],
+      "notes": "마루의 생일파티, 별1,2의 대화"
+    },
+    {
+      "cue_id": "cue_011",
+      "scene_number": "D#3",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_011_001",
+          "trigger": {
+            "type": "lighting_cue",
+            "character_id": "",
+            "description": "암전, 윤서 유림 하수 단상 무대대기 완료, 전체 조명 in, 가로등 느낌 조명 in"
+          },
+          "actions": [
+            {
+              "type": "character_enter",
+              "character_id": "char_yunseo",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "character_enter",
+              "character_id": "char_yurim",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            }
+          ],
+          "notes": "하수 단상 무대대기 완료"
+        }
+      ],
+      "notes": "암전 cue"
+    },
+    {
+      "cue_id": "cue_012",
+      "scene_number": "S#6",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_012_001",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_jungwon",
+            "description": "정원: 이제 얼마 안 남았는데. 조금이라도 더 잘해주고 싶은데"
+          },
+          "actions": [],
+          "notes": "가로등 느낌 탑 조명 in 메모"
+        }
+      ],
+      "notes": "밖으로 나온 우현, 뒤따라가는 별1,2"
+    },
+    {
+      "cue_id": "cue_013",
+      "scene_number": "N#4",
+      "scene_type": "number",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_013_001",
+          "trigger": {
+            "type": "scene_change",
+            "character_id": "",
+            "description": "N#4 전주 시작, 캐스트 입장"
+          },
+          "actions": [
+            { "type": "character_enter", "character_id": "char_hyewon", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_jungwon", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_eunbi", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_yurim", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_yunseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_minseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_hyunseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_jungmin", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" }
+          ],
+          "notes": "캐스트 입장"
+        },
+        {
+          "event_id": "evt_013_002",
+          "trigger": {
+            "type": "scene_change",
+            "character_id": "",
+            "description": "1절 후렴 끝나면 은비, 혜원 중퇴"
+          },
+          "actions": [
+            {
+              "type": "character_exit",
+              "character_id": "char_eunbi",
+              "direction": "stage_left",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_left",
+              "to": "stage_left",
+              "costume_description": ""
+            },
+            {
+              "type": "character_exit",
+              "character_id": "char_hyewon",
+              "direction": "stage_left",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_left",
+              "to": "stage_left",
+              "costume_description": ""
+            }
+          ],
+          "notes": "은비, 혜원 중퇴"
+        }
+      ],
+      "notes": "UGLY"
+    },
+    {
+      "cue_id": "cue_014",
+      "scene_number": "D#4",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_014_001",
+          "trigger": {
+            "type": "lighting_cue",
+            "character_id": "",
+            "description": "노래 끝나면 암전, 은비 혜원 하수 무대대기 완료, 하수 조명 in"
+          },
+          "actions": [
+            {
+              "type": "character_enter",
+              "character_id": "char_eunbi",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "character_enter",
+              "character_id": "char_hyewon",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            }
+          ],
+          "notes": "은비, 혜원 하수 무대대기 완료"
+        }
+      ],
+      "notes": "암전 cue"
+    },
+    {
+      "cue_id": "cue_015",
+      "scene_number": "S#7",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_015_001",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_eunbi",
+            "description": "수연: 같이 가, 마루야"
+          },
+          "actions": [
+            {
+              "type": "character_exit",
+              "character_id": "char_hyewon",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "prop_out",
+              "character_id": "",
+              "direction": "stage_right",
+              "prop_id": "prop_maru_bag",
+              "carried_by": "char_hyewon",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            }
+          ],
+          "notes": "혜원 퇴장, 마루가방 out"
+        }
+      ],
+      "notes": "학예회날 아침"
+    },
+    {
+      "cue_id": "cue_016",
+      "scene_number": "N#5",
+      "scene_type": "number",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_016_001",
+          "trigger": {
+            "type": "scene_change",
+            "character_id": "",
+            "description": "암전 때 캐스트 입장, N#5 전주 시작"
+          },
+          "actions": [
+            { "type": "character_enter", "character_id": "char_hyewon", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_yurim", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_yunseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_minseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_hyunseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_jungmin", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" }
+          ],
+          "notes": "정원, 은비 제외 캐스트 입장"
+        }
+      ],
+      "notes": "혜성"
+    },
+    {
+      "cue_id": "cue_017",
+      "scene_number": "S#8",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_017_001",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_hyewon",
+            "description": "혜원: 엄마, 가자. 나 여기 있기 싫어. 집에 갈래."
+          },
+          "actions": [],
+          "notes": ""
+        },
+        {
+          "event_id": "evt_017_002",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_eunbi",
+            "description": "은비: 일단 집으로 가요."
+          },
+          "actions": [
+            {
+              "type": "character_exit",
+              "character_id": "char_hyewon",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "character_exit",
+              "character_id": "char_eunbi",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            }
+          ],
+          "notes": "혜원, 은비 퇴장"
+        },
+        {
+          "event_id": "evt_017_003",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_jungwon",
+            "description": "정원: 마루야"
+          },
+          "actions": [
+            {
+              "type": "character_exit",
+              "character_id": "char_jungwon",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            }
+          ],
+          "notes": "정원이 한숨 쉬며 쫓아 나감"
+        }
+      ],
+      "notes": "학예회에 늦은 우현"
+    },
+    {
+      "cue_id": "cue_018",
+      "scene_number": "S#9",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_018_001",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_jungwon",
+            "description": "정원: 여보 그게 아니라 내 말 좀 들어봐"
+          },
+          "actions": [],
+          "notes": ""
+        },
+        {
+          "event_id": "evt_018_002",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_eunbi",
+            "description": "은비: 하 듣기 싫어. 매번 똑같은 변명, 똑같은 약속. 나 이제 진짜 지쳤어."
+          },
+          "actions": [],
+          "notes": "N#6 세션큐 연결"
+        }
+      ],
+      "notes": "다그치는 수연"
+    },
+    {
+      "cue_id": "cue_019",
+      "scene_number": "N#6",
+      "scene_type": "number",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_019_001",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_eunbi",
+            "description": "은비 솔로 시작"
+          },
+          "actions": [],
+          "notes": "은비 솔로 중심 넘버"
+        },
+        {
+          "event_id": "evt_019_002",
+          "trigger": {
+            "type": "scene_change",
+            "character_id": "",
+            "description": "은비 퇴장"
+          },
+          "actions": [
+            {
+              "type": "character_exit",
+              "character_id": "char_eunbi",
+              "direction": "stage_left",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_left",
+              "to": "stage_left",
+              "costume_description": ""
+            }
+          ],
+          "notes": "은비 퇴장"
+        }
+      ],
+      "notes": "Good for you"
+    },
+    {
+      "cue_id": "cue_020",
+      "scene_number": "S#10",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_020_001",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_eunbi",
+            "description": "은비: 내가 미안해 내가 미안해, 여보"
+          },
+          "actions": [],
+          "notes": ""
+        },
+        {
+          "event_id": "evt_020_002",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_jungwon",
+            "description": "정원: 여보, 너무 슬퍼하지 마. 당신 곁에 항상 있을 거야."
+          },
+          "actions": [],
+          "notes": "N#7 세션큐 연결"
+        }
+      ],
+      "notes": "우현의 시한부 고백"
+    },
+    {
+      "cue_id": "cue_021",
+      "scene_number": "N#7",
+      "scene_type": "number",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_021_001",
+          "trigger": {
+            "type": "scene_change",
+            "character_id": "",
+            "description": "전주에 캐스트 입장"
+          },
+          "actions": [
+            { "type": "character_enter", "character_id": "char_hyewon", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_jungwon", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_eunbi", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_yurim", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_yunseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_minseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_hyunseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_jungmin", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" }
+          ],
+          "notes": "전주에 캐스트 입장"
+        },
+        {
+          "event_id": "evt_021_002",
+          "trigger": {
+            "type": "scene_change",
+            "character_id": "",
+            "description": "노래 끝나면 캐스트 퇴장, 바로 암전"
+          },
+          "actions": [
+            { "type": "character_exit", "character_id": "char_hyewon", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_jungwon", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_eunbi", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_yurim", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_yunseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_minseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_hyunseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_exit", "character_id": "char_jungmin", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" }
+          ],
+          "notes": "캐스트 퇴장 후 바로 암전"
+        }
+      ],
+      "notes": "하나의 답"
+    },
+    {
+      "cue_id": "cue_022",
+      "scene_number": "S#11",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_022_001",
+          "trigger": {
+            "type": "sound_cue",
+            "character_id": "",
+            "description": "현서 정민 상 무대대기 완료 후 학교 종소리 S.E."
+          },
+          "actions": [
+            {
+              "type": "character_enter",
+              "character_id": "char_hyunseo",
+              "direction": "stage_left",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_left",
+              "to": "stage_left",
+              "costume_description": ""
+            },
+            {
+              "type": "character_enter",
+              "character_id": "char_jungmin",
+              "direction": "stage_left",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_left",
+              "to": "stage_left",
+              "costume_description": ""
+            }
+          ],
+          "notes": "현서, 정민 입장"
+        },
+        {
+          "event_id": "evt_022_002",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_hyewon",
+            "description": "혜원: 우리 아빠 거짓말쟁이 아니야! 진짜 바빠서 못 온 거란 말이야!"
+          },
+          "actions": [],
+          "notes": "N#8 세션큐 직전 대사"
+        }
+      ],
+      "notes": "마루를 놀리는 친구들"
+    },
+    {
+      "cue_id": "cue_023",
+      "scene_number": "N#8",
+      "scene_type": "number",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_023_001",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_hyewon",
+            "description": "혜원: 아 우리 아빠가 선물해준 거야"
+          },
+          "actions": [
+            {
+              "type": "prop_in",
+              "character_id": "",
+              "direction": "stage_left",
+              "prop_id": "prop_maru_bag",
+              "carried_by": "char_hyewon",
+              "from": "stage_left",
+              "to": "stage_left",
+              "costume_description": ""
+            }
+          ],
+          "notes": "마루가방 관련 이벤트"
+        },
+        {
+          "event_id": "evt_023_002",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_hyewon",
+            "description": "혜원: 안돼 나한테 정말 소중한 거야"
+          },
+          "actions": [],
+          "notes": "가방을 둘러싼 갈등"
+        }
+      ],
+      "notes": "Larger than life"
+    },
+    {
+      "cue_id": "cue_024",
+      "scene_number": "S#12",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_024_001",
+          "trigger": {
+            "type": "scene_change",
+            "character_id": "",
+            "description": "정원 은비 하수 무대대기 완료"
+          },
+          "actions": [
+            {
+              "type": "character_enter",
+              "character_id": "char_jungwon",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "character_enter",
+              "character_id": "char_eunbi",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            }
+          ],
+          "notes": "정원, 은비 하수 무대대기 완료"
+        },
+        {
+          "event_id": "evt_024_002",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_jungwon",
+            "description": "정원: 어, 우리 마루 왔어? 학교 끝났네."
+          },
+          "actions": [],
+          "notes": ""
+        },
+        {
+          "event_id": "evt_024_003",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_hyewon",
+            "description": "혜원 빠르게 지나쳐가고"
+          },
+          "actions": [
+            {
+              "type": "character_exit",
+              "character_id": "char_hyewon",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            }
+          ],
+          "notes": "혜원 빠르게 지나감"
+        },
+        {
+          "event_id": "evt_024_004",
+          "trigger": {
+            "type": "lighting_cue",
+            "character_id": "",
+            "description": "빠르게 하수 조명 out, 상수 조명 in"
+          },
+          "actions": [
+            {
+              "type": "backstage_crossover",
+              "character_id": "char_eunbi",
+              "direction": "stage_left",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_left",
+              "costume_description": ""
+            }
+          ],
+          "notes": "은비 상수 이동"
+        },
+        {
+          "event_id": "evt_024_005",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_jungwon",
+            "description": "정원: 마루야 아빠인데, 들어가도 될까?"
+          },
+          "actions": [],
+          "notes": ""
+        },
+        {
+          "event_id": "evt_024_006",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_hyewon",
+            "description": "혜원: 응 이번 딱 한 번만 봐주는 거야."
+          },
+          "actions": [],
+          "notes": ""
+        },
+        {
+          "event_id": "evt_024_007",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_jungwon",
+            "description": "정원: 우리 토요일에 놀이동산 갈까?"
+          },
+          "actions": [],
+          "notes": ""
+        },
+        {
+          "event_id": "evt_024_008",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_hyewon",
+            "description": "혜원: 약속!"
+          },
+          "actions": [],
+          "notes": "장면 끝 암전"
+        }
+      ],
+      "notes": "우현이 마루에게 사과"
+    },
+    {
+      "cue_id": "cue_025",
+      "scene_number": "S#13",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_025_001",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_hyewon",
+            "description": "혜원: 엄마, 아빠! 둘이서만 무슨 비밀 얘기 해!"
+          },
+          "actions": [],
+          "notes": ""
+        },
+        {
+          "event_id": "evt_025_002",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_eunbi",
+            "description": "은비: 얼른 가자. 마루 기다리겠다."
+          },
+          "actions": [],
+          "notes": ""
+        }
+      ],
+      "notes": "놀이공원에 온 가족들"
+    },
+    {
+      "cue_id": "cue_026",
+      "scene_number": "N#9",
+      "scene_type": "number",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [],
+      "notes": "한 페이지가 될 수 있게"
+    },
+    {
+      "cue_id": "cue_027",
+      "scene_number": "S#14",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_027_001",
+          "trigger": {
+            "type": "scene_change",
+            "character_id": "",
+            "description": "유림 윤서 하수 무대대기 완료, 정원 혜원 상 무대대기 완료"
+          },
+          "actions": [
+            {
+              "type": "character_enter",
+              "character_id": "char_yurim",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "character_enter",
+              "character_id": "char_yunseo",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_right",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "character_enter",
+              "character_id": "char_jungwon",
+              "direction": "stage_left",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_left",
+              "to": "stage_left",
+              "costume_description": ""
+            },
+            {
+              "type": "character_enter",
+              "character_id": "char_hyewon",
+              "direction": "stage_left",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_left",
+              "to": "stage_left",
+              "costume_description": ""
+            }
+          ],
+          "notes": "상하 무대대기 완료"
+        },
+        {
+          "event_id": "evt_027_002",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_yurim",
+            "description": "유림: 너는 사람들이 우리를 못 본다는 걸 언제 알아차릴래?"
+          },
+          "actions": [],
+          "notes": ""
+        },
+        {
+          "event_id": "evt_027_003",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_yunseo",
+            "description": "윤서: 아 맞다. 그럼 아저씨가 이야기 시작하기 전에 얼른 들어가자."
+          },
+          "actions": [],
+          "notes": ""
+        }
+      ],
+      "notes": "우현의 이별 고백 / 별1,2의 대화"
+    },
+    {
+      "cue_id": "cue_028",
+      "scene_number": "N#10",
+      "scene_type": "number",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [],
+      "notes": "기쁨, 슬픔 reprise"
+    },
+    {
+      "cue_id": "cue_029",
+      "scene_number": "S#15",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_029_001",
+          "trigger": {
+            "type": "scene_change",
+            "character_id": "",
+            "description": "은비 상수 무대대기 완료, 상수 조명 in"
+          },
+          "actions": [
+            {
+              "type": "character_enter",
+              "character_id": "char_eunbi",
+              "direction": "stage_left",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_left",
+              "to": "stage_left",
+              "costume_description": ""
+            }
+          ],
+          "notes": "혜원은 자고 있다가 씬 시작"
+        },
+        {
+          "event_id": "evt_029_002",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_hyewon",
+            "description": "혜원: 나 아빠랑 약속했으니까, 진짜 매운 김치도 꾹 참고 다 먹는 멋진 어른이 될 거야."
+          },
+          "actions": [],
+          "notes": ""
+        },
+        {
+          "event_id": "evt_029_003",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_eunbi",
+            "description": "은비: 다 잘 할 수 있겠어?"
+          },
+          "actions": [],
+          "notes": "N#11 세션큐"
+        }
+      ],
+      "notes": "마루와 수연의 대화"
+    },
+    {
+      "cue_id": "cue_030",
+      "scene_number": "N#11",
+      "scene_type": "number",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_030_001",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_hyewon",
+            "description": "혜원: 응, 진짜 열심히 해서 꼭 아빠 보러 갈 거야."
+          },
+          "actions": [],
+          "notes": ""
+        },
+        {
+          "event_id": "evt_030_002",
+          "trigger": {
+            "type": "scene_change",
+            "character_id": "",
+            "description": "상하수 교차, 혜원 앞으로 나오고 은비가 옆으로"
+          },
+          "actions": [
+            {
+              "type": "backstage_crossover",
+              "character_id": "char_hyewon",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_left",
+              "to": "stage_right",
+              "costume_description": ""
+            },
+            {
+              "type": "backstage_crossover",
+              "character_id": "char_eunbi",
+              "direction": "stage_right",
+              "prop_id": "",
+              "carried_by": "",
+              "from": "stage_left",
+              "to": "stage_right",
+              "costume_description": ""
+            }
+          ],
+          "notes": "상하수 교차 동선"
+        }
+      ],
+      "notes": "Goodbye"
+    },
+    {
+      "cue_id": "cue_031",
+      "scene_number": "S#16",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [],
+      "notes": "긴 암전, 약 1분. 별들의 대화와 뉴스 음성 S.E. 포함"
+    },
+    {
+      "cue_id": "cue_032",
+      "scene_number": "S#17",
+      "scene_type": "scene",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_032_001",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_eunbi",
+            "description": "은비: 야! 넌 오늘 마루호 발사 당일인데"
+          },
+          "actions": [],
+          "notes": ""
+        },
+        {
+          "event_id": "evt_032_002",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_hyewon",
+            "description": "혜원: 당연하지! 나 길우현 씨 딸이잖아. 엄마, 나 다녀올게."
+          },
+          "actions": [],
+          "notes": ""
+        }
+      ],
+      "notes": "우주비행사가 된 마루"
+    },
+    {
+      "cue_id": "cue_033",
+      "scene_number": "N#12",
+      "scene_type": "number",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [
+        {
+          "event_id": "evt_033_001",
+          "trigger": {
+            "type": "dialogue",
+            "character_id": "char_hyewon",
+            "description": "혜원: 다녀오겠습니다!"
+          },
+          "actions": [
+            { "type": "character_enter", "character_id": "char_hyewon", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_jungwon", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_eunbi", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_yurim", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_yunseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_minseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_hyunseo", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" },
+            { "type": "character_enter", "character_id": "char_jungmin", "direction": "stage_left", "prop_id": "", "carried_by": "", "from": "stage_left", "to": "stage_left", "costume_description": "" }
+          ],
+          "notes": "뛰어다니며 캐스트 입장"
+        }
+      ],
+      "notes": "Fantasy"
+    },
+    {
+      "cue_id": "cue_034",
+      "scene_number": "N#13",
+      "scene_type": "number",
+      "backstage_crossover_time_override_sec": 0,
+      "events": [],
+      "notes": "Goodbye reprise / 커튼콜. 노래 끝난 직후 암전 없이 막 close, 막 닫히면 객석 조명 on"
+    }
+  ]
+}
