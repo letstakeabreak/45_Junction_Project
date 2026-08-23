@@ -189,7 +189,7 @@ available = 다음 입장 시각 − 이전 퇴장 시각
 `MASTER_CUE` 카드에 **별마루 예시 프로젝트 열기** 버튼을 둔다. 예시는 허가받은 원본 대본·마스터 큐의
 `example-cue-with-light.json` 전체 34 cue·59 event와, `별마루.docx`에서 실제 대사·지문 131개 구간을
 문단 locator와 함께 구조화한 읽기 전용 Script Projection을 함께 연다. 원본 DOCX 자체는 공개 저장소에
-넣지 않으며 source hash와 locator를 보존한다. 첫 방문에는 초록색 **90초 빠른 체험** 팝업을 열어
+넣지 않으며 source hash와 locator를 보존한다. 첫 방문에는 초록색 **빠른 체험** 팝업을 열어
 “큐시트와 대본이 없어도 예시 결과를 볼 수 있다”는 점과 같은 로컬 예시를 여는 단일 CTA를 안내한다.
 이 경로는 네트워크나 Upstage job을 시작하지 않아 무한 로딩이 없어야 하며, provenance는
 `CONTROLLED_FIXTURE`로 명시한다.

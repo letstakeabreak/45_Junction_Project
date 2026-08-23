@@ -12,12 +12,12 @@
 
 ---
 
-## ⚡ 90초 라이브 데모 가이드 (Try It Instantly)
+## ⚡ 라이브 데모 가이드 (Try It Instantly)
 
 심사위원이나 첫 방문자가 별도의 공연 문서를 준비하지 않아도 즉시 전체 E2E 검증을 체험할 수 있습니다:
 
 1. **[Live Demo](https://standby-junctionx.vercel.app/)**에 접속합니다.
-2. 첫 방문 팝업의 초록색 **Start the 90-sec example** 버튼을 누릅니다.
+2. 첫 방문 팝업의 초록색 **Start the example** 버튼을 누릅니다.
 3. 준비된 별마루 전체 큐시트의 **34개 cue·59개 event**를 타임라인에서 선택합니다.
 4. 왼쪽 Script Sidebar에서 `별마루.docx`의 실제 대사·지문이 같은 event로 이동하는지 확인합니다.
 5. 큐시트의 오류·검토 상태, 2D 무대 snapshot, 이벤트 상세를 함께 살펴봅니다.
