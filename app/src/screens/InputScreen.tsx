@@ -24,6 +24,7 @@ import type { CueSheet } from '@/types/cue-sheet';
 
 const MAX_SOURCE_BYTES = 50 * 1024 * 1024;
 const SOURCE_ORIGIN: SourceOrigin = 'USER_PROVIDED';
+const JUDGE_TOUR_DISMISSED_KEY = 'standby.judge-tour.dismissed.v1';
 
 const ZONES = [
   ['STAGE', '무대'],
@@ -165,6 +166,9 @@ export function InputScreen() {
   const [stageHash, setStageHash] = useState('계산 중');
   const [phase, setPhase] = useState<SubmitPhase>('IDLE');
   const [message, setMessage] = useState<string | null>(null);
+  const [judgeTourOpen, setJudgeTourOpen] = useState(() => (
+    typeof window === 'undefined' || window.sessionStorage.getItem(JUDGE_TOUR_DISMISSED_KEY) !== '1'
+  ));
 
   const stageSpec = useMemo(() => ({
     contract_version: 'standby.stage-spec.v1',
@@ -270,13 +274,27 @@ export function InputScreen() {
     }
   };
 
-  const attachExampleMasterCue = () => {
+  const attachExampleMasterCue = async () => {
     const file = new File(
       [exampleMasterCueText],
       'STANDBY_example_master_cue.json',
       { type: 'application/json', lastModified: 0 },
     );
-    void selectSources('MASTER_CUE', [file], 'CONTROLLED_FIXTURE');
+    await selectSources('MASTER_CUE', [file], 'CONTROLLED_FIXTURE');
+  };
+
+  const openExampleWorkspace = async () => {
+    clearReviewFlow();
+    clearWorkspace();
+    clearCueSheet();
+    const cueSheet = parseCueSheetJson(exampleMasterCueText, locale);
+    loadCueSheet(cueSheet);
+    await navigate({ to: '/workspace' });
+  };
+
+  const dismissJudgeTour = () => {
+    window.sessionStorage.setItem(JUDGE_TOUR_DISMISSED_KEY, '1');
+    setJudgeTourOpen(false);
   };
 
   const openRawJson = async (file: File) => {
@@ -309,6 +327,7 @@ export function InputScreen() {
   };
 
   const ready = Boolean(masterCue);
+  const exampleReady = masterCue?.origin === 'CONTROLLED_FIXTURE';
 
   const apiClient = () => {
     return createStandbyBrowserApi();
@@ -392,9 +411,28 @@ export function InputScreen() {
   return (
     <main className="min-h-screen bg-background px-4 py-8 text-foreground lg:px-8">
       <div className="mx-auto max-w-[1500px]">
-        <header className="border-b border-border pb-5">
+        <header className="flex items-center justify-between gap-4 border-b border-border pb-5">
           <h1 className="text-2xl font-medium">{t('input.title')}</h1>
+          {!judgeTourOpen && (
+            <button
+              type="button"
+              onClick={() => setJudgeTourOpen(true)}
+              className="border border-border px-3 py-2 text-xs font-medium hover:border-foreground"
+            >
+              {t('input.tour.open')}
+            </button>
+          )}
         </header>
+
+        {judgeTourOpen && (
+          <JudgeQuickTour
+            exampleReady={exampleReady}
+            onPreview={() => void openExampleWorkspace()}
+            onPrepare={() => void attachExampleMasterCue()}
+            onStart={() => void startExtraction()}
+            onClose={dismissJudgeTour}
+          />
+        )}
 
         <section className="mt-6 grid items-start gap-4 lg:grid-cols-2">
           <div className="grid gap-4">
@@ -404,7 +442,7 @@ export function InputScreen() {
               error={sourceErrors.MASTER_CUE}
               batchFiles={masterCueBatchFiles}
               onFiles={(files) => void selectSources('MASTER_CUE', files)}
-              onUseExample={attachExampleMasterCue}
+              onUseExample={() => void attachExampleMasterCue()}
             />
             <RawJsonCard
               error={sourceErrors.RAW_JSON}
@@ -444,6 +482,76 @@ export function InputScreen() {
         {message && <ExtractionStatus phase={phase} message={message} />}
       </div>
     </main>
+  );
+}
+
+function JudgeQuickTour({
+  exampleReady,
+  onPreview,
+  onPrepare,
+  onStart,
+  onClose,
+}: {
+  exampleReady: boolean;
+  onPreview: () => void;
+  onPrepare: () => void;
+  onStart: () => void;
+  onClose: () => void;
+}) {
+  const { t } = useI18n();
+  const steps = [
+    t('input.tour.step.source'),
+    t('input.tour.step.review'),
+    t('input.tour.step.workspace'),
+  ];
+
+  return (
+    <aside className="mt-5 border border-border bg-surface" aria-labelledby="judge-tour-title">
+      <div className="flex items-start justify-between gap-4 border-b border-border p-4">
+        <div>
+          <div className="flex flex-wrap items-center gap-2">
+            <p className="mono text-[10px] tracking-[0.14em] text-muted-foreground">{t('input.tour.eyebrow')}</p>
+            <span className="mono border border-border px-2 py-1 text-[9px] text-muted-foreground">{t('input.tour.fixture')}</span>
+          </div>
+          <h2 id="judge-tour-title" className="mt-2 text-lg font-medium">{t('input.tour.title')}</h2>
+          <p className="mt-1 max-w-3xl text-xs leading-5 text-muted-foreground">{t('input.tour.description')}</p>
+        </div>
+        <button
+          type="button"
+          aria-label={t('input.tour.close')}
+          onClick={onClose}
+          className="border border-border p-2 text-muted-foreground hover:border-foreground hover:text-foreground"
+        >
+          <X className="h-4 w-4" />
+        </button>
+      </div>
+
+      <div className="grid gap-px bg-border sm:grid-cols-3">
+        {steps.map((step, index) => (
+          <div key={step} className="flex items-center gap-3 bg-background px-4 py-3">
+            <span className="mono text-[10px] text-muted-foreground">0{index + 1}</span>
+            <span className="text-xs font-medium">{step}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex flex-col gap-2 border-t border-border p-4 sm:flex-row sm:justify-end">
+        <button
+          type="button"
+          onClick={exampleReady ? onStart : onPrepare}
+          className="border border-border px-4 py-2.5 text-xs font-medium hover:border-foreground"
+        >
+          {exampleReady ? t('input.tour.start') : t('input.tour.prepare')}
+        </button>
+        <button
+          type="button"
+          onClick={onPreview}
+          className="border border-foreground bg-foreground px-4 py-2.5 text-xs font-medium text-background hover:bg-muted-foreground"
+        >
+          {t('input.tour.preview')}
+        </button>
+      </div>
+    </aside>
   );
 }
 
