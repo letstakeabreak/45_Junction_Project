@@ -1,102 +1,106 @@
-# STANDBY
+# 🎭 STANDBY — 공연 프리플라이트 검증기 (Stage Pre-flight Verifier)
 
-> **Pre-flight verification for live stage productions.**
-> 대본, 마스터 큐시트, 무대 사양 사이의 괴리를 리허설 전에 찾아내고 근거와 2D 무대 상태로 재현합니다.
+> **"공연계에는 리허설이라는 런타임 테스트만 있고, 정적 분석기(컴파일러)가 없다."**  
+> 대본 · 마스터 큐시트 · 무대 사양을 한 공연 순서로 대조하여 시간 · 동선 · 소품 · 환복 모순을 **리허설 전에** 찾아내고, 원문 근거와 함께 2D 무대 위에서 재현하는 공연 프리플라이트 검증 시스템입니다.
 
-[Live Demo](https://standby-junctionx.vercel.app/) · [API Health](https://standby-api-production.up.railway.app/healthz) · [Current Feature Spec](project/FEATURE_SPEC_CURRENT.md) · [Upstage Usage](project/UPSTAGE_USAGE_SPEC.md)
+[![Vercel Live Demo](https://img.shields.io/badge/Vercel-Live_Demo-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://standby-junctionx.vercel.app/)
+[![Railway API Health](https://img.shields.io/badge/Railway-API_Health-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)](https://standby-api-production.up.railway.app/healthz)
+[![JunctionX Korea 2026](https://img.shields.io/badge/JunctionX_Korea_2026-Upstage_Track-3b82f6?style=for-the-badge)](https://github.com/Rudy-009/45_Junction_Project)
+[![Upstage Studio](https://img.shields.io/badge/Upstage-Document_AI_Agents-8b5cf6?style=for-the-badge)](project/UPSTAGE_USAGE_SPEC.md)
+[![React 19](https://img.shields.io/badge/React_19-Vite_SPA-61dafb?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
+[![Fastify](https://img.shields.io/badge/Fastify-Node.js_22-000000?style=for-the-badge&logo=fastify&logoColor=white)](https://fastify.dev)
 
-STANDBY는 공연 문서를 단순히 요약하는 도구가 아닙니다. Upstage Studio Agent로 비정형 문서를
-근거가 붙은 fact 후보로 구조화하고, 사람이 승인한 사실만 결정론적 compiler/verifier에 전달해
-환복 시간, 동선 수용량, 소품 연속성 문제를 검증합니다. 결과는 큐시트, 대본, 이벤트 타임라인과
-동기화된 2D 무대에서 확인할 수 있습니다.
+---
+
+## ⚡ 30초 라이브 데모 가이드 (Try It Instantly)
+
+심사위원이나 첫 방문자가 별도의 공연 문서를 준비하지 않아도 즉시 전체 E2E 검증을 체험할 수 있습니다:
+
+1. **[Live Demo](https://standby-junctionx.vercel.app/)**에 접속합니다.
+2. `MASTER CUE` 카드의 **Attach example cue sheet (예시 큐시트 첨부)** 버튼을 누릅니다.
+3. **Start Upstage extraction**을 눌러 비정형 큐시트에서 추출된 Fact 후보를 확인합니다.
+4. **Extraction Review** 화면에서 팩트를 확인하고 승인(Approve)합니다.
+5. **Workspace**로 이동하여 타임라인 `E3` (🔴 `VIOLATION: 환복시간 58s vs 66s`)를 클릭합니다.
+6. **'이 위치로 이동'** $\to$ 큐시트 `58s`를 **`70s`**로 수정 후 **저장** $\to$ **🟢 `CONSISTENT`로 실시간 반전**되는 쾌감을 확인하세요!
+
+---
 
 ![STANDBY workspace](qa/production-workspace-e3-desktop.jpg)
 
-## Why STANDBY
+---
 
-공연 제작 정보는 하나의 데이터베이스가 아니라 여러 문서와 사람에게 흩어져 있습니다.
+## 💡 Why STANDBY (문제 정의와 포지셔닝)
 
-- 대본에는 대사, 지문, 등장·퇴장과 장면 전환이 섞여 있습니다.
-- 마스터 큐시트에는 조명, 음향, 무대, 소품, 의상, 영상 큐가 서로 다른 표현으로 기록됩니다.
-- 무대 사양에는 윙, 백스테이지 통로, 이동 시간, 수용 인원과 초기 배치가 있습니다.
-- 대본이나 큐 하나가 바뀌면 이후 환복, 동선, 소품 상태가 연쇄적으로 영향을 받습니다.
+### 1. 현장의 문제: 분열된 진실과 인간 암산의 한계
+* 공연 현장에는 무대감독의 **프롬프트북**, 부서별 큐를 모은 **마스터 큐시트**, 소품팀의 **프리셋 리스트** 등 최소 5종의 문서가 병존합니다.
+* 이들은 *동일한 사실을 다르게 적은 사본*이지만, 문서 간 불일치를 사전에 자동으로 교차 검증해 주는 장치가 없었습니다.
+* 특히 암전(전환 구간) 시 40초 동안 수많은 부서와 배우, 소품이 동시에 움직일 때, 인간의 암산 한계로 인해 **리허설 무대 위에서 사고(환복 불가, 소품 미배치 등)**가 터집니다.
 
-기존 방식은 여러 부서가 문서를 한 줄씩 대조하거나 실제 무대 리허설에서 오류를 발견합니다.
-STANDBY는 이 대조 작업을 공연 전에 실행 가능한 검증 흐름으로 바꿉니다.
+### 2. 우리의 포지셔닝: 저작 도구가 아닌 "린터(Linter)"
+* 기존 상용 SaaS(Stage Write, Propared 등)는 **"기존 엑셀을 버리고 우리 툴로 이주하라"**고 요구합니다.
+* 하지만 현장(소극장, 대학 극단, K-pop 콘서트팀)은 유연하고 익숙한 **엑셀**을 결코 버릴 수 없습니다.
+* **STANDBY는 엑셀을 버리게 하지 않고, 기존 엑셀을 그대로 먹고 검증한 뒤 원본 서식 그대로 돌려줍니다.**
 
-## Try it without a cue sheet
+---
 
-심사위원이나 첫 사용자가 별도의 공연 파일을 준비할 필요는 없습니다.
+## ⚖️ 3대 제품 불변 원칙 & 신뢰 모델 (Trust Model)
 
-1. [Live Demo](https://standby-junctionx.vercel.app/)를 엽니다.
-2. `MASTER CUE` 카드의 **Attach example cue sheet / 예시 큐시트 첨부**를 선택합니다.
-3. 필요하면 Stage Spec을 입력하고 **Start Upstage extraction**을 누릅니다.
-4. 추출된 원문 근거를 확인하고 일괄 승인하거나 항목별로 검토합니다.
-5. Workspace에서 이벤트, 큐시트, 대본, 2D 무대 상태와 finding을 함께 확인합니다.
+STANDBY는 LLM이 마음대로 안전 결론을 환각(Hallucination)하지 못하도록 엄격한 원칙을 둡니다.
 
-예시 파일도 일반 업로드와 동일한 파일 검사, SHA-256, Upstage API 경로를 사용합니다.
-특정 파일 hash에 따른 데모 우회는 없으며, origin만 `CONTROLLED_FIXTURE`로 표시해 실제 공연 문서와 구분합니다.
-
-## Core capabilities
-
-| 영역 | 현재 동작 |
+| 원칙 | 구현 경계와 의미 |
 |---|---|
-| Master Cue intake | XLSX, PDF, JSON 및 다중 파일 선택을 지원합니다. 제품 내 예시 JSON도 실제 파일처럼 첨부할 수 있습니다. |
-| Raw JSON editor | STANDBY canonical JSON은 Upstage 재추출 없이 즉시 로컬 Editor와 결정론적 validator로 엽니다. |
-| Stage Spec | crossover, 환복 최소 시간, route/capacity, 이동 시간, 인물·소품 초기 배치를 구조화해 입력합니다. |
-| Upstage extraction | cue row, 부서, 트리거, 인물, 동작, 위치, 소품, 의상을 locator와 source quote가 있는 `UNREVIEWED` fact로 만듭니다. |
-| Extraction Review | 원문 필드와 추천을 검토하고 승인·거절·수정합니다. Agent 추천은 승인 전까지 판정에 쓰이지 않습니다. |
-| Deterministic verification | VR-01 quick-change, VR-02 route capacity, VR-03 prop continuity를 코드로 계산합니다. |
-| Evidence Trace | 모든 finding에 SCRIPT, MASTER_CUE, STAGE_SPEC 근거와 계산을 연결합니다. |
-| 2D stage simulator | 이벤트별 인물·소품 상태와 인접 이벤트의 `ENTER`/`EXIT` 의미 전환을 표시합니다. 시뮬레이터는 읽기 전용입니다. |
-| Script Sidebar | DOCX 우선, PDF 보조 대본을 읽고 실제 대사·지문을 timeline event와 연결합니다. |
-| Cue revision | 셀 편집, 이벤트 추가·삭제, 미저장 상태, append-only revision history와 복원을 지원합니다. |
-| Export | 원본 레이아웃을 보존한 새 XLSX, 표준 DOCX, 브라우저 PDF 인쇄본, UTF-8 CSV를 제공합니다. |
-| International demo | 한국어와 영어 UI를 전환하며 선택한 언어를 브라우저에 보존합니다. |
+| **1. Verifier first** | **판정은 결정론적 코드(수학적 규칙)**가 내립니다. LLM은 결코 판정(`verdict`)을 조작할 수 없습니다. |
+| **2. Evidence always** | 모든 Finding은 반드시 **`SCRIPT`(대본), `CUESHEET`(큐시트), `STAGE_SPEC`(무대사양)** 3대 출처의 인용문과 위치 근거를 갖습니다. |
+| **3. Human decides** | AI는 Fact 후보와 제안 문구만 제공하며, 최종 승인과 수정 결정은 **인간 무대감독**이 내립니다. |
 
-구현 여부와 남은 제한은 [현재 기능 명세](project/FEATURE_SPEC_CURRENT.md)가 정본입니다.
+### 🎯 3대 판정 체계 (Verdict)
+* **🔴 `VIOLATION` (위반):** 명시된 시간·경로·상태가 물리적·수학적으로 양립 불가능함. (예: 가용 시간 58s < 필요 시간 66s)
+* **🟡 `REVIEW` (검토):** 시간 범위가 겹치거나, 소품 이동 담당 크루가 누락된 경우.
+* **⬜ `INSUFFICIENT_EVIDENCE` (근거 부족):** **STANDBY의 핵심 정체성**. 판정에 필요한 수치가 문서에 없을 때 억지로 추정하지 않고 *"이 정보가 없어서 판정하지 못함"*을 명시적 기권(Abstention).
 
-## How Upstage is used
+---
 
-Upstage는 **문서 이해와 비권위적 추천·설명**을 담당합니다. 실제 안전 관련 verdict는 Upstage가 아니라
-사람이 승인한 fact를 읽는 STANDBY의 결정론적 코드가 만듭니다.
+## 📐 결정론적 검증 규칙 (Deterministic Rules)
+
+* **VR-01. Quick-change Feasibility (환복 가능성):**
+  $$\text{Required} = \text{Route}(\text{퇴장}\to\text{환복소}) + \text{Min Change Time} + \text{Route}(\text{환복소}\to\text{입장})$$
+  $$\text{Available} = \text{다음 입장 시각} - \text{이전 퇴장 시각}$$
+  $\text{Available} < \text{Required}$이면 즉시 `VIOLATION`.
+* **VR-02. Blocking / Route Conflict (동선/통로 충돌):**
+  백스테이지 통로(`crossover`)가 없는데 반대편 윙으로 재등장해야 하거나 통로 수용 인원을 초과하면 `VIOLATION`.
+* **VR-03. Prop Continuity (소품 연속성):**
+  초기 배치(`initial_state`)에서 시작해 소품의 인계자나 이동 경로가 누락되면 `REVIEW`.
+
+---
+
+## 🤖 Upstage Document AI 파이프라인 (How Upstage is Used)
+
+Upstage는 **비정형 공연 문서의 이해와 비권위적(Non-authoritative) 추천·설명**을 담당합니다. 실제 물리적 안전 판정은 Upstage가 아니라 사람이 승인한 Fact를 읽는 STANDBY의 결정론적 Verifier가 수행합니다.
 
 ```text
-공연 문서
-  → Upstage: 읽기 · 추출 · 구조화 · 추천
-  → 사람: 승인 · 거절 · 수정 · 연결
-  → STANDBY: 상태 전이 · 충돌 계산 · verdict
-  → Upstage: 이미 계산된 결과의 storyboard · rehearsal brief
+공연 원문 문서 (PDF / DOCX / XLSX / JSON)
+  ↓
+Upstage Studio Agents: 읽기 · 다중 열 분리 · Fact 추출 · 구조화
+  ↓
+인간 무대감독: Fact Review (승인 · 거절 · 값 수정)
+  ↓
+STANDBY Deterministic Engine: 상태 전이 추적 · 물리적 충돌 계산 · Verdict 판정
+  ↓
+Upstage Storyboard & Brief: 계산된 근거 기반의 Rehearsal Brief & 비권위적 설명 생성
 ```
 
-| Upstage Studio Agent | 입력 | 출력과 제품 내 역할 | Authority |
+| Upstage Studio Agent | 입력 | 제품 내 역할 | Authority |
 |---|---|---|---|
-| Script Extractor | DOCX/PDF 대본 | 대사, 지문, 화자, 장면, locator → Script Sidebar | `UNREVIEWED` |
-| Master Cue Extractor | XLSX/PDF/JSON | cue row별 트리거, 인물, 동작, 소품, 의상, 근거 | `UNREVIEWED` |
-| Stage Spec Extractor | 구조화된 무대 사양 | route, capacity, 초기 배치 fact 후보 | `UNREVIEWED` |
-| Fact Normalizer | raw fact + 허용 schema | 표준 fact type/value 추천 | `NON_AUTHORITATIVE` |
-| Storyboard Recomposer | reviewed event + 인접 snapshot | action beat와 누락 근거 설명 | `NON_AUTHORITATIVE` |
-| Rehearsal Brief | deterministic finding + evidence | 부서별 확인 질문과 리허설 요약 | `NON_AUTHORITATIVE` |
+| **Script Extractor** | DOCX/PDF 대본 | 대사, 지문, 화자, 장면, locator $\to$ Script Sidebar 연결 | `UNREVIEWED` |
+| **Master Cue Extractor** | XLSX/PDF/JSON | 17열 큐시트의 트리거, 인물, 동작, 소품, 의상, 근거 추출 | `UNREVIEWED` |
+| **Stage Spec Extractor** | 구조화 무대사양 | route, capacity, 초기 배치 fact 후보 추출 | `UNREVIEWED` |
+| **Fact Normalizer** | raw fact + schema | 표준 fact type/value 추천 (읽기 전용 보조) | `NON_AUTHORITATIVE` |
+| **Storyboard Recomposer**| reviewed event | 2D 무대 액션 비트 및 결측 근거 해설 | `NON_AUTHORITATIVE` |
+| **Rehearsal Brief** | deterministic finding | 부서별 체크리스트 및 리허설 브리핑 요약 | `NON_AUTHORITATIVE` |
 
-복잡한 병합 셀, 한국어 공연 용어, 대사와 지문, 부서별 표현은 일반 표 파서만으로 의미를 분리하기 어렵습니다.
-Upstage가 이 비정형 구간의 coverage를 담당하고, STANDBY는 strict decoder, schema allowlist,
-source locator, human review로 결과를 통제합니다. 상세 계약과 live-smoke 범위는
-[Upstage 활용 명세](project/UPSTAGE_USAGE_SPEC.md)를 참고하세요.
+---
 
-## Trust model
-
-STANDBY의 세 가지 제품 원칙은 다음과 같습니다.
-
-| 원칙 | 구현 경계 |
-|---|---|
-| **Verifier first** | LLM은 verdict를 생성하거나 변경하지 않습니다. compiler/verifier는 네트워크 호출이 없는 결정론적 모듈입니다. |
-| **Evidence always** | finding은 역할별 source locator, quote, review state와 계산을 함께 제공합니다. |
-| **Human decides** | Upstage 결과는 항상 후보이며, 사람의 review snapshot에 승인된 fact만 authority를 얻습니다. |
-
-검증 결과는 `VIOLATION`, `REVIEW`, `INSUFFICIENT_EVIDENCE` 세 가지입니다.
-정보가 부족하면 임의로 안전하다고 결론 내리지 않고, 무엇이 없어 판단할 수 없는지 표시합니다.
-
-## End-to-end flow
+## 🔄 End-to-End 시스템 아키텍처 (Architecture Flow)
 
 ```mermaid
 flowchart LR
