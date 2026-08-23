@@ -2,8 +2,14 @@ import ExcelJS from "exceljs";
 import { DomainError } from "./errors.js";
 import type { CueRow } from "./types.js";
 
-function cellText(cell: ExcelJS.Cell): string {
-  return cell.text ?? "";
+export function cellText(cell: ExcelJS.Cell): string {
+  try {
+    return cell.text ?? "";
+  } catch {
+    // Some real-world XLSX files contain a merged cell whose master was removed.
+    // Excel renders that cell as blank, while ExcelJS throws from Cell.text.
+    return cell.value == null ? "" : String(cell.value);
+  }
 }
 
 function headerRow(worksheet: ExcelJS.Worksheet): number {

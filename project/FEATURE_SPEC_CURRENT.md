@@ -39,6 +39,7 @@ UUID 세션으로 case 소유권을 분리한다. 이 값은 사용자 신원을
 | 입력 | **구현** | MASTER_CUE는 다중 선택·드롭을 허용하되 단일 authority 계약에 따라 첫 번째 유효 XLSX/PDF/JSON만 정본으로 사용. 선택한 파일 수와 각 파일의 아이콘·이름·용량·`MASTER_CUE/IGNORED` 상태를 카드 목록으로 표시. 다중 선택은 실제 추출을 수행하면서 최소 12초 loading scene을 보장. STAGE_SPEC은 폼으로 받음 |
 | Script Sidebar | **case·RAW JSON 구현** | DOCX 우선·PDF 보조. verified case에서는 `SCRIPT` source와 review queue에 통합한다. RAW JSON Editor에서는 standalone Upstage projection을 만들고 exact event ID·유일한 장면명은 자동 연결한다. 나머지는 장면·화자·대사/트리거·공연 순서 기반 추천과 신뢰도·근거를 표시하며, 개별 적용 또는 사람이 누르는 `추천 모두 적용`으로 확정한다 |
 | 로컬 파일 방어 | **구현** | 확장자·signature·50 MiB·SHA-256 검사. 미리 정한 파일명 없음 |
+| XLSX 호환성 | **구현** | 병합 원본이 사라진 빈 셀은 Excel 표시와 같이 빈칸으로 읽고, revision 변환 성공 전에 source slot을 저장하지 않는다. Upstage 응답에 근거 없는 행이 일부 섞이면 그 행만 authority에서 제외하고 locator·quote가 완전한 fact는 유지한다 |
 | RAW JSON 입력 | **직접 Editor 경로 구현** | MASTER_CUE와 별도인 `RAW JSON` 섹션에서 STANDBY CueSheet JSON을 받는다. 브라우저 strict 구조 검사를 통과하면 CueSheet 자체는 Upstage를 호출하지 않고 즉시 로컬 Editor와 결정론적 validator로 연다. 이후 연결한 Script만 standalone Upstage projection으로 처리한다. 공개 CueSheet JSON에는 duration 추정 필드 없음 |
 | 비정형 JSON 전달 | **서버 호환 유지** | 서버 API로 직접 들어오는 비정형 JSON source는 원본 bytes/hash를 보존하고, Upstage가 필요한 경로에서만 JSON Pointer 행의 임시 XLSX로 변환한다. 입력 화면이 허용하는 STANDBY CueSheet JSON에는 이 경로를 쓰지 않는다 |
 | 무대 사양 | **구현** | crossover, 환복 시간, route time, route ID/capacity, 인물·소품 초기 배치 |

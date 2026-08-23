@@ -169,16 +169,18 @@ function decodeFacts(
   if (!Array.isArray(rawFacts)) {
     throw new DomainError(502, "UPSTAGE_RESPONSE_INVALID", `${key} must be an array.`);
   }
-  return rawFacts.map((rawFact, index) => {
+  const facts = rawFacts.flatMap((rawFact, index) => {
     const value = objectValue(rawFact, `${key}[${index}]`);
-    const { locator, quote } = locateFact(role, value);
+    const evidence = factEvidence(value);
+    if (!evidence) return [];
+    const { locator, quote } = evidence;
     const rawConfidence = value.confidence;
     const confidence =
       rawConfidence === "HIGH" || rawConfidence === "LOW" ? rawConfidence : "NOT_PROVIDED";
     const factTypeValue = value.fact_type ?? value.record_kind ?? `${role}_FACT`;
     const factType = nonEmptyString(factTypeValue, `${key}[${index}].fact_type`);
     const digest = hashJson({ source_sha256: source.sha256, index, value });
-    return {
+    return [{
       fact_id: `fact_${role.toLowerCase()}_${digest.slice(0, 16)}`,
       fact_type: factType,
       raw_value: structuredClone(value),
@@ -190,8 +192,12 @@ function decodeFacts(
       origin: source.origin,
       confidence,
       review_status: "UNREVIEWED",
-    } satisfies FactCandidate;
+    } satisfies FactCandidate];
   });
+  if (rawFacts.length > 0 && facts.length === 0) {
+    locateFact(role, objectValue(rawFacts[0], `${key}[0]`));
+  }
+  return facts;
 }
 
 function roleFactKey(role: SourceRole): "script_facts" | "cue_facts" | "stage_facts" {

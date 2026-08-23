@@ -586,6 +586,43 @@ test("Upstage adapter fails closed when a generated fact has no evidence quote",
   );
 });
 
+test("Upstage adapter keeps evidenced facts when an extraction also contains an unevidenced row", async () => {
+  const mockFetch: typeof fetch = async (input, init) => {
+    const url = String(input);
+    if (url.endsWith("/v2/files")) return Response.json({ id: "file-mixed-evidence" });
+    if (url.endsWith("/v2/responses") && init?.method === "POST") {
+      return Response.json({ id: "job-mixed-evidence" });
+    }
+    return Response.json({
+      id: "job-mixed-evidence",
+      status: "completed",
+      output: [{ content: [{ text: JSON.stringify({
+        cue_facts: [
+          { fact_type: "CUE_ROW", locator: "Cue!A2", source_quote_raw: "E1 GO" },
+          { fact_type: "CUE_ROW", locator: "Cue!A3" },
+        ],
+      }) }] }],
+    });
+  };
+  const provider = new UpstageAgentProvider({
+    apiKey: "secret-test-key",
+    agentIds: { MASTER_CUE: "agt_cue" },
+    fetchImpl: mockFetch,
+    pollIntervalMs: 0,
+    timeoutMs: 1_000,
+  });
+  const result = await provider.extract(new Map<SourceRole, InternalSourceVersion>([
+    ["MASTER_CUE", source("MASTER_CUE", {
+      bytes: Uint8Array.from([0x50, 0x4b, 1, 2]),
+      content: null,
+      mediaType: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    })],
+  ]));
+
+  assert.equal(result.facts.length, 1);
+  assert.equal(result.facts[0]?.quote, "E1 GO");
+});
+
 test("Upstage adapter reports only the failed upstream status", async () => {
   const provider = new UpstageAgentProvider({
     apiKey: "secret-test-key",

@@ -245,9 +245,13 @@ export class InMemoryStore {
       content: null,
       bytes: Uint8Array.from(input.bytes),
     };
+    const cueRowsForRevision =
+      input.role === "MASTER_CUE" &&
+      input.mediaType === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        ? await cueRowsFromXlsx(input.bytes)
+        : null;
     record.sources.set(input.role, source);
-    if (input.role === "MASTER_CUE" && input.mediaType === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
-      const rows = await cueRowsFromXlsx(input.bytes);
+    if (cueRowsForRevision) {
       const baseRevision: CueRevision = {
         contract_version: "standby.revision.v1",
         revision_id: `rev_source_${sourceHash.slice(0, 12)}`,
@@ -258,7 +262,7 @@ export class InMemoryStore {
         patches: [],
         created_by: "source-upload",
         created_at: source.created_at,
-        rows,
+        rows: cueRowsForRevision,
       };
       record.revisions.push(baseRevision);
       record.current_revision_id = baseRevision.revision_id;

@@ -4,6 +4,7 @@ import ExcelJS from "exceljs";
 import type { FastifyInstance } from "fastify";
 import { buildApp } from "../src/app.js";
 import type { CueRevision, SourceVersion } from "../src/domain/types.js";
+import { cellText } from "../src/domain/xlsx-revision.js";
 import { sha256 } from "../src/lib/hash.js";
 import type { ExtractionProvider } from "../src/providers/extraction-provider.js";
 
@@ -37,6 +38,46 @@ function multipart(boundary: string, bytes: Buffer): Buffer {
     Buffer.from(`\r\n--${boundary}--\r\n`),
   ]);
 }
+
+test("dangling merged cells are read as blank instead of crashing the upload", () => {
+  const cell = { value: null } as ExcelJS.Cell;
+  Object.defineProperty(cell, "text", {
+    get() {
+      throw new TypeError("Cannot read properties of null (reading 'toString')");
+    },
+  });
+
+  assert.equal(cellText(cell), "");
+});
+
+test("a failed XLSX revision parse does not lock the source slot", async () => {
+  const created = await app.inject({
+    method: "POST",
+    url: "/v1/cases",
+    headers: headers(true),
+    payload: { title: "Transactional upload" },
+  });
+  const caseId = (created.json() as { case_id: string }).case_id;
+  const upload = (bytes: Buffer, suffix: string) => {
+    const boundary = `transactional-${suffix}`;
+    return app.inject({
+      method: "POST",
+      url: `/v1/cases/${caseId}/sources/MASTER_CUE`,
+      headers: { ...headers(true), "content-type": `multipart/form-data; boundary=${boundary}` },
+      payload: multipart(boundary, bytes),
+    });
+  };
+
+  const failed = await upload(Buffer.from("PK invalid workbook"), "bad");
+  assert.equal(failed.statusCode, 500, failed.body);
+
+  const workbook = new ExcelJS.Workbook();
+  const sheet = workbook.addWorksheet("Cue");
+  sheet.addRow(["Cue", "Action"]);
+  sheet.addRow(["E1", "GO"]);
+  const valid = await upload(Buffer.from(await workbook.xlsx.writeBuffer()), "valid");
+  assert.equal(valid.statusCode, 201, valid.body);
+});
 
 test("XLSX revision export changes only the patched cell and preserves workbook shape", async () => {
   const workbook = new ExcelJS.Workbook();
