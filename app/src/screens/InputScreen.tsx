@@ -26,7 +26,7 @@ import type { ScriptProjection } from '@/types/script';
 
 const MAX_SOURCE_BYTES = 50 * 1024 * 1024;
 const SOURCE_ORIGIN: SourceOrigin = 'USER_PROVIDED';
-const JUDGE_TOUR_DISMISSED_KEY = 'standby.judge-tour.dismissed.v1';
+const JUDGE_TOUR_DISMISSED_KEY = 'standby.judge-tour.dismissed.v2';
 
 const ZONES = [
   ['STAGE', '무대'],
@@ -414,7 +414,7 @@ export function InputScreen() {
             <button
               type="button"
               onClick={() => setJudgeTourOpen(true)}
-              className="border border-border px-3 py-2 text-xs font-medium hover:border-foreground"
+              className="border border-consistent bg-consistent-bg px-3 py-2 text-xs font-medium text-consistent hover:bg-consistent/10"
             >
               {t('input.tour.open')}
             </button>
@@ -494,45 +494,53 @@ function JudgeQuickTour({
   ];
 
   return (
-    <aside className="mt-5 border border-border bg-surface" aria-labelledby="judge-tour-title">
-      <div className="flex items-start justify-between gap-4 border-b border-border p-4">
-        <div>
-          <div className="flex flex-wrap items-center gap-2">
-            <p className="mono text-[10px] tracking-[0.14em] text-muted-foreground">{t('input.tour.eyebrow')}</p>
-            <span className="mono border border-border px-2 py-1 text-[9px] text-muted-foreground">{t('input.tour.fixture')}</span>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 py-8" role="presentation">
+      <aside
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="judge-tour-title"
+        className="w-full max-w-2xl border border-consistent bg-surface"
+      >
+        <div className="flex items-start justify-between gap-4 border-b border-consistent p-5 sm:p-6">
+          <div>
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="mono text-[10px] tracking-[0.14em] text-consistent">{t('input.tour.eyebrow')}</p>
+              <span className="mono border border-consistent px-2 py-1 text-[9px] text-consistent">{t('input.tour.fixture')}</span>
+            </div>
+            <h2 id="judge-tour-title" className="mt-3 text-xl font-medium">{t('input.tour.title')}</h2>
+            <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">{t('input.tour.description')}</p>
           </div>
-          <h2 id="judge-tour-title" className="mt-2 text-lg font-medium">{t('input.tour.title')}</h2>
-          <p className="mt-1 max-w-3xl text-xs leading-5 text-muted-foreground">{t('input.tour.description')}</p>
+          <button
+            type="button"
+            aria-label={t('input.tour.close')}
+            onClick={onClose}
+            className="border border-border p-2 text-muted-foreground hover:border-foreground hover:text-foreground"
+          >
+            <X className="h-4 w-4" />
+          </button>
         </div>
-        <button
-          type="button"
-          aria-label={t('input.tour.close')}
-          onClick={onClose}
-          className="border border-border p-2 text-muted-foreground hover:border-foreground hover:text-foreground"
-        >
-          <X className="h-4 w-4" />
-        </button>
-      </div>
 
-      <div className="grid gap-px bg-border sm:grid-cols-3">
-        {steps.map((step, index) => (
-          <div key={step} className="flex items-center gap-3 bg-background px-4 py-3">
-            <span className="mono text-[10px] text-muted-foreground">0{index + 1}</span>
-            <span className="text-xs font-medium">{step}</span>
-          </div>
-        ))}
-      </div>
+        <div className="grid gap-px bg-border sm:grid-cols-3">
+          {steps.map((step, index) => (
+            <div key={step} className="flex items-center gap-3 bg-background px-4 py-3">
+              <span className="mono text-[10px] text-consistent">0{index + 1}</span>
+              <span className="text-xs font-medium">{step}</span>
+            </div>
+          ))}
+        </div>
 
-      <div className="flex border-t border-border p-4 sm:justify-end">
-        <button
-          type="button"
-          onClick={onPreview}
-          className="border border-foreground bg-foreground px-4 py-2.5 text-xs font-medium text-background hover:bg-muted-foreground"
-        >
-          {t('input.tour.preview')}
-        </button>
-      </div>
-    </aside>
+        <div className="flex flex-col gap-2 border-t border-border p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+          <span className="text-xs text-muted-foreground">{t('input.tour.fixture')}</span>
+          <button
+            type="button"
+            onClick={onPreview}
+            className="border border-consistent bg-consistent px-5 py-3 text-sm font-semibold text-background hover:bg-consistent/90"
+          >
+            {t('input.tour.preview')}
+          </button>
+        </div>
+      </aside>
+    </div>
   );
 }
 

@@ -36,8 +36,8 @@ UUID 세션으로 case 소유권을 분리한다. 이 값은 사용자 신원을
 | 두 화면 라우팅 | **구현** | `/` 입력, `/workspace` 워크스페이스만 존재 |
 | KOR/ENG i18n | **구현** | 헤더 선택 메뉴로 M3 입력·review·workspace·2D 무대 카피를 전환하고 선택을 localStorage에 보존 |
 | UI 카피 정리 | **구현** | 설명형 슬로건·면책·중복 제목을 제거하고, 선택 화면은 선택지만 남김. 오류·제약·상태와 provenance/hash는 유지하되 provenance는 요청 시 펼침 |
-| 입력 | **구현** | MASTER_CUE는 다중 선택·드롭을 허용하되 단일 authority 계약에 따라 첫 번째 유효 XLSX/PDF/JSON만 정본으로 사용. 선택한 파일 수와 각 파일의 아이콘·이름·용량만 카드 목록으로 표시하며 내부 authority/ignored 분류는 노출하지 않음. `별마루 예시 프로젝트 열기`와 첫 방문 `90초 둘러보기`는 허가받은 원본의 S#16→S#17을 대조해 만든 8-event CueSheet와 event-linked Script Projection을 서버 호출 없이 즉시 연다. 실제 Upstage 흐름은 사용자 파일의 기본 CTA로만 시작한다. 다중 선택은 실제 추출을 수행하면서 최소 12초 loading scene을 보장. STAGE_SPEC은 폼으로 받음 |
-| Script Sidebar | **case·RAW JSON·통제 예시 구현** | DOCX 우선·PDF 보조. verified case에서는 `SCRIPT` source와 review queue에 통합한다. RAW JSON Editor에서는 standalone Upstage projection을 만들고 exact event ID·유일한 장면명은 자동 연결한다. 나머지는 장면·화자·대사/트리거·공연 순서 기반 추천과 신뢰도·근거를 표시하며, 개별 적용 또는 사람이 누르는 `추천 모두 적용`으로 확정한다. 별마루 통제 예시는 12개 발췌가 8개 event에 모두 연결되고 `CONTROLLED FIXTURE · NON_AUTHORITATIVE`를 표시한다 |
+| 입력 | **구현** | MASTER_CUE는 다중 선택·드롭을 허용하되 단일 authority 계약에 따라 첫 번째 유효 XLSX/PDF/JSON만 정본으로 사용. 선택한 파일 수와 각 파일의 아이콘·이름·용량만 카드 목록으로 표시하며 내부 authority/ignored 분류는 노출하지 않음. `별마루 예시 프로젝트 열기`와 첫 방문 초록색 `90초 빠른 체험` 팝업은 `example-cue-with-light.json`의 34 cue·59 event 전체와 DOCX 기반 Script Projection을 서버 호출 없이 즉시 연다. 실제 Upstage 흐름은 사용자 파일의 기본 CTA로만 시작한다. 다중 선택은 실제 추출을 수행하면서 최소 12초 loading scene을 보장. STAGE_SPEC은 폼으로 받음 |
+| Script Sidebar | **case·RAW JSON·통제 예시 구현** | DOCX 우선·PDF 보조. verified case에서는 `SCRIPT` source와 review queue에 통합한다. RAW JSON Editor에서는 standalone Upstage projection을 만들고 exact event ID·유일한 장면명은 자동 연결한다. 나머지는 장면·화자·대사/트리거·공연 순서 기반 추천과 신뢰도·근거를 표시하며, 개별 적용 또는 사람이 누르는 `추천 모두 적용`으로 확정한다. 별마루 통제 예시는 `별마루.docx`의 실제 대사·지문 131개 구간을 source hash·문단 locator와 함께 연결하고 `CONTROLLED FIXTURE · NON_AUTHORITATIVE`를 표시한다 |
 | 로컬 파일 방어 | **구현** | 확장자·signature·50 MiB·SHA-256 검사. 미리 정한 파일명 없음 |
 | XLSX 호환성 | **구현** | 병합 원본이 사라진 빈 셀은 Excel 표시와 같이 빈칸으로 읽고, revision 변환 성공 전에 source slot을 저장하지 않는다. Upstage 응답에 근거 없는 행이 일부 섞이면 그 행만 authority에서 제외하고 locator·quote가 완전한 fact는 유지한다 |
 | RAW JSON 입력 | **직접 Editor 경로 구현** | MASTER_CUE와 별도인 `RAW JSON` 섹션에서 STANDBY CueSheet JSON을 받는다. 브라우저 strict 구조 검사를 통과하면 CueSheet 자체는 Upstage를 호출하지 않고 즉시 로컬 Editor와 결정론적 validator로 연다. 이후 연결한 Script만 standalone Upstage projection으로 처리한다. 공개 CueSheet JSON에는 duration 추정 필드 없음 |
@@ -50,11 +50,11 @@ UUID 세션으로 case 소유권을 분리한다. 이 값은 사용자 신원을
 | Rehearsal Brief | **Studio 설정·서버 배선·fallback 구현 / 전체 live smoke 재확인 대기** | Config #1 `agt_9iLkb7fqwdEtaBv48t9tQA`. 결정론적 finding과 evidence를 무대감독용 확인 질문·unknown으로 요약. 허용 목록 밖 event/finding 참조는 거부하고 provenance를 남긴 빈 결정론적 brief로 격리 |
 | 인접 event semantic transition | **구현·운영 배포** | 인접한 다음 event의 바뀐 entity만 짧게 전환. jump/back·초기 로드는 정적, reduced-motion은 정적 |
 | 장시간 추출 | **구현·개선** | Master Cue Extractor 완료 즉시 raw fact review로 진입하며 Fact Normalizer는 background에서 추천을 합류시킨다. 서버 최대 10분·브라우저 최대 11분 polling, 순차 점등 `S T A N D B Y`, reduced-motion 고정 wordmark를 유지한다 |
-| 예시 프로젝트 fast path | **구현** | 심사위원용 별마루 예시는 사전에 검토한 8-event CueSheet와 Script Projection을 로컬에서 즉시 연다. 특정 사용자 업로드 hash를 감지하는 우회가 아니며, 실제 XLSX/PDF/JSON은 모두 기존 Upstage API·review 경로를 사용한다. 예시는 `CONTROLLED_FIXTURE` provenance와 실제 source hash를 표시하고 AI 검증 완료로 표현하지 않는다 |
+| 예시 프로젝트 fast path | **구현** | 심사위원용 별마루 예시는 지정된 전체 34 cue·59 event CueSheet와 131-segment Script Projection을 로컬에서 즉시 연다. 특정 사용자 업로드 hash를 감지하는 우회가 아니며, 실제 XLSX/PDF/JSON은 모두 기존 Upstage API·review 경로를 사용한다. 예시는 `CONTROLLED_FIXTURE` provenance와 실제 source hash를 표시하고 AI 검증 완료로 표현하지 않는다 |
 | Extraction Review | **구현** | 추천값 mode는 Agent Recommendation 패널 없이 Master Cue Extracted Fields 한 건만 표시하고 필드 옆 Chevron으로 이동. `일괄 승인 후 큐시트로 이동`은 별도 개별 검토가 없어도 적용 가능한 normalized 추천 전체를 REVIEWED로 batch 기록한다. 추천 생성 중 눌렀다면 결과 도착 즉시 자동 승인·이동하며, schema-invalid/추천 부재 fact를 가짜 값으로 승인하지는 않는다. 사용자화 mode에서 13개 normalized fact와 EVENT_STATE snapshot 구조화 편집 |
 | Review snapshot | **구현** | 현재 결정을 불변 digest로 동결. 미결정 fact는 authority를 얻지 않음 |
 | Compiler | **구현** | 승인된 normalized envelope만 event graph·stage snapshot으로 변환 |
-| Verifier | **구현** | VR-01 환복, VR-02 경로 수용량, VR-03 소품 연속성을 결정론적으로 계산. 로컬 예시에서는 exact event로 연결된 대본 지문의 “이미 착용” 상태와 같은 event의 큐시트 환복 지시를 `script_costume_state_conflict` REVIEW로 대조 |
+| Verifier | **구현** | VR-01 환복, VR-02 경로 수용량, VR-03 소품 연속성을 결정론적으로 계산. 로컬 예시도 같은 CueSheet validator와 exact script-event 연결 규칙을 사용하며, 통제 fixture라는 이유로 verdict를 별도 하드코딩하지 않는다 |
 | 실제 workspace 배선 | **구현** | 같은 case ID의 event·finding·calculation·evidence·2D snapshot을 표시 |
 | 큐시트 revision 편집 | **서버 배선 구현** | finding의 source row/cell을 편집해 새 append-only revision으로 저장하고 같은 case의 workspace를 서버에서 재검증한다. 저장 전 draft는 verdict를 바꾸지 않는다 |
 | revision 히스토리·복원 | **서버 배선 구현** | revision 목록·상세를 서버에서 읽고, 과거 상태 복원은 기존 이력을 덮지 않고 reverse patch를 가진 새 revision을 생성한다 |

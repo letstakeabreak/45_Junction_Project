@@ -187,15 +187,15 @@ available = 다음 입장 시각 − 이전 퇴장 시각
 세 문서를 받고 역할을 확정한다. `STAGE_SPEC`은 파일 대신 **폼 입력**을 허용한다.
 심사위원·첫 사용자가 별도의 큐시트를 갖고 있지 않아도 흐름을 시작할 수 있게
 `MASTER_CUE` 카드에 **별마루 예시 프로젝트 열기** 버튼을 둔다. 예시는 허가받은 원본 대본·마스터 큐의
-S#16→S#17 구간을 로컬에서 대조해 만든 8-event 통제 fixture와, 모든 event에 정확히 연결된 읽기 전용
-Script Projection을 함께 연다. 원본 DOCX/XLSX 자체는 공개 저장소에 넣지 않으며 source hash와 locator를
-보존한다. 첫 방문의 **90초 둘러보기**도 같은 로컬 예시를 여는 단일 CTA만 제공한다. 이 경로는 네트워크나
-Upstage job을 시작하지 않아 무한 로딩이 없어야 하며, provenance는 `CONTROLLED_FIXTURE`로 명시한다.
+`example-cue-with-light.json` 전체 34 cue·59 event와, `별마루.docx`에서 실제 대사·지문 131개 구간을
+문단 locator와 함께 구조화한 읽기 전용 Script Projection을 함께 연다. 원본 DOCX 자체는 공개 저장소에
+넣지 않으며 source hash와 locator를 보존한다. 첫 방문에는 초록색 **90초 빠른 체험** 팝업을 열어
+“큐시트와 대본이 없어도 예시 결과를 볼 수 있다”는 점과 같은 로컬 예시를 여는 단일 CTA를 안내한다.
+이 경로는 네트워크나 Upstage job을 시작하지 않아 무한 로딩이 없어야 하며, provenance는
+`CONTROLLED_FIXTURE`로 명시한다.
 실제 파일의 Upstage 추출·review·deterministic verifier 경로는 별도이며 생략하지 않는다.
-
-통제 예시는 대본의 “우주복을 이미 착용한 채 등장” 지문과 마스터 큐의 “같은 event에서 무대 위 환복”
-지시를 결정론적으로 대조해 `ACTION REQUIRED`를 표시한다. 이는 사고 예측이 아니라 두 문서의 상태 괴리를
-보여 주는 review 신호다.
+대본에 존재하지 않는 암전 전용 cue에는 대사를 만들어 넣지 않는다. 연결된 구간은 exact event ID를 사용하고,
+모든 finding은 기존 결정론적 cue validator가 계산한다.
 
 ### 화면 2 — 워크스페이스 (메인)
 

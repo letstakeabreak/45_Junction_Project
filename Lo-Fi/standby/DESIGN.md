@@ -91,14 +91,15 @@ P0는 화면 **두 개**뿐이다.
 - 각 카드: 파일명, revision/hash, origin 배지(`REAL_REFERENCE` / `CONTROLLED_FIXTURE` / `MUTATED_FIXTURE`), `REVIEWED | UNREVIEWED`
 - `STAGE_SPEC` 카드는 파일 업로드 대신 **폼 입력**을 허용한다 (아래 무대 최소 입력 참조)
 - Primary CTA: `Upstage 추출 시작` → 완료되면 화면 2로 전환
-- `MASTER_CUE` 카드에 보조 액션 `별마루 예시 프로젝트 열기`를 둔다. 클릭 시 허가받은 원본의 S#16→S#17을
-  대조해 만든 8-event CueSheet와 event-linked Script Projection을 로컬에서 함께 연다. 원본 DOCX/XLSX는
-  번들하지 않고 source hash·locator·`CONTROLLED_FIXTURE` provenance만 보존한다
-- 첫 방문에는 입력 카드 위에 닫을 수 있는 `90초 둘러보기` 한 줄 블록을 둔다. 통제 예시 워크스페이스를
-  즉시 여는 CTA 하나만 제공하고, 닫은 상태는 현재 브라우저 세션에만 보존한다. 실제 Upstage 흐름은 사용자가
-  자신의 파일을 첨부한 뒤 기본 CTA로 시작한다
-- 즉시 미리보기는 `CONTROLLED EXAMPLE`로 표시하며 AI 검증 완료처럼 표현하지 않는다. 별도 화면·전역 사이드바·
-  단계별 overlay를 만들지 않고, 닫은 뒤에는 헤더의 작은 `90초 둘러보기` 버튼으로만 다시 연다
+- `MASTER_CUE` 카드에 보조 액션 `별마루 예시 프로젝트 열기`를 둔다. 클릭 시
+  `example-cue-with-light.json`의 34 cue·59 event 전체와 `별마루.docx`의 실제 대사·지문 131개 구간을
+  문단 locator로 연결한 Script Projection을 로컬에서 함께 연다. 원본 DOCX는 번들하지 않고 source
+  hash·locator·`CONTROLLED_FIXTURE` provenance만 보존한다
+- 첫 방문에는 초록색 `90초 빠른 체험` 팝업을 연다. 큐시트와 대본이 없는 사용자도 예시 결과를 즉시 볼 수
+  있음을 한 문단으로 설명하고, 통제 예시 워크스페이스를 여는 CTA 하나만 제공한다. 닫은 상태는 현재 브라우저
+  세션에만 보존한다. 실제 Upstage 흐름은 사용자가 자신의 파일을 첨부한 뒤 기본 CTA로 시작한다
+- 즉시 미리보기는 통제 예시임을 표시하며 AI 검증 완료처럼 표현하지 않는다. 별도 화면·전역 사이드바·
+  단계별 overlay를 만들지 않고, 닫은 뒤에는 헤더의 작은 초록색 `90초 빠른 체험` 버튼으로만 다시 연다
 - **제외**: 입력 계약 체크리스트, `Source 교체`, `EXPORT LOG`, revision lineage, 5단계 진행 표시
 
 ### Extraction loading scene
