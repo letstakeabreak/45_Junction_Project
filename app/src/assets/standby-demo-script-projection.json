@@ -1,6 +1,6 @@
 {
   "contract_version": "standby.script-projection.v1",
-  "projection_id": "fixture_byeolmaru_s16_s17_v1",
+  "projection_id": "fixture_byeolmaru_full_cue_v1",
   "case_id": null,
   "authority": "NON_AUTHORITATIVE",
   "source": {
@@ -12,7 +12,7 @@
     "provider": "CONTROLLED_FIXTURE",
     "source_role": "SCRIPT",
     "origin": "CONTROLLED_FIXTURE",
-    "fixture_id": "byeolmaru-s16-s17-v1",
+    "fixture_id": "byeolmaru-full-cue-v1",
     "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
   },
   "segments": [
@@ -20,145 +20,1966 @@
       "segment_id": "script_001",
       "sequence_index": 1,
       "kind": "STAGE_DIRECTION",
-      "text": "N#11이 끝나고 무대가 긴 암전에 들어간다.",
+      "text": "N1 adv - 우주선 발사장면을 보러온 군중들 (이라는 내용의 뉴스? 영상을 보는 마루)",
       "speaker": null,
-      "event_id": "evt_001_n11_end",
-      "section_marker": "N#11 Goodbye",
-      "locator": "docx:p568",
-      "source_quote": "N#11 종료 후 긴 암전으로 전환",
-      "provenance": { "fixture_segment_id": "script_001", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+      "event_id": "evt_001_001",
+      "section_marker": "N#1 We're all adventurers",
+      "locator": "docx:p19",
+      "source_quote": "N1 adv - 우주선 발사장면을 보러온 군중들 (이라는 내용의 뉴스? 영상을 보는 마루)",
+      "provenance": {
+        "fixture_segment_id": "script_001",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
     },
     {
       "segment_id": "script_002",
       "sequence_index": 2,
       "kind": "STAGE_DIRECTION",
-      "text": "암전 중 마루는 하수로 퇴장하고 무대의 침대와 가방이 반출된다.",
+      "text": "Adventurer~ We’re all adventurers~",
       "speaker": null,
-      "event_id": "evt_002_blackout",
-      "section_marker": "S#16 긴 암전",
-      "locator": "docx:p569",
-      "source_quote": "긴 암전 전환 지문을 큐시트와 함께 구조화",
-      "provenance": { "fixture_segment_id": "script_002", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+      "event_id": "evt_001_001",
+      "section_marker": "N#1 We're all adventurers",
+      "locator": "docx:p31",
+      "source_quote": "Adventurer~ We’re all adventurers~",
+      "provenance": {
+        "fixture_segment_id": "script_002",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
     },
     {
       "segment_id": "script_003",
       "sequence_index": 3,
       "kind": "DIALOGUE",
-      "text": "다음에 태어날 때는 더 오래 함께할 수 있으면 좋겠다.",
-      "speaker": "별1",
-      "event_id": "evt_003_star_dialogue",
-      "section_marker": "S#16 긴 암전",
-      "locator": "docx:p574",
-      "source_quote": "별1의 암전 대사",
-      "provenance": { "fixture_segment_id": "script_003", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+      "text": "전 시스템 점검 완료. 메인 추진구 점화. 이륙 준비, 카운트다운 시작.",
+      "speaker": "AI 음성",
+      "event_id": "evt_001_001",
+      "section_marker": "N#1 We're all adventurers",
+      "locator": "docx:p32",
+      "source_quote": "Ai 음성 : 전 시스템 점검 완료. 메인 추진구 점화. 이륙 준비, 카운트다운 시작.",
+      "provenance": {
+        "fixture_segment_id": "script_003",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
     },
     {
       "segment_id": "script_004",
       "sequence_index": 4,
-      "kind": "DIALOGUE",
-      "text": "같이 보낸 시간은 사라지지 않을 거야.",
-      "speaker": "별2",
-      "event_id": "evt_003_star_dialogue",
-      "section_marker": "S#16 긴 암전",
-      "locator": "docx:p580",
-      "source_quote": "별2의 암전 대사",
-      "provenance": { "fixture_segment_id": "script_004", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+      "kind": "STAGE_DIRECTION",
+      "text": "S1 딸이 티비에서 우주비행사 얘기를 보고와서, 아빠에게 우주선에 대해 물음. 아빠는 저건 우주에 가는 것이라며 딸에게 우주에 대한 신비로운 이야기를 해줌 (2분 -> 꼭 우주에 대한 설명으로 채우지 않아도 됨)",
+      "speaker": null,
+      "event_id": "evt_003_001",
+      "section_marker": "S#1 마루, 우현의 우주이야기",
+      "locator": "docx:p34",
+      "source_quote": "S1 딸이 티비에서 우주비행사 얘기를 보고와서, 아빠에게 우주선에 대해 물음. 아빠는 저건 우주에 가는 것이라며 딸에게 우주에 대한 신비로운 이야기를 해줌 (2분 -> 꼭 우주에 대한 설명으로 채우지 않아도 됨)",
+      "provenance": {
+        "fixture_segment_id": "script_004",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
     },
     {
       "segment_id": "script_005",
       "sequence_index": 5,
-      "kind": "STAGE_DIRECTION",
-      "text": "별들의 대사가 끝나고 뉴스 음성이 이어진다. 마루는 다음 장면을 준비한다.",
-      "speaker": null,
-      "event_id": "evt_004_news_change",
-      "section_marker": "S#16 긴 암전",
-      "locator": "docx:p587",
-      "source_quote": "별 대사 종료 뒤 뉴스 음성",
-      "provenance": { "fixture_segment_id": "script_005", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+      "kind": "DIALOGUE",
+      "text": "(온 거실을 휘저으며) 슈우우웅! 쾅! 빠바방!",
+      "speaker": "마루",
+      "event_id": "evt_003_001",
+      "section_marker": "S#1 마루, 우현의 우주이야기",
+      "locator": "docx:p44",
+      "source_quote": "마루 (온 거실을 휘저으며) 슈우우웅! 쾅! 빠바방!",
+      "provenance": {
+        "fixture_segment_id": "script_005",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
     },
     {
       "segment_id": "script_006",
       "sequence_index": 6,
-      "kind": "STAGE_DIRECTION",
-      "text": "조명이 켜지고 엄마가 성인이 된 마루를 깨운다.",
-      "speaker": null,
-      "event_id": "evt_005_lights_in",
-      "section_marker": "S#17 우주비행사가 된 마루",
-      "locator": "docx:p590",
-      "source_quote": "조명 in 후 엄마가 마루를 깨우는 장면",
-      "provenance": { "fixture_segment_id": "script_006", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+      "kind": "DIALOGUE",
+      "text": "(우현의 등을 덥석 껴안으며 부비적인다) 아빠 아빠! 방금 뉴스 봤어?! 방금 TV에서 엄청 커다란 불꽃이 팍! 터지면서 하얗고 커다란 우주선이 하늘로 슝 날아가는 거 나왔단 말이야! 진짜 눈부시고 멋있었어! 우주비행사 아저씨도 막 나왔어!",
+      "speaker": "마루",
+      "event_id": "evt_003_001",
+      "section_marker": "S#1 마루, 우현의 우주이야기",
+      "locator": "docx:p46",
+      "source_quote": "마루 (우현의 등을 덥석 껴안으며 부비적인다) 아빠 아빠! 방금 뉴스 봤어?! 방금 TV에서 엄청 커다란 불꽃이 팍! 터지면서 하얗고 커다란 우주선이 하늘로 슝 날아가는 거 나왔단 말이야! 진짜 눈부시고 멋있었어! 우주비행사 아저씨도 막 나왔어!",
+      "provenance": {
+        "fixture_segment_id": "script_006",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
     },
     {
       "segment_id": "script_007",
       "sequence_index": 7,
       "kind": "DIALOGUE",
-      "text": "엄마, 나 지금 나가요! 지금 나가!!",
+      "text": "(입술을 삐죽이며) 에이, 비밀은 무슨. 학교에서 선생님이 그랬는데, 거기는 공기도 없고 엄청 춥고 깜깜한 곳이랬어. 사람이 살 수 없는 곳이라고.",
       "speaker": "마루",
-      "event_id": "evt_006_maru_entrance",
-      "section_marker": "S#17 우주비행사가 된 마루",
-      "locator": "docx:p592",
-      "source_quote": "엄마, 나 지금 나가요! 지금 나가!!",
-      "provenance": { "fixture_segment_id": "script_007", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+      "event_id": "evt_003_001",
+      "section_marker": "S#1 마루, 우현의 우주이야기",
+      "locator": "docx:p50",
+      "source_quote": "마루 (입술을 삐죽이며) 에이, 비밀은 무슨. 학교에서 선생님이 그랬는데, 거기는 공기도 없고 엄청 춥고 깜깜한 곳이랬어. 사람이 살 수 없는 곳이라고.",
+      "provenance": {
+        "fixture_segment_id": "script_007",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
     },
     {
       "segment_id": "script_008",
       "sequence_index": 8,
-      "kind": "STAGE_DIRECTION",
-      "text": "성인 마루가 우주비행사 유니폼을 이미 착용한 채, 아빠가 준 가방을 메고 방에서 뛰어나온다.",
-      "speaker": null,
-      "event_id": "evt_007_spacesuit_change",
-      "section_marker": "S#17 우주비행사가 된 마루",
-      "locator": "docx:p593",
-      "source_quote": "마루의 등장 의상 상태를 보존한 통제 projection",
-      "provenance": { "fixture_segment_id": "script_008", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+      "kind": "DIALOGUE",
+      "text": "거기는 밤낮이 없어, 마루야. 언제나 눈부신 별들이 마루 눈동자처럼 반짝반짝 빛나고 있지. 시끄러운 자동차 소리도 없고, 무엇보다 엄마의 잔소리도 없는! 아주 조용하고 평화로운 곳이야. 혹시 속상하거나 슬픈 일이 생겨도, 그 넓고 아름다운 우주를 가만히 바라보고 있으면 마법처럼 마음이 사르르 녹아내리는… 그런 멋진 곳이지.",
+      "speaker": "우현",
+      "event_id": "evt_003_001",
+      "section_marker": "S#1 마루, 우현의 우주이야기",
+      "locator": "docx:p55",
+      "source_quote": "우현 거기는 밤낮이 없어, 마루야. 언제나 눈부신 별들이 마루 눈동자처럼 반짝반짝 빛나고 있지. 시끄러운 자동차 소리도 없고, 무엇보다 엄마의 잔소리도 없는! 아주 조용하고 평화로운 곳이야. 혹시 속상하거나 슬픈 일이 생겨도, 그 넓고 아름다운 우주를 가만히 바라보고 있으면 마법처럼 마음이 사르르 녹아내리는… 그런 멋진 곳이지.",
+      "provenance": {
+        "fixture_segment_id": "script_008",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
     },
     {
       "segment_id": "script_009",
       "sequence_index": 9,
-      "kind": "DIALOGUE",
-      "text": "그 가방도 들고 가니?",
-      "speaker": "엄마",
-      "event_id": "evt_007_spacesuit_change",
-      "section_marker": "S#17 우주비행사가 된 마루",
-      "locator": "docx:p594",
-      "source_quote": "그 가방도 들고 가니?",
-      "provenance": { "fixture_segment_id": "script_009", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+      "kind": "STAGE_DIRECTION",
+      "text": "(우현이 자리에서 일어나 마루의 손을 잡고 무대 중앙으로 나아가며, 무대 조명이 서서히 우주 공간처럼 푸르고 신비로운 은빛 색감으로 변한다.)",
+      "speaker": null,
+      "event_id": "evt_003_001",
+      "section_marker": "S#1 마루, 우현의 우주이야기",
+      "locator": "docx:p61",
+      "source_quote": "(우현이 자리에서 일어나 마루의 손을 잡고 무대 중앙으로 나아가며, 무대 조명이 서서히 우주 공간처럼 푸르고 신비로운 은빛 색감으로 변한다.)",
+      "provenance": {
+        "fixture_segment_id": "script_009",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
     },
     {
       "segment_id": "script_010",
       "sequence_index": 10,
-      "kind": "DIALOGUE",
-      "text": "응. 아빠가 준 거잖아.",
-      "speaker": "마루",
-      "event_id": "evt_007_spacesuit_change",
-      "section_marker": "S#17 우주비행사가 된 마루",
-      "locator": "docx:p595",
-      "source_quote": "응. 아빠가 준 거잖아.",
-      "provenance": { "fixture_segment_id": "script_010", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+      "kind": "STAGE_DIRECTION",
+      "text": "N2 Million - 우현이 들려주는 우주에 대한 신비로운 이야기",
+      "speaker": null,
+      "event_id": "evt_004_001",
+      "section_marker": "N#2 A million miles away",
+      "locator": "docx:p63",
+      "source_quote": "N2 Million - 우현이 들려주는 우주에 대한 신비로운 이야기",
+      "provenance": {
+        "fixture_segment_id": "script_010",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
     },
     {
       "segment_id": "script_011",
       "sequence_index": 11,
-      "kind": "DIALOGUE",
-      "text": "마루, 다녀오겠습니다!",
-      "speaker": "마루",
-      "event_id": "evt_008_departure",
-      "section_marker": "S#17 우주비행사가 된 마루",
-      "locator": "docx:p599",
-      "source_quote": "마루, 다녀오겠습니다!",
-      "provenance": { "fixture_segment_id": "script_011", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+      "kind": "STAGE_DIRECTION",
+      "text": "S2 딸은 아빠는 우주에 가봤냐며 물어봄. 아빠는 안가봤는데 꼭 가보고싶다고 말함. 딸은 자기도 데려가달라며 이야기함. 아빠는 당황하며 애써 미소만 지어보임",
+      "speaker": null,
+      "event_id": "evt_005_001",
+      "section_marker": "S#2 수연의 등장, 마루 침실이동",
+      "locator": "docx:p66",
+      "source_quote": "S2 딸은 아빠는 우주에 가봤냐며 물어봄. 아빠는 안가봤는데 꼭 가보고싶다고 말함. 딸은 자기도 데려가달라며 이야기함. 아빠는 당황하며 애써 미소만 지어보임",
+      "provenance": {
+        "fixture_segment_id": "script_011",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
     },
     {
       "segment_id": "script_012",
       "sequence_index": 12,
+      "kind": "DIALOGUE",
+      "text": "(아무것도 모른 채 천진난만하게 웃으며) 어떡하긴 뭘 어떡해! 나도 같이 가면 되지! 아빠 우주선 탈 때 내 자리도 하나 딱 만들어달라고 해!",
+      "speaker": "마루",
+      "event_id": "evt_005_001",
+      "section_marker": "S#2 수연의 등장, 마루 침실이동",
+      "locator": "docx:p75",
+      "source_quote": "마루 (아무것도 모른 채 천진난만하게 웃으며) 어떡하긴 뭘 어떡해! 나도 같이 가면 되지! 아빠 우주선 탈 때 내 자리도 하나 딱 만들어달라고 해!",
+      "provenance": {
+        "fixture_segment_id": "script_012",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_013",
+      "sequence_index": 13,
+      "kind": "DIALOGUE",
+      "text": "(한쪽 손으로 허리를 짚으며) 둘이 뭘 그렇게 재밌게 이야기하길래 집안일은 뒷전이야? 마루 너는 숙제 다 했어?",
+      "speaker": "수연",
+      "event_id": "evt_005_001",
+      "section_marker": "S#2 수연의 등장, 마루 침실이동",
+      "locator": "docx:p82",
+      "source_quote": "수연 (한쪽 손으로 허리를 짚으며) 둘이 뭘 그렇게 재밌게 이야기하길래 집안일은 뒷전이야? 마루 너는 숙제 다 했어?",
+      "provenance": {
+        "fixture_segment_id": "script_013",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_014",
+      "sequence_index": 14,
+      "kind": "DIALOGUE",
+      "text": "(수연의 눈치를 보며 마루 뒤로 숨는 시늉을 한다) 아하하… 내가 틀린 말 한 건 아니잖아? 우주는 조용하니까…",
+      "speaker": "우현",
+      "event_id": "evt_005_001",
+      "section_marker": "S#2 수연의 등장, 마루 침실이동",
+      "locator": "docx:p89",
+      "source_quote": "우현 (수연의 눈치를 보며 마루 뒤로 숨는 시늉을 한다) 아하하… 내가 틀린 말 한 건 아니잖아? 우주는 조용하니까…",
+      "provenance": {
+        "fixture_segment_id": "script_014",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_015",
+      "sequence_index": 15,
+      "kind": "DIALOGUE",
+      "text": "마루야, 방에 들어가서 동화책 골라놔~ (마루는 방에 들어감) 에효… 빨래나 다시 개야지..",
+      "speaker": "우현",
+      "event_id": "evt_005_001",
+      "section_marker": "S#2 수연의 등장, 마루 침실이동",
+      "locator": "docx:p95",
+      "source_quote": "우현 마루야, 방에 들어가서 동화책 골라놔~ (마루는 방에 들어감) 에효… 빨래나 다시 개야지..",
+      "provenance": {
+        "fixture_segment_id": "script_015",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_016",
+      "sequence_index": 16,
       "kind": "STAGE_DIRECTION",
-      "text": "마루가 떠날 준비를 마치고 N#12 Fantasy로 이어진다.",
+      "text": "S.E. 전화벨소리",
       "speaker": null,
-      "event_id": "evt_008_departure",
+      "event_id": "evt_005_001",
+      "section_marker": "S#2 수연의 등장, 마루 침실이동",
+      "locator": "docx:p97",
+      "source_quote": "S.E. 전화벨소리",
+      "provenance": {
+        "fixture_segment_id": "script_016",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_017",
+      "sequence_index": 17,
+      "kind": "STAGE_DIRECTION",
+      "text": "S3 딸보고 먼저 방에 들어가 오늘 읽을 동화책 한 권을 준비해서 누워있으면 가겠다고 함. 그러고는 병원에서 전화가 온다. 전화내용은 아빠가 병원에 당장 오지않으면 기존에 고지한대로 2달 밖에 살지 못하고, 병원에서 보내게되면 조금이라도 더 살 수 있다는 내용이다. 아빠는 거기에 가족들과 함께하지 않는 시간은 의미가 없다며 2달이라도 가족과 함께 있겠다고 하고서는 전화를 끊는다.",
+      "speaker": null,
+      "event_id": "evt_006_001",
+      "section_marker": "S#3 우현과 의사의 통화",
+      "locator": "docx:p99",
+      "source_quote": "S3 딸보고 먼저 방에 들어가 오늘 읽을 동화책 한 권을 준비해서 누워있으면 가겠다고 함. 그러고는 병원에서 전화가 온다. 전화내용은 아빠가 병원에 당장 오지않으면 기존에 고지한대로 2달 밖에 살지 못하고, 병원에서 보내게되면 조금이라도 더 살 수 있다는 내용이다. 아빠는 거기에 가족들과 함께하지 않는 시간은 의미가 없다며 2달이라도 가족과 함께 있겠다고 하고서는 전화를 끊는다.",
+      "provenance": {
+        "fixture_segment_id": "script_017",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_018",
+      "sequence_index": 18,
+      "kind": "DIALOGUE",
+      "text": "(쥐고 있던 수건을 꽉 움켜쥔다. 담담한 목소리로) …네, 알고 있습니다. 두 달… 남았다는 거 잘 압니다.",
+      "speaker": "우현",
+      "event_id": "evt_006_001",
+      "section_marker": "S#3 우현과 의사의 통화",
+      "locator": "docx:p107",
+      "source_quote": "우현 (쥐고 있던 수건을 꽉 움켜쥔다. 담담한 목소리로) …네, 알고 있습니다. 두 달… 남았다는 거 잘 압니다.",
+      "provenance": {
+        "fixture_segment_id": "script_018",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_019",
+      "sequence_index": 19,
+      "kind": "DIALOGUE",
+      "text": "(의사의 말을 조용히, 하지만 단호하게 끊으며) 박사님.",
+      "speaker": "우현",
+      "event_id": "evt_006_001",
+      "section_marker": "S#3 우현과 의사의 통화",
+      "locator": "docx:p109",
+      "source_quote": "우현 (의사의 말을 조용히, 하지만 단호하게 끊으며) 박사님.",
+      "provenance": {
+        "fixture_segment_id": "script_019",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_020",
+      "sequence_index": 20,
+      "kind": "DIALOGUE",
+      "text": "우현 씨, 그게 무슨 무책임한 소립니까! 가족들을 생각하셔야죠!",
+      "speaker": "의사 목소리",
+      "event_id": "evt_006_001",
+      "section_marker": "S#3 우현과 의사의 통화",
+      "locator": "docx:p112",
+      "source_quote": "의사 목소리 우현 씨, 그게 무슨 무책임한 소립니까! 가족들을 생각하셔야죠!",
+      "provenance": {
+        "fixture_segment_id": "script_020",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_021",
+      "sequence_index": 21,
+      "kind": "STAGE_DIRECTION",
+      "text": "(전화를 끊는다.)",
+      "speaker": null,
+      "event_id": "evt_006_001",
+      "section_marker": "S#3 우현과 의사의 통화",
+      "locator": "docx:p120",
+      "source_quote": "(전화를 끊는다.)",
+      "provenance": {
+        "fixture_segment_id": "script_021",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_022",
+      "sequence_index": 22,
+      "kind": "STAGE_DIRECTION",
+      "text": "(우현이 자신의 가슴을 툭툭 치며 숨을 크게 고른 뒤, 마루의 방으로 들어간다. 수연은 남편의 뒷모습을 보다가 바닥에 남은 수건들을 마저 정리하기 시작한다. 조명이 서서히 어두워지며 암전.)",
+      "speaker": null,
+      "event_id": "evt_006_001",
+      "section_marker": "S#3 우현과 의사의 통화",
+      "locator": "docx:p127",
+      "source_quote": "(우현이 자신의 가슴을 툭툭 치며 숨을 크게 고른 뒤, 마루의 방으로 들어간다. 수연은 남편의 뒷모습을 보다가 바닥에 남은 수건들을 마저 정리하기 시작한다. 조명이 서서히 어두워지며 암전.)",
+      "provenance": {
+        "fixture_segment_id": "script_022",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_023",
+      "sequence_index": 23,
+      "kind": "STAGE_DIRECTION",
+      "text": "S4 아빠가 딸의 방에 들어감. 그러고는 동화책을 나긋하게 읽어줌. 딸이 동화책 재미없다며 자고싶으니까 자장가를 불러달라고 함. 아빠는 알겠다며 딸에게 자장가를 불러줌",
+      "speaker": null,
+      "event_id": "evt_007_001",
+      "section_marker": "S#4 마루의 방으로 들어간 우현",
+      "locator": "docx:p130",
+      "source_quote": "S4 아빠가 딸의 방에 들어감. 그러고는 동화책을 나긋하게 읽어줌. 딸이 동화책 재미없다며 자고싶으니까 자장가를 불러달라고 함. 아빠는 알겠다며 딸에게 자장가를 불러줌",
+      "provenance": {
+        "fixture_segment_id": "script_023",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_024",
+      "sequence_index": 24,
+      "kind": "DIALOGUE",
+      "text": "와, 길마루. 우주비행사 되기로 작정한거야?",
+      "speaker": "우현",
+      "event_id": "evt_007_001",
+      "section_marker": "S#4 마루의 방으로 들어간 우현",
+      "locator": "docx:p139",
+      "source_quote": "우현 와, 길마루. 우주비행사 되기로 작정한거야?",
+      "provenance": {
+        "fixture_segment_id": "script_024",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_025",
+      "sequence_index": 25,
+      "kind": "DIALOGUE",
+      "text": "두 별은 만나기만 하면 서로 잘났다고 티격태격 장난을 치기 바빴지요. 한 별이 멋진 춤을 추면, 다른 한 별은 춤추는 별을 밀치고 본인이 춤을 추기도 하고, 한 별이 노래를 부르면, 다른 한 별은 목을 탁 치고 도망가기도 했어요. 어느 날은 가위바위보를 하고 이긴 별이 진 별에게 딱밤을 때리기도 하고, 둘이 함께 뱅글뱅글 돌며 술래잡기를 하기도 했죠.",
+      "speaker": "우현",
+      "event_id": "evt_007_001",
+      "section_marker": "S#4 마루의 방으로 들어간 우현",
+      "locator": "docx:p146",
+      "source_quote": "우현 두 별은 만나기만 하면 서로 잘났다고 티격태격 장난을 치기 바빴지요. 한 별이 멋진 춤을 추면, 다른 한 별은 춤추는 별을 밀치고 본인이 춤을 추기도 하고, 한 별이 노래를 부르면, 다른 한 별은 목을 탁 치고 도망가기도 했어요. 어느 날은 가위바위보를 하고 이긴 별이 진 별에게 딱밤을 때리기도 하고, 둘이 함께 뱅글뱅글 돌며 술래잡기를 하기도 했죠.",
+      "provenance": {
+        "fixture_segment_id": "script_025",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_026",
+      "sequence_index": 26,
+      "kind": "STAGE_DIRECTION",
+      "text": "(두 별은 지문에 맞춰 직접 연기한다.)",
+      "speaker": null,
+      "event_id": "evt_007_001",
+      "section_marker": "S#4 마루의 방으로 들어간 우현",
+      "locator": "docx:p153",
+      "source_quote": "(두 별은 지문에 맞춰 직접 연기한다.)",
+      "provenance": {
+        "fixture_segment_id": "script_026",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_027",
+      "sequence_index": 27,
+      "kind": "DIALOGUE",
+      "text": "(마루를 내려다보는 눈빛에 깊은 애틋함과 슬픔이 서린다. 억지로 다정한 미소를 지으며 마루의 이마를 살포시 쓸어 넘겨준다) …그래, 우리 공주님이 원하신다면 아빠 명품 자장가 나가야지. 아빠가 손 꼭 잡아줄 테니까, 아무 걱정 하지 말고 편안하게 자자, 우리 딸.",
+      "speaker": "우현",
+      "event_id": "evt_007_001",
+      "section_marker": "S#4 마루의 방으로 들어간 우현",
+      "locator": "docx:p158",
+      "source_quote": "우현 (마루를 내려다보는 눈빛에 깊은 애틋함과 슬픔이 서린다. 억지로 다정한 미소를 지으며 마루의 이마를 살포시 쓸어 넘겨준다) …그래, 우리 공주님이 원하신다면 아빠 명품 자장가 나가야지. 아빠가 손 꼭 잡아줄 테니까, 아무 걱정 하지 말고 편안하게 자자, 우리 딸.",
+      "provenance": {
+        "fixture_segment_id": "script_027",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_028",
+      "sequence_index": 28,
+      "kind": "DIALOGUE",
+      "text": "(우현의 손을 꼭 쥐며, 완전히 눈을 감고 편안한 숨을 내쉰다) 응…",
+      "speaker": "마루",
+      "event_id": "evt_007_001",
+      "section_marker": "S#4 마루의 방으로 들어간 우현",
+      "locator": "docx:p161",
+      "source_quote": "마루 (우현의 손을 꼭 쥐며, 완전히 눈을 감고 편안한 숨을 내쉰다) 응…",
+      "provenance": {
+        "fixture_segment_id": "script_028",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_029",
+      "sequence_index": 29,
+      "kind": "STAGE_DIRECTION",
+      "text": "N3 기쁨, 슬픔~~ - 이별을 암시하는 자장가.",
+      "speaker": null,
+      "event_id": "evt_008_001",
+      "section_marker": "N#3 기쁨, 슬픔, 아름다운 마음",
+      "locator": "docx:p163",
+      "source_quote": "N3 기쁨, 슬픔~~ - 이별을 암시하는 자장가.",
+      "provenance": {
+        "fixture_segment_id": "script_029",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_030",
+      "sequence_index": 30,
+      "kind": "STAGE_DIRECTION",
+      "text": "마루가 침대에서 잠들고 암전.",
+      "speaker": null,
+      "event_id": "evt_008_002",
+      "section_marker": "N#3 기쁨, 슬픔, 아름다운 마음",
+      "locator": "docx:p173",
+      "source_quote": "마루가 침대에서 잠들고 암전.",
+      "provenance": {
+        "fixture_segment_id": "script_030",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_031",
+      "sequence_index": 31,
+      "kind": "STAGE_DIRECTION",
+      "text": "S5 마루의 생일날, 엄마와 마루는 집에서 생일파티 준비를 해놓고 아빠를 장시간 기다림. 뒤늦게 아빠가 선물을 사들고 뛰어들어옴 (살짝 아픈티). 마루는 매우 서운해서 방으로 뛰어들어감. 아내는 한숨을 쉬며, 그동안 가족들에게 소홀했던 점들을 열거한다. 그러곤 이럴거면 오지 말아라 라며 다그치고 퇴장함. 아빠는 책상위에 선물을 올려두고, 한탄하며 집밖으로 나와 거리를 정처없이 걷기 시작.",
+      "speaker": null,
+      "event_id": "evt_010_002",
+      "section_marker": "S#5 마루의 생일파티, 별1,2의 대화",
+      "locator": "docx:p175",
+      "source_quote": "S5 마루의 생일날, 엄마와 마루는 집에서 생일파티 준비를 해놓고 아빠를 장시간 기다림. 뒤늦게 아빠가 선물을 사들고 뛰어들어옴 (살짝 아픈티). 마루는 매우 서운해서 방으로 뛰어들어감. 아내는 한숨을 쉬며, 그동안 가족들에게 소홀했던 점들을 열거한다. 그러곤 이럴거면 오지 말아라 라며 다그치고 퇴장함. 아빠는 책상위에 선물을 올려두고, 한탄하며 집밖으로 나와 거리를 정처없이 걷기 시작.",
+      "provenance": {
+        "fixture_segment_id": "script_031",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_032",
+      "sequence_index": 32,
+      "kind": "STAGE_DIRECTION",
+      "text": "수연은 초조한 얼굴로 핸드폰을 만지작거리고 있고, 아홉 살 마루는 꼬깔모자를 쓴 채 식탁 의자에 턱을 괴고 앉아 현관문만 뚫어지게 바라보고 있다. 마루의 표정은 잔뜩 시무룩하다.",
+      "speaker": null,
+      "event_id": "evt_010_004",
+      "section_marker": "S#5 마루의 생일파티, 별1,2의 대화",
+      "locator": "docx:p180",
+      "source_quote": "수연은 초조한 얼굴로 핸드폰을 만지작거리고 있고, 아홉 살 마루는 꼬깔모자를 쓴 채 식탁 의자에 턱을 괴고 앉아 현관문만 뚫어지게 바라보고 있다. 마루의 표정은 잔뜩 시무룩하다.",
+      "provenance": {
+        "fixture_segment_id": "script_032",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_033",
+      "sequence_index": 33,
+      "kind": "DIALOGUE",
+      "text": "(당황해서 마루 앞으로 급하게 다가가 한쪽 무릎을 꿇는다. 마루의 눈물을 닦아주며) 아이고, 우리 공주님 울지 마. 아빠가 진짜 미안해. (밝은 목소리로) 여기 봐봐, 아빠가 우리 마루 주려고..(선물을 등 뒤에서 꺼내며) 짠! 아빠가 마루 선물사왔지롱~ 진짜 멋진 선물 사 왔는데… 이거 보고 화 풀면 안 될까? 어?",
+      "speaker": "우현",
+      "event_id": "evt_010_002",
+      "section_marker": "S#5 마루의 생일파티, 별1,2의 대화",
+      "locator": "docx:p191",
+      "source_quote": "우현 (당황해서 마루 앞으로 급하게 다가가 한쪽 무릎을 꿇는다. 마루의 눈물을 닦아주며) 아이고, 우리 공주님 울지 마. 아빠가 진짜 미안해. (밝은 목소리로) 여기 봐봐, 아빠가 우리 마루 주려고..(선물을 등 뒤에서 꺼내며) 짠! 아빠가 마루 선물사왔지롱~ 진짜 멋진 선물 사 왔는데… 이거 보고 화 풀면 안 될까? 어?",
+      "provenance": {
+        "fixture_segment_id": "script_033",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_034",
+      "sequence_index": 34,
+      "kind": "DIALOGUE",
+      "text": "(우현이 내민 선물을 보지도 않고 툭 밀쳐버린다) 필요 없어! 선물 같은 거 다 필요 없다고! 아빠 진짜 치사해!",
+      "speaker": "마루",
+      "event_id": "evt_010_001",
+      "section_marker": "S#5 마루의 생일파티, 별1,2의 대화",
+      "locator": "docx:p192",
+      "source_quote": "마루 (우현이 내민 선물을 보지도 않고 툭 밀쳐버린다) 필요 없어! 선물 같은 거 다 필요 없다고! 아빠 진짜 치사해!",
+      "provenance": {
+        "fixture_segment_id": "script_034",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_035",
+      "sequence_index": 35,
+      "kind": "STAGE_DIRECTION",
+      "text": "(우현이 터덜터덜 식탁 위의 선물을 책상 위에 올려두고, 집 밖으로 걸어 나간다.)",
+      "speaker": null,
+      "event_id": "evt_010_002",
+      "section_marker": "S#5 마루의 생일파티, 별1,2의 대화",
+      "locator": "docx:p204",
+      "source_quote": "(우현이 터덜터덜 식탁 위의 선물을 책상 위에 올려두고, 집 밖으로 걸어 나간다.)",
+      "provenance": {
+        "fixture_segment_id": "script_035",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_036",
+      "sequence_index": 36,
+      "kind": "DIALOGUE",
+      "text": "야,,! 좀 조용해졌다. 나가보자.",
+      "speaker": "별1",
+      "event_id": "evt_010_003",
+      "section_marker": "S#5 마루의 생일파티, 별1,2의 대화",
+      "locator": "docx:p208",
+      "source_quote": "별1 야,,! 좀 조용해졌다. 나가보자.",
+      "provenance": {
+        "fixture_segment_id": "script_036",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_037",
+      "sequence_index": 37,
+      "kind": "DIALOGUE",
+      "text": "(가슴 부여잡으며 호들갑) 야, 설마 아저씨 아파서 쓰러지기라도 거 아냐? 아까 아저씨 가슴 쥐어뜯을 때 나 진짜 심장 터지는 줄 알았단 말이야. 봐봐, 나 너무 놀라서 지금 온몸에 소름 돋은 거 안 보여?",
+      "speaker": "별1",
+      "event_id": "evt_010_003",
+      "section_marker": "S#5 마루의 생일파티, 별1,2의 대화",
+      "locator": "docx:p220",
+      "source_quote": "별1 (가슴 부여잡으며 호들갑) 야, 설마 아저씨 아파서 쓰러지기라도 거 아냐? 아까 아저씨 가슴 쥐어뜯을 때 나 진짜 심장 터지는 줄 알았단 말이야. 봐봐, 나 너무 놀라서 지금 온몸에 소름 돋은 거 안 보여?",
+      "provenance": {
+        "fixture_segment_id": "script_037",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_038",
+      "sequence_index": 38,
+      "kind": "STAGE_DIRECTION",
+      "text": "조명 in",
+      "speaker": null,
+      "event_id": "evt_010_004",
+      "section_marker": "S#5 마루의 생일파티, 별1,2의 대화",
+      "locator": "docx:p236",
+      "source_quote": "조명 in",
+      "provenance": {
+        "fixture_segment_id": "script_038",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_039",
+      "sequence_index": 39,
+      "kind": "STAGE_DIRECTION",
+      "text": "S6 거리로 나와 한탄하는 우현과 그를 따라가는 별들",
+      "speaker": null,
+      "event_id": "evt_012_001",
+      "section_marker": "S#6 밖으로 나온 우현, 뒤따라가는 별1,2",
+      "locator": "docx:p237",
+      "source_quote": "S6 거리로 나와 한탄하는 우현과 그를 따라가는 별들",
+      "provenance": {
+        "fixture_segment_id": "script_039",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_040",
+      "sequence_index": 40,
+      "kind": "DIALOGUE",
+      "text": "(허탈하게 웃는다) …이제 얼마 안 남았는데. 진짜 얼마 안 남았는데…… 조금이라도 더 잘해주고 싶은데…… 왜 난 이 모양이지. 왜 자꾸 망치기만 하지……",
+      "speaker": "우현",
+      "event_id": "evt_012_001",
+      "section_marker": "S#6 밖으로 나온 우현, 뒤따라가는 별1,2",
+      "locator": "docx:p240",
+      "source_quote": "우현 (허탈하게 웃는다) …이제 얼마 안 남았는데. 진짜 얼마 안 남았는데…… 조금이라도 더 잘해주고 싶은데…… 왜 난 이 모양이지. 왜 자꾸 망치기만 하지……",
+      "provenance": {
+        "fixture_segment_id": "script_040",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_041",
+      "sequence_index": 41,
+      "kind": "STAGE_DIRECTION",
+      "text": "(두 별이 우현을 근처를 멤돌다가 우현이 뒤를 돌아보자 급하게 뒤돌아 모른척 한다.)",
+      "speaker": null,
+      "event_id": "evt_012_001",
+      "section_marker": "S#6 밖으로 나온 우현, 뒤따라가는 별1,2",
+      "locator": "docx:p243",
+      "source_quote": "(두 별이 우현을 근처를 멤돌다가 우현이 뒤를 돌아보자 급하게 뒤돌아 모른척 한다.)",
+      "provenance": {
+        "fixture_segment_id": "script_041",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_042",
+      "sequence_index": 42,
+      "kind": "DIALOGUE",
+      "text": "(목이 메어 가라앉은 목소리로) 마루야… 아빠가 진짜 미안해. 아빠도 안 늦으려고… 우리 딸 기다릴까 봐 숨이 턱 끝까지 막히도록 달렸는데… 왜 내 몸은 내 마음대로 안 움직여줄까. 왜 하필 오늘 고장 나서… 널 울리게 만들까……",
+      "speaker": "우현",
+      "event_id": "evt_012_001",
+      "section_marker": "S#6 밖으로 나온 우현, 뒤따라가는 별1,2",
+      "locator": "docx:p247",
+      "source_quote": "우현 (목이 메어 가라앉은 목소리로) 마루야… 아빠가 진짜 미안해. 아빠도 안 늦으려고… 우리 딸 기다릴까 봐 숨이 턱 끝까지 막히도록 달렸는데… 왜 내 몸은 내 마음대로 안 움직여줄까. 왜 하필 오늘 고장 나서… 널 울리게 만들까……",
+      "provenance": {
+        "fixture_segment_id": "script_042",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_043",
+      "sequence_index": 43,
+      "kind": "STAGE_DIRECTION",
+      "text": "여보… 나 진짜 도망치고 싶어서 겉도는 거 아니야. 나도 무서워서 그래. 매일 거울 볼 때마다 내 얼굴이 너무 허옇게 질려 있어서… 내가 봐도 내가 너무 피폐하고 못나 보여서, 당신 눈을 똑바로 못 보겠어. 차라리 아프다고 다 말해버리고 당신 품에서 울고 싶은데…… 내가 어떻게 그래… 남은 시간 동안 짐만 되다가 갈 순 없잖아……",
+      "speaker": null,
+      "event_id": "evt_012_001",
+      "section_marker": "S#6 밖으로 나온 우현, 뒤따라가는 별1,2",
+      "locator": "docx:p251",
+      "source_quote": "여보… 나 진짜 도망치고 싶어서 겉도는 거 아니야. 나도 무서워서 그래. 매일 거울 볼 때마다 내 얼굴이 너무 허옇게 질려 있어서… 내가 봐도 내가 너무 피폐하고 못나 보여서, 당신 눈을 똑바로 못 보겠어. 차라리 아프다고 다 말해버리고 당신 품에서 울고 싶은데…… 내가 어떻게 그래… 남은 시간 동안 짐만 되다가 갈 순 없잖아……",
+      "provenance": {
+        "fixture_segment_id": "script_043",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_044",
+      "sequence_index": 44,
+      "kind": "STAGE_DIRECTION",
+      "text": "(멍때리다 눈물을 흘리며 읊조린다. 자신의 몸을 내려다보며) 하…아빠가 되서 가족들 앞에서 당당하게 이야기하지도 못하고, 차라리 솔직하지 못할꺼면 잘해주기라도 하던가…밤거리에 나와서 술병이나 쥐고 질질 짜고 있고…… 진짜 못났다. 진짜… 더럽게 못났네 나……",
+      "speaker": null,
+      "event_id": "evt_012_001",
+      "section_marker": "S#6 밖으로 나온 우현, 뒤따라가는 별1,2",
+      "locator": "docx:p256",
+      "source_quote": "(멍때리다 눈물을 흘리며 읊조린다. 자신의 몸을 내려다보며) 하…아빠가 되서 가족들 앞에서 당당하게 이야기하지도 못하고, 차라리 솔직하지 못할꺼면 잘해주기라도 하던가…밤거리에 나와서 술병이나 쥐고 질질 짜고 있고…… 진짜 못났다. 진짜… 더럽게 못났네 나……",
+      "provenance": {
+        "fixture_segment_id": "script_044",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_045",
+      "sequence_index": 45,
+      "kind": "STAGE_DIRECTION",
+      "text": "N4 UGLY - 2NE1 몸이 아파서 가족들에게 소홀해진 자신을 한탄하는 우현. 거리를 정처없이 걷기 시작",
+      "speaker": null,
+      "event_id": "evt_013_001",
+      "section_marker": "N#4 UGLY",
+      "locator": "docx:p258",
+      "source_quote": "N4 UGLY - 2NE1 몸이 아파서 가족들에게 소홀해진 자신을 한탄하는 우현. 거리를 정처없이 걷기 시작",
+      "provenance": {
+        "fixture_segment_id": "script_045",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_046",
+      "sequence_index": 46,
+      "kind": "STAGE_DIRECTION",
+      "text": "- 암전 -",
+      "speaker": null,
+      "event_id": "evt_013_002",
+      "section_marker": "N#4 UGLY",
+      "locator": "docx:p261",
+      "source_quote": "- 암전 -",
+      "provenance": {
+        "fixture_segment_id": "script_046",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_047",
+      "sequence_index": 47,
+      "kind": "STAGE_DIRECTION",
+      "text": "S7 마루의 학예회가 있는 날. 아침부터 분주함. 마루가 아침부터 신이나서 우주에 관련된 넘버를 학예회로 올린 이유를 엄마에게 설명함. 그러곤 아빠한테도 말하려고 아빠를 찾지만 아빠가 안보임. 마루는 고민하다가 책상 위에 놓인 아빠의 선물을 챙겨서 출발함. (최소 1분 30초 - 목표는 2분)",
+      "speaker": null,
+      "event_id": "evt_015_001",
+      "section_marker": "S#7 학예회날 아침",
+      "locator": "docx:p263",
+      "source_quote": "S7 마루의 학예회가 있는 날. 아침부터 분주함. 마루가 아침부터 신이나서 우주에 관련된 넘버를 학예회로 올린 이유를 엄마에게 설명함. 그러곤 아빠한테도 말하려고 아빠를 찾지만 아빠가 안보임. 마루는 고민하다가 책상 위에 놓인 아빠의 선물을 챙겨서 출발함. (최소 1분 30초 - 목표는 2분)",
+      "provenance": {
+        "fixture_segment_id": "script_047",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_048",
+      "sequence_index": 48,
+      "kind": "DIALOGUE",
+      "text": "(입술을 삐죽이며 고개를 세차게 흔든다) 에이, 땡! 완전히 틀렸습니다! 하여간 엄마는 9살짜리 딸내미 속을 너무 모른다니까. 이거 다 아빠 보라고 일부러 고른 거란 말이야.",
+      "speaker": "마루",
+      "event_id": "evt_015_001",
+      "section_marker": "S#7 학예회날 아침",
+      "locator": "docx:p270",
+      "source_quote": "마루 (입술을 삐죽이며 고개를 세차게 흔든다) 에이, 땡! 완전히 틀렸습니다! 하여간 엄마는 9살짜리 딸내미 속을 너무 모른다니까. 이거 다 아빠 보라고 일부러 고른 거란 말이야.",
+      "provenance": {
+        "fixture_segment_id": "script_048",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_049",
+      "sequence_index": 49,
+      "kind": "DIALOGUE",
+      "text": "(안방 쪽을 쳐다보며 한숨 섞인 목소리로 혼잣말한다) 이 양반이 이 시간부터 대체 어딜 간 거야? 전화도 안 받고. (마루에게 말한다) 회사에 급한 일이 생겨서 먼저 출근한다고 하더라구. 그래도 학예회 시간 맞춰 올꺼니까 나중에 보면 되지.",
+      "speaker": "수연",
+      "event_id": "evt_015_001",
+      "section_marker": "S#7 학예회날 아침",
+      "locator": "docx:p275",
+      "source_quote": "수연 (안방 쪽을 쳐다보며 한숨 섞인 목소리로 혼잣말한다) 이 양반이 이 시간부터 대체 어딜 간 거야? 전화도 안 받고. (마루에게 말한다) 회사에 급한 일이 생겨서 먼저 출근한다고 하더라구. 그래도 학예회 시간 맞춰 올꺼니까 나중에 보면 되지.",
+      "provenance": {
+        "fixture_segment_id": "script_049",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_050",
+      "sequence_index": 50,
+      "kind": "DIALOGUE",
+      "text": "(입가에 이소가 살짝 번지며) …치. 그래? (인심쓰듯) 뭐 좀 유치하긴 해도 아빠가 사준 거니까 딱 오늘만 매주는 거야. 헐, 벌써 시간이 이렇게 됐네! 엄마, 얼른 가자!",
+      "speaker": "마루",
+      "event_id": "evt_015_001",
+      "section_marker": "S#7 학예회날 아침",
+      "locator": "docx:p280",
+      "source_quote": "마루 (입가에 이소가 살짝 번지며) …치. 그래? (인심쓰듯) 뭐 좀 유치하긴 해도 아빠가 사준 거니까 딱 오늘만 매주는 거야. 헐, 벌써 시간이 이렇게 됐네! 엄마, 얼른 가자!",
+      "provenance": {
+        "fixture_segment_id": "script_050",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_051",
+      "sequence_index": 51,
+      "kind": "DIALOGUE",
+      "text": "같이 가, 마루야! (혼잣말로) 얘는 누굴닮아서 이렇게 급해.. (다시 외치며) 마루야!",
+      "speaker": "수연",
+      "event_id": "evt_015_001",
+      "section_marker": "S#7 학예회날 아침",
+      "locator": "docx:p281",
+      "source_quote": "수연 같이 가, 마루야! (혼잣말로) 얘는 누굴닮아서 이렇게 급해.. (다시 외치며) 마루야!",
+      "provenance": {
+        "fixture_segment_id": "script_051",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_052",
+      "sequence_index": 52,
+      "kind": "STAGE_DIRECTION",
+      "text": "- 조명 in -",
+      "speaker": null,
+      "event_id": "evt_015_001",
+      "section_marker": "S#7 학예회날 아침",
+      "locator": "docx:p287",
+      "source_quote": "- 조명 in -",
+      "provenance": {
+        "fixture_segment_id": "script_052",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_053",
+      "sequence_index": 53,
+      "kind": "STAGE_DIRECTION",
+      "text": "N5 혜성 - 딸의 학예회",
+      "speaker": null,
+      "event_id": "evt_016_001",
+      "section_marker": "N#5 혜성",
+      "locator": "docx:p289",
+      "source_quote": "N5 혜성 - 딸의 학예회",
+      "provenance": {
+        "fixture_segment_id": "script_053",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_054",
+      "sequence_index": 54,
+      "kind": "STAGE_DIRECTION",
+      "text": "- 암전 -",
+      "speaker": null,
+      "event_id": "evt_016_001",
+      "section_marker": "N#5 혜성",
+      "locator": "docx:p292",
+      "source_quote": "- 암전 -",
+      "provenance": {
+        "fixture_segment_id": "script_054",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_055",
+      "sequence_index": 55,
+      "kind": "STAGE_DIRECTION",
+      "text": "S8 학예회가 끝난 이후 아빠가 숨을 헐떡이며 도착(아픈게 살짝 느껴지게). 딸은 아빠가 학예회를 안와서 이미 단단히 삐졌음. 그래서 아빠를 등지기 시작함. 연이어 사과하지만 전혀 받아주지 않음.",
+      "speaker": null,
+      "event_id": "evt_017_001",
+      "section_marker": "S#8 학예회에 늦은 우현",
+      "locator": "docx:p294",
+      "source_quote": "S8 학예회가 끝난 이후 아빠가 숨을 헐떡이며 도착(아픈게 살짝 느껴지게). 딸은 아빠가 학예회를 안와서 이미 단단히 삐졌음. 그래서 아빠를 등지기 시작함. 연이어 사과하지만 전혀 받아주지 않음.",
+      "provenance": {
+        "fixture_segment_id": "script_055",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_056",
+      "sequence_index": 56,
+      "kind": "DIALOGUE",
+      "text": "(뛰어 들어오는 우현을 보고 기가 찬 듯 걸음을 멈춘다) ……당신, 지금 와요?",
+      "speaker": "수연",
+      "event_id": "evt_017_002",
+      "section_marker": "S#8 학예회에 늦은 우현",
+      "locator": "docx:p299",
+      "source_quote": "수연 (뛰어 들어오는 우현을 보고 기가 찬 듯 걸음을 멈춘다) ……당신, 지금 와요?",
+      "provenance": {
+        "fixture_segment_id": "script_056",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_057",
+      "sequence_index": 57,
+      "kind": "DIALOGUE",
+      "text": "(등을 돌린 마루에게 다가가며 미안한 목소리로 ) 우리 딸, 아빠 좀 봐봐. 어? 아빠가 진짜 잘못했어. 회사에서 나오는데 갑자기 어지러… 아니, 일이 좀 바빠져서 그랬어. 한번만 봐줘… (밝은 목소리로) 마루 오늘 노래 엄청 잘했다면서? 이미 소문이 다 났던데? 마루가 1등이라고!",
+      "speaker": "우현",
+      "event_id": "evt_017_002",
+      "section_marker": "S#8 학예회에 늦은 우현",
+      "locator": "docx:p302",
+      "source_quote": "우현 (등을 돌린 마루에게 다가가며 미안한 목소리로 ) 우리 딸, 아빠 좀 봐봐. 어? 아빠가 진짜 잘못했어. 회사에서 나오는데 갑자기 어지러… 아니, 일이 좀 바빠져서 그랬어. 한번만 봐줘… (밝은 목소리로) 마루 오늘 노래 엄청 잘했다면서? 이미 소문이 다 났던데? 마루가 1등이라고!",
+      "provenance": {
+        "fixture_segment_id": "script_057",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_058",
+      "sequence_index": 58,
+      "kind": "DIALOGUE",
+      "text": "(우현이 어깨에 손을 대자마자 세차게 뿌리친다. 뒤도 돌아보지 않고 차갑고 단호한 목소리로) 엄마, 가자. 나 여기 있기 싫어. 집에 갈래.",
+      "speaker": "마루",
+      "event_id": "evt_017_001",
+      "section_marker": "S#8 학예회에 늦은 우현",
+      "locator": "docx:p303",
+      "source_quote": "마루 (우현이 어깨에 손을 대자마자 세차게 뿌리친다. 뒤도 돌아보지 않고 차갑고 단호한 목소리로) 엄마, 가자. 나 여기 있기 싫어. 집에 갈래.",
+      "provenance": {
+        "fixture_segment_id": "script_058",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_059",
+      "sequence_index": 59,
+      "kind": "DIALOGUE",
+      "text": "마루야……",
+      "speaker": "우현",
+      "event_id": "evt_017_003",
+      "section_marker": "S#8 학예회에 늦은 우현",
+      "locator": "docx:p304",
+      "source_quote": "우현 마루야……",
+      "provenance": {
+        "fixture_segment_id": "script_059",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_060",
+      "sequence_index": 60,
+      "kind": "DIALOGUE",
+      "text": "(우현을 싸늘하게 바라보며) 일단 집으로 가요.",
+      "speaker": "수연",
+      "event_id": "evt_017_002",
+      "section_marker": "S#8 학예회에 늦은 우현",
+      "locator": "docx:p305",
+      "source_quote": "수연 (우현을 싸늘하게 바라보며) 일단 집으로 가요.",
+      "provenance": {
+        "fixture_segment_id": "script_060",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_061",
+      "sequence_index": 61,
+      "kind": "STAGE_DIRECTION",
+      "text": "- 암전 -",
+      "speaker": null,
+      "event_id": "evt_017_003",
+      "section_marker": "S#8 학예회에 늦은 우현",
+      "locator": "docx:p307",
+      "source_quote": "- 암전 -",
+      "provenance": {
+        "fixture_segment_id": "script_061",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_062",
+      "sequence_index": 62,
+      "kind": "STAGE_DIRECTION",
+      "text": "S9 집에 돌아옴. 딸은 방으로 들어감 (퇴장). 아빠가 마루를 따라가며 변명을 해보려하지만 이미 가버림.",
+      "speaker": null,
+      "event_id": "evt_018_001",
+      "section_marker": "S#9 다그치는 수연",
+      "locator": "docx:p309",
+      "source_quote": "S9 집에 돌아옴. 딸은 방으로 들어감 (퇴장). 아빠가 마루를 따라가며 변명을 해보려하지만 이미 가버림.",
+      "provenance": {
+        "fixture_segment_id": "script_062",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_063",
+      "sequence_index": 63,
+      "kind": "DIALOGUE",
+      "text": "(우현의 팔을 잡아 문 앞에서 떼어내며, 낮고 가라앉은 목소리로) 그만해요. 애 지금 당신 목소리도 듣기 싫어해.",
+      "speaker": "수연",
+      "event_id": "evt_018_001",
+      "section_marker": "S#9 다그치는 수연",
+      "locator": "docx:p316",
+      "source_quote": "수연 (우현의 팔을 잡아 문 앞에서 떼어내며, 낮고 가라앉은 목소리로) 그만해요. 애 지금 당신 목소리도 듣기 싫어해.",
+      "provenance": {
+        "fixture_segment_id": "script_063",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_064",
+      "sequence_index": 64,
+      "kind": "DIALOGUE",
+      "text": "……미안해.",
+      "speaker": "우현",
+      "event_id": "evt_018_002",
+      "section_marker": "S#9 다그치는 수연",
+      "locator": "docx:p319",
+      "source_quote": "우현 ……미안해.",
+      "provenance": {
+        "fixture_segment_id": "script_064",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_065",
+      "sequence_index": 65,
+      "kind": "DIALOGUE",
+      "text": "(한숨을 깊게 쉬며 고개를 저을 뿐이다) 맨날 미안, 미안 미안! 지겨워 죽겠어 진짜! 당신 요즘 왜 그래? 저번 마루 생일 때부터 시작해서, 집안일도 다 내팽개치고 밖으로만 돌고… 당신한테 이제 나랑 마루는 아무것도 아니야? 이렇게 소홀할 거면, 도대체 집에는 왜 들어오는 건데? 그냥 회사에 살지 왜애!",
+      "speaker": "수연",
+      "event_id": "evt_018_002",
+      "section_marker": "S#9 다그치는 수연",
+      "locator": "docx:p322",
+      "source_quote": "수연 (한숨을 깊게 쉬며 고개를 저을 뿐이다) 맨날 미안, 미안 미안! 지겨워 죽겠어 진짜! 당신 요즘 왜 그래? 저번 마루 생일 때부터 시작해서, 집안일도 다 내팽개치고 밖으로만 돌고… 당신한테 이제 나랑 마루는 아무것도 아니야? 이렇게 소홀할 거면, 도대체 집에는 왜 들어오는 건데? 그냥 회사에 살지 왜애!",
+      "provenance": {
+        "fixture_segment_id": "script_065",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_066",
+      "sequence_index": 66,
+      "kind": "DIALOGUE",
+      "text": "여보, 그게 아니라… 내 말 좀 들어봐, 여보…",
+      "speaker": "우현",
+      "event_id": "evt_018_001",
+      "section_marker": "S#9 다그치는 수연",
+      "locator": "docx:p323",
+      "source_quote": "우현 여보, 그게 아니라… 내 말 좀 들어봐, 여보…",
+      "provenance": {
+        "fixture_segment_id": "script_066",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_067",
+      "sequence_index": 67,
+      "kind": "DIALOGUE",
+      "text": "(우현의 시선을 피하며 차갑게 돌아선다. 차분하고 지친 목소리로) 하… 듣기 싫어. 매번 똑같은 변명, 똑같은 약속… 나 이제 진짜 지쳤어.",
+      "speaker": "수연",
+      "event_id": "evt_018_002",
+      "section_marker": "S#9 다그치는 수연",
+      "locator": "docx:p324",
+      "source_quote": "수연 (우현의 시선을 피하며 차갑게 돌아선다. 차분하고 지친 목소리로) 하… 듣기 싫어. 매번 똑같은 변명, 똑같은 약속… 나 이제 진짜 지쳤어.",
+      "provenance": {
+        "fixture_segment_id": "script_067",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_068",
+      "sequence_index": 68,
+      "kind": "DIALOGUE",
+      "text": "이렇게 매번 기대했다가 상처받을 바에는, 그냥 나 혼자 사는게 게 백번 천번 낫겠어.",
+      "speaker": "수연",
+      "event_id": "evt_018_002",
+      "section_marker": "S#9 다그치는 수연",
+      "locator": "docx:p326",
+      "source_quote": "수연 이렇게 매번 기대했다가 상처받을 바에는, 그냥 나 혼자 사는게 게 백번 천번 낫겠어.",
+      "provenance": {
+        "fixture_segment_id": "script_068",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_069",
+      "sequence_index": 69,
+      "kind": "STAGE_DIRECTION",
+      "text": "N6 good for you - 아내가 애아빠한테 학예회 왜 안가줬냐고 화내고, 가족들에게 소홀해졌다고 다그치는 넘버",
+      "speaker": null,
+      "event_id": "evt_019_001",
+      "section_marker": "N#6 Good for you",
+      "locator": "docx:p327",
+      "source_quote": "N6 good for you - 아내가 애아빠한테 학예회 왜 안가줬냐고 화내고, 가족들에게 소홀해졌다고 다그치는 넘버",
+      "provenance": {
+        "fixture_segment_id": "script_069",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_070",
+      "sequence_index": 70,
+      "kind": "STAGE_DIRECTION",
+      "text": "S10 아빠가 아내에게 자신이 한달 남은 시한부임을 밝힘. 아내는 충격을 받아 주저앉음. 울어. 그리고 아빠는 이런 수연을 위로",
+      "speaker": null,
+      "event_id": "evt_020_001",
+      "section_marker": "S#10 우현의 시한부 고백",
+      "locator": "docx:p331",
+      "source_quote": "S10 아빠가 아내에게 자신이 한달 남은 시한부임을 밝힘. 아내는 충격을 받아 주저앉음. 울어. 그리고 아빠는 이런 수연을 위로",
+      "provenance": {
+        "fixture_segment_id": "script_070",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_071",
+      "sequence_index": 71,
+      "kind": "STAGE_DIRECTION",
+      "text": "(수연이 뒤를 돌아선다.)",
+      "speaker": null,
+      "event_id": "evt_020_001",
+      "section_marker": "S#10 우현의 시한부 고백",
+      "locator": "docx:p339",
+      "source_quote": "(수연이 뒤를 돌아선다.)",
+      "provenance": {
+        "fixture_segment_id": "script_071",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_072",
+      "sequence_index": 72,
+      "kind": "DIALOGUE",
+      "text": "(아무렇지 않은 듯 무덤덤하게) 응. 나 좀 아프데. 나… 한 달 남았대. 이제 나 한 달 밖에 못산데..",
+      "speaker": "우현",
+      "event_id": "evt_020_002",
+      "section_marker": "S#10 우현의 시한부 고백",
+      "locator": "docx:p344",
+      "source_quote": "우현 (아무렇지 않은 듯 무덤덤하게) 응. 나 좀 아프데. 나… 한 달 남았대. 이제 나 한 달 밖에 못산데..",
+      "provenance": {
+        "fixture_segment_id": "script_072",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_073",
+      "sequence_index": 73,
+      "kind": "DIALOGUE",
+      "text": "(수연의 떨리는 손을 잡아 자신의 가슴 쪽에 대준다. 참았던 눈물이 기어코 한 방울 떨어져 내린다) 거짓말이었으면 나도 진짜 좋겠다, 여보… 근데 나 진짜 얼마 안 남았대… 그래도 차가운 병실에 누워서 있는거보다는 남은 한 달, 당신이랑 마루 얼굴 많이 보고 가고싶어서 진짜 열심히 버텼는데.. 아픈거 티 안내고 정말 잘해주고 싶었는데… 하루라도 더 웃는모습 보고싶었는데… 그게 잘 안되네... 미안해..",
+      "speaker": "우현",
+      "event_id": "evt_020_002",
+      "section_marker": "S#10 우현의 시한부 고백",
+      "locator": "docx:p349",
+      "source_quote": "우현 (수연의 떨리는 손을 잡아 자신의 가슴 쪽에 대준다. 참았던 눈물이 기어코 한 방울 떨어져 내린다) 거짓말이었으면 나도 진짜 좋겠다, 여보… 근데 나 진짜 얼마 안 남았대… 그래도 차가운 병실에 누워서 있는거보다는 남은 한 달, 당신이랑 마루 얼굴 많이 보고 가고싶어서 진짜 열심히 버텼는데.. 아픈거 티 안내고 정말 잘해주고 싶었는데… 하루라도 더 웃는모습 보고싶었는데… 그게 잘 안되네... 미안해..",
+      "provenance": {
+        "fixture_segment_id": "script_073",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_074",
+      "sequence_index": 74,
+      "kind": "DIALOGUE",
+      "text": "(주저앉은 수연의 무릎 앞에 마주 앉아 수연을 끌어안는다) 미안해… 내가 다 망쳐서 진짜 미안해, 여보…",
+      "speaker": "우현",
+      "event_id": "evt_020_001",
+      "section_marker": "S#10 우현의 시한부 고백",
+      "locator": "docx:p351",
+      "source_quote": "우현 (주저앉은 수연의 무릎 앞에 마주 앉아 수연을 끌어안는다) 미안해… 내가 다 망쳐서 진짜 미안해, 여보…",
+      "provenance": {
+        "fixture_segment_id": "script_074",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_075",
+      "sequence_index": 75,
+      "kind": "DIALOGUE",
+      "text": "(수연의 눈물을 닦아주며, 자신의 슬픔을 숨기고 아내를 감싸 안는다.) 여보, 너무 슬퍼하지 마. 나 어디 가는거 아니야. 당신 곁에 항상 있을꺼야. 마루 얼굴에, 당신 눈동자에, ` 우리 같이 보낸 시간 속에서 늘 함께할거야.",
+      "speaker": "우현",
+      "event_id": "evt_020_002",
+      "section_marker": "S#10 우현의 시한부 고백",
+      "locator": "docx:p353",
+      "source_quote": "우현 (수연의 눈물을 닦아주며, 자신의 슬픔을 숨기고 아내를 감싸 안는다.) 여보, 너무 슬퍼하지 마. 나 어디 가는거 아니야. 당신 곁에 항상 있을꺼야. 마루 얼굴에, 당신 눈동자에, ` 우리 같이 보낸 시간 속에서 늘 함께할거야.",
+      "provenance": {
+        "fixture_segment_id": "script_075",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_076",
+      "sequence_index": 76,
+      "kind": "STAGE_DIRECTION",
+      "text": "그러니까 남은 시간, 우리 울면서 보내지 말자. 나는 당신 웃는 모습만 담아 가고 싶어. 그게 내 소원이야, 여보. (수연을 품에 꼭 안고 토닥이며) 그러니까 울지 마.",
+      "speaker": null,
+      "event_id": "evt_020_002",
+      "section_marker": "S#10 우현의 시한부 고백",
+      "locator": "docx:p355",
+      "source_quote": "그러니까 남은 시간, 우리 울면서 보내지 말자. 나는 당신 웃는 모습만 담아 가고 싶어. 그게 내 소원이야, 여보. (수연을 품에 꼭 안고 토닥이며) 그러니까 울지 마.",
+      "provenance": {
+        "fixture_segment_id": "script_076",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_077",
+      "sequence_index": 77,
+      "kind": "STAGE_DIRECTION",
+      "text": "N7 하나의 답 - 곧 떠날 아빠가 엄마를 위로.",
+      "speaker": null,
+      "event_id": "evt_021_001",
+      "section_marker": "N#7 하나의 답",
+      "locator": "docx:p356",
+      "source_quote": "N7 하나의 답 - 곧 떠날 아빠가 엄마를 위로.",
+      "provenance": {
+        "fixture_segment_id": "script_077",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_078",
+      "sequence_index": 78,
+      "kind": "STAGE_DIRECTION",
+      "text": "암전",
+      "speaker": null,
+      "event_id": "evt_021_002",
+      "section_marker": "N#7 하나의 답",
+      "locator": "docx:p358",
+      "source_quote": "암전",
+      "provenance": {
+        "fixture_segment_id": "script_078",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_079",
+      "sequence_index": 79,
+      "kind": "STAGE_DIRECTION",
+      "text": "S11 마루가 아빠가 줬던 가방을 메고 학교에 갔더니, 그걸 본 친구들이 가방 누가 사준거냐며 유치하다고 놀리기 시작",
+      "speaker": null,
+      "event_id": "evt_022_001",
+      "section_marker": "S#11 마루를 놀리는 친구들",
+      "locator": "docx:p359",
+      "source_quote": "S11 마루가 아빠가 줬던 가방을 메고 학교에 갔더니, 그걸 본 친구들이 가방 누가 사준거냐며 유치하다고 놀리기 시작",
+      "provenance": {
+        "fixture_segment_id": "script_079",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_080",
+      "sequence_index": 80,
+      "kind": "STAGE_DIRECTION",
+      "text": "S.E. 학교 마치는 종소리",
+      "speaker": null,
+      "event_id": "evt_022_001",
+      "section_marker": "S#11 마루를 놀리는 친구들",
+      "locator": "docx:p362",
+      "source_quote": "S.E. 학교 마치는 종소리",
+      "provenance": {
+        "fixture_segment_id": "script_080",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_081",
+      "sequence_index": 81,
+      "kind": "DIALOGUE",
+      "text": "보자 (단어장을 보고) 아니 멍청아 악어는 엘리게이터잖아. 아리가또 이러고있네",
+      "speaker": "친구 1",
+      "event_id": "evt_022_001",
+      "section_marker": "S#11 마루를 놀리는 친구들",
+      "locator": "docx:p371",
+      "source_quote": "친구 1 보자 (단어장을 보고) 아니 멍청아 악어는 엘리게이터잖아. 아리가또 이러고있네",
+      "provenance": {
+        "fixture_segment_id": "script_081",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_082",
+      "sequence_index": 82,
+      "kind": "STAGE_DIRECTION",
+      "text": "친구 2",
+      "speaker": null,
+      "event_id": "evt_022_001",
+      "section_marker": "S#11 마루를 놀리는 친구들",
+      "locator": "docx:p380",
+      "source_quote": "친구 2",
+      "provenance": {
+        "fixture_segment_id": "script_082",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_083",
+      "sequence_index": 83,
+      "kind": "DIALOGUE",
+      "text": "(마루 주변을 맴돌며) 그럼 아까워서 억지로 매고 온 거네! 아니면 너 혹시 유치원으로 다시 돌아가고 싶어서 그래? 그럼 급식 먹기 전에 낮잠 안 자면 피곤해서 어떡하냐? 응석 부릴 유치원 선생님도 없고. 옹알이는 끝났나 몰라. 우리 마루 응애 해봐 응애!",
+      "speaker": "친구 2",
+      "event_id": "evt_022_002",
+      "section_marker": "S#11 마루를 놀리는 친구들",
+      "locator": "docx:p392",
+      "source_quote": "친구 2 (마루 주변을 맴돌며) 그럼 아까워서 억지로 매고 온 거네! 아니면 너 혹시 유치원으로 다시 돌아가고 싶어서 그래? 그럼 급식 먹기 전에 낮잠 안 자면 피곤해서 어떡하냐? 응석 부릴 유치원 선생님도 없고. 옹알이는 끝났나 몰라. 우리 마루 응애 해봐 응애!",
+      "provenance": {
+        "fixture_segment_id": "script_083",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_084",
+      "sequence_index": 84,
+      "kind": "DIALOGUE",
+      "text": "(친구들을 매섭게 노려보며, 눈물을 훔치고 소리친다) 우리 아빠 거짓말쟁이 아니야! 진짜 바빠서 못 온 거란 말이야! 너네가 우리 아빠에 대해 뭘 안다고 그래!",
+      "speaker": "마루",
+      "event_id": "evt_022_002",
+      "section_marker": "S#11 마루를 놀리는 친구들",
+      "locator": "docx:p401",
+      "source_quote": "마루 (친구들을 매섭게 노려보며, 눈물을 훔치고 소리친다) 우리 아빠 거짓말쟁이 아니야! 진짜 바빠서 못 온 거란 말이야! 너네가 우리 아빠에 대해 뭘 안다고 그래!",
+      "provenance": {
+        "fixture_segment_id": "script_084",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_085",
+      "sequence_index": 85,
+      "kind": "STAGE_DIRECTION",
+      "text": "N8 Larger - 마루가 아빠에게 받은 가방에 대해 놀리는 친구들과 마루의 말다툼",
+      "speaker": null,
+      "event_id": "evt_023_001",
+      "section_marker": "N#8 Larger than life",
+      "locator": "docx:p403",
+      "source_quote": "N8 Larger - 마루가 아빠에게 받은 가방에 대해 놀리는 친구들과 마루의 말다툼",
+      "provenance": {
+        "fixture_segment_id": "script_085",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_086",
+      "sequence_index": 86,
+      "kind": "STAGE_DIRECTION",
+      "text": "- 암전 -",
+      "speaker": null,
+      "event_id": "evt_023_002",
+      "section_marker": "N#8 Larger than life",
+      "locator": "docx:p406",
+      "source_quote": "- 암전 -",
+      "provenance": {
+        "fixture_segment_id": "script_086",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_087",
+      "sequence_index": 87,
+      "kind": "STAGE_DIRECTION",
+      "text": "S12 마루가 학교를 마치고 집으로 돌아와서 아빠를 무시한채 방으로 뛰어들어감. 엄마는 아빠와 함께 마루에게 어떻게 시한부 사실을 알릴지 대화함. 대화를 끝내고 마루가 화난 상태로 들어옴. 이후 대화를 통해 이때까지의 일을 화해함. 이후 아빠는 놀이동산을 제안함",
+      "speaker": null,
+      "event_id": "evt_024_001",
+      "section_marker": "S#12 우현이 마루에게 사과",
+      "locator": "docx:p408",
+      "source_quote": "S12 마루가 학교를 마치고 집으로 돌아와서 아빠를 무시한채 방으로 뛰어들어감. 엄마는 아빠와 함께 마루에게 어떻게 시한부 사실을 알릴지 대화함. 대화를 끝내고 마루가 화난 상태로 들어옴. 이후 대화를 통해 이때까지의 일을 화해함. 이후 아빠는 놀이동산을 제안함",
+      "provenance": {
+        "fixture_segment_id": "script_087",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_088",
+      "sequence_index": 88,
+      "kind": "DIALOGUE",
+      "text": "(우현의 말에 가슴이 미어져 고개를 저으며) 여보……",
+      "speaker": "수연",
+      "event_id": "evt_024_003",
+      "section_marker": "S#12 우현이 마루에게 사과",
+      "locator": "docx:p419",
+      "source_quote": "수연 (우현의 말에 가슴이 미어져 고개를 저으며) 여보……",
+      "provenance": {
+        "fixture_segment_id": "script_088",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_089",
+      "sequence_index": 89,
+      "kind": "DIALOGUE",
+      "text": "(마루가 들어오는 소리에 서둘러 몸을 일으키며, 반갑고도 미안한 목소리로) …어, 우리 마루 왔어? 학교 끝났네. 오늘 날씨 많이 덥지? 아빠가 우리 마루 좋아하는……",
+      "speaker": "우현",
+      "event_id": "evt_024_002",
+      "section_marker": "S#12 우현이 마루에게 사과",
+      "locator": "docx:p427",
+      "source_quote": "우현 (마루가 들어오는 소리에 서둘러 몸을 일으키며, 반갑고도 미안한 목소리로) …어, 우리 마루 왔어? 학교 끝났네. 오늘 날씨 많이 덥지? 아빠가 우리 마루 좋아하는……",
+      "provenance": {
+        "fixture_segment_id": "script_089",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_090",
+      "sequence_index": 90,
+      "kind": "DIALOGUE",
+      "text": "(우현을 쳐다보지도 않고, 굳은 얼굴로 우현의 옆을 빠르게 지나쳐 방으로 향한다)",
+      "speaker": "마루",
+      "event_id": "evt_024_003",
+      "section_marker": "S#12 우현이 마루에게 사과",
+      "locator": "docx:p428",
+      "source_quote": "마루 (우현을 쳐다보지도 않고, 굳은 얼굴로 우현의 옆을 빠르게 지나쳐 방으로 향한다)",
+      "provenance": {
+        "fixture_segment_id": "script_090",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_091",
+      "sequence_index": 91,
+      "kind": "STAGE_DIRECTION",
+      "text": "상수조명in, 하수조명 out",
+      "speaker": null,
+      "event_id": "evt_024_004",
+      "section_marker": "S#12 우현이 마루에게 사과",
+      "locator": "docx:p432",
+      "source_quote": "상수조명in, 하수조명 out",
+      "provenance": {
+        "fixture_segment_id": "script_091",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_092",
+      "sequence_index": 92,
+      "kind": "DIALOGUE",
+      "text": "(문 너머로 조심스럽고 다정하게) …마루야. 아빠인데, 들어가도 될까……?",
+      "speaker": "우현",
+      "event_id": "evt_024_005",
+      "section_marker": "S#12 우현이 마루에게 사과",
+      "locator": "docx:p434",
+      "source_quote": "우현 (문 너머로 조심스럽고 다정하게) …마루야. 아빠인데, 들어가도 될까……?",
+      "provenance": {
+        "fixture_segment_id": "script_092",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_093",
+      "sequence_index": 93,
+      "kind": "DIALOGUE",
+      "text": "(입술을 삐죽이며) 싫어하거든? 이거 엄청 유치해서 오늘 학교에서 애들이 다 놀렸단 말이야. 유치원생 가방 맸다고 막 깐족거렸어.",
+      "speaker": "마루",
+      "event_id": "evt_024_006",
+      "section_marker": "S#12 우현이 마루에게 사과",
+      "locator": "docx:p438",
+      "source_quote": "마루 (입술을 삐죽이며) 싫어하거든? 이거 엄청 유치해서 오늘 학교에서 애들이 다 놀렸단 말이야. 유치원생 가방 맸다고 막 깐족거렸어.",
+      "provenance": {
+        "fixture_segment_id": "script_093",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_094",
+      "sequence_index": 94,
+      "kind": "DIALOGUE",
+      "text": "(우현의 손을 잡으며 베시시 웃는다) 응. 이번 딱 한 번만 봐주는 거야. 대신 다음엔 진짜 국물도 없어!",
+      "speaker": "마루",
+      "event_id": "evt_024_006",
+      "section_marker": "S#12 우현이 마루에게 사과",
+      "locator": "docx:p442",
+      "source_quote": "마루 (우현의 손을 잡으며 베시시 웃는다) 응. 이번 딱 한 번만 봐주는 거야. 대신 다음엔 진짜 국물도 없어!",
+      "provenance": {
+        "fixture_segment_id": "script_094",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_095",
+      "sequence_index": 95,
+      "kind": "DIALOGUE",
+      "text": "알겠어, 그럼 우리 마루가 너그러운 마음씨로 용서해줬는데 아빠가 가만히 있을 수 없지. 우리 토요일에 놀이동산 갈까?",
+      "speaker": "우현",
+      "event_id": "evt_024_007",
+      "section_marker": "S#12 우현이 마루에게 사과",
+      "locator": "docx:p443",
+      "source_quote": "우현 알겠어, 그럼 우리 마루가 너그러운 마음씨로 용서해줬는데 아빠가 가만히 있을 수 없지. 우리 토요일에 놀이동산 갈까?",
+      "provenance": {
+        "fixture_segment_id": "script_095",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_096",
+      "sequence_index": 96,
+      "kind": "DIALOGUE",
+      "text": "(우현에게 약속하는 손을 내민다.)약속!",
+      "speaker": "마루",
+      "event_id": "evt_024_001",
+      "section_marker": "S#12 우현이 마루에게 사과",
+      "locator": "docx:p446",
+      "source_quote": "마루 (우현에게 약속하는 손을 내민다.)약속!",
+      "provenance": {
+        "fixture_segment_id": "script_096",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_097",
+      "sequence_index": 97,
+      "kind": "DIALOGUE",
+      "text": "(웃으며 손에 고리를 건다) 약속!",
+      "speaker": "우현",
+      "event_id": "evt_024_008",
+      "section_marker": "S#12 우현이 마루에게 사과",
+      "locator": "docx:p447",
+      "source_quote": "우현 (웃으며 손에 고리를 건다) 약속!",
+      "provenance": {
+        "fixture_segment_id": "script_097",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_098",
+      "sequence_index": 98,
+      "kind": "STAGE_DIRECTION",
+      "text": "- 암전 -",
+      "speaker": null,
+      "event_id": "evt_024_008",
+      "section_marker": "S#12 우현이 마루에게 사과",
+      "locator": "docx:p448",
+      "source_quote": "- 암전 -",
+      "provenance": {
+        "fixture_segment_id": "script_098",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_099",
+      "sequence_index": 99,
+      "kind": "STAGE_DIRECTION",
+      "text": "S13 가족이 다같이 놀이동산에 놀러옴",
+      "speaker": null,
+      "event_id": "evt_025_001",
+      "section_marker": "S#13 놀이공원에 온 가족들",
+      "locator": "docx:p450",
+      "source_quote": "S13 가족이 다같이 놀이동산에 놀러옴",
+      "provenance": {
+        "fixture_segment_id": "script_099",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_100",
+      "sequence_index": 100,
+      "kind": "DIALOGUE",
+      "text": "(장난치듯 소리치며) 길마루! 뛰지 마, 넘어진다니까! 엄마 지갑 여기 있으니까 회오리감자 먹고 싶으면 말해!",
+      "speaker": "수연",
+      "event_id": "evt_025_001",
+      "section_marker": "S#13 놀이공원에 온 가족들",
+      "locator": "docx:p454",
+      "source_quote": "수연 (장난치듯 소리치며) 길마루! 뛰지 마, 넘어진다니까! 엄마 지갑 여기 있으니까 회오리감자 먹고 싶으면 말해!",
+      "provenance": {
+        "fixture_segment_id": "script_100",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_101",
+      "sequence_index": 101,
+      "kind": "DIALOGUE",
+      "text": "(마루의 머리를 쓰다듬으며 다정하게) 그럼요 공주님, 여부가 있겠습니까?",
+      "speaker": "우현",
+      "event_id": "evt_025_001",
+      "section_marker": "S#13 놀이공원에 온 가족들",
+      "locator": "docx:p457",
+      "source_quote": "우현 (마루의 머리를 쓰다듬으며 다정하게) 그럼요 공주님, 여부가 있겠습니까?",
+      "provenance": {
+        "fixture_segment_id": "script_101",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_102",
+      "sequence_index": 102,
+      "kind": "DIALOGUE",
+      "text": "(울컥 차오르는 슬픔을 꾹 누르며, 환한 미소를 지어 보인다) 누가 안 그렇대? 그러게, 같이 놀이동산 오니까 좋네.",
+      "speaker": "수연",
+      "event_id": "evt_025_002",
+      "section_marker": "S#13 놀이공원에 온 가족들",
+      "locator": "docx:p461",
+      "source_quote": "수연 (울컥 차오르는 슬픔을 꾹 누르며, 환한 미소를 지어 보인다) 누가 안 그렇대? 그러게, 같이 놀이동산 오니까 좋네.",
+      "provenance": {
+        "fixture_segment_id": "script_102",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_103",
+      "sequence_index": 103,
+      "kind": "DIALOGUE",
+      "text": "(두 사람 사이로 비집고 들어와 손을 하나씩 맞잡으며 흔든다) 엄마, 아빠! 둘이서만 무슨 비밀 얘기해! 얼른 가자니까! 우리 오늘 하고 싶은 거 다 하고 오기로 했잖아!",
+      "speaker": "마루",
+      "event_id": "evt_025_001",
+      "section_marker": "S#13 놀이공원에 온 가족들",
+      "locator": "docx:p462",
+      "source_quote": "마루 (두 사람 사이로 비집고 들어와 손을 하나씩 맞잡으며 흔든다) 엄마, 아빠! 둘이서만 무슨 비밀 얘기해! 얼른 가자니까! 우리 오늘 하고 싶은 거 다 하고 오기로 했잖아!",
+      "provenance": {
+        "fixture_segment_id": "script_103",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_104",
+      "sequence_index": 104,
+      "kind": "DIALOGUE",
+      "text": "(우현을 바라보며) 얼른 가자. 마루 기다리겠다.",
+      "speaker": "수연",
+      "event_id": "evt_025_002",
+      "section_marker": "S#13 놀이공원에 온 가족들",
+      "locator": "docx:p463",
+      "source_quote": "수연 (우현을 바라보며) 얼른 가자. 마루 기다리겠다.",
+      "provenance": {
+        "fixture_segment_id": "script_104",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_105",
+      "sequence_index": 105,
+      "kind": "DIALOGUE",
+      "text": "(마루와 수연의 손을 꼭 잡고 무대 중앙으로 나아가며 힘차게) 그래! 가자!",
+      "speaker": "우현",
+      "event_id": "evt_025_002",
+      "section_marker": "S#13 놀이공원에 온 가족들",
+      "locator": "docx:p464",
+      "source_quote": "우현 (마루와 수연의 손을 꼭 잡고 무대 중앙으로 나아가며 힘차게) 그래! 가자!",
+      "provenance": {
+        "fixture_segment_id": "script_105",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_106",
+      "sequence_index": 106,
+      "kind": "STAGE_DIRECTION",
+      "text": "S14 놀고온 날 밤, 우현과 마루가 침대에서 대화함. 아빠가 우주에 갈 수 있는 기회를 얻었다는 이야기임. 근데 그게 내일이라는 이야기를 함. 마루는 같이 가자고 했지만 아빠는 어른만 갈 수 있다고 함. 아빠가 먼저 가서 예쁜 방 꾸며놓을테니 어른이 되면 엄마랑 우주로 오라고 함. 마루는 고민하더니 정말 귀여운 요구사항들을 잔뜩 말함.",
+      "speaker": null,
+      "event_id": "evt_027_001",
+      "section_marker": "S#14 우현의 이별 고백 / 별1,2의 대화",
+      "locator": "docx:p474",
+      "source_quote": "S14 놀고온 날 밤, 우현과 마루가 침대에서 대화함. 아빠가 우주에 갈 수 있는 기회를 얻었다는 이야기임. 근데 그게 내일이라는 이야기를 함. 마루는 같이 가자고 했지만 아빠는 어른만 갈 수 있다고 함. 아빠가 먼저 가서 예쁜 방 꾸며놓을테니 어른이 되면 엄마랑 우주로 오라고 함. 마루는 고민하더니 정말 귀여운 요구사항들을 잔뜩 말함.",
+      "provenance": {
+        "fixture_segment_id": "script_106",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_107",
+      "sequence_index": 107,
+      "kind": "DIALOGUE",
+      "text": "응? 무슨 날?",
+      "speaker": "별1",
+      "event_id": "evt_027_001",
+      "section_marker": "S#14 우현의 이별 고백 / 별1,2의 대화",
+      "locator": "docx:p485",
+      "source_quote": "별1 응? 무슨 날?",
+      "provenance": {
+        "fixture_segment_id": "script_107",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_108",
+      "sequence_index": 108,
+      "kind": "DIALOGUE",
+      "text": "그럼 오늘이 아니라 내일이 그 날인거 아냐?",
+      "speaker": "별1",
+      "event_id": "evt_027_002",
+      "section_marker": "S#14 우현의 이별 고백 / 별1,2의 대화",
+      "locator": "docx:p489",
+      "source_quote": "별1 그럼 오늘이 아니라 내일이 그 날인거 아냐?",
+      "provenance": {
+        "fixture_segment_id": "script_108",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_109",
+      "sequence_index": 109,
+      "kind": "DIALOGUE",
+      "text": "너는 사람들이 우리를 못본다는걸 언제 알아차릴래?",
+      "speaker": "별2",
+      "event_id": "evt_027_002",
+      "section_marker": "S#14 우현의 이별 고백 / 별1,2의 대화",
+      "locator": "docx:p496",
+      "source_quote": "별2 너는 사람들이 우리를 못본다는걸 언제 알아차릴래?",
+      "provenance": {
+        "fixture_segment_id": "script_109",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_110",
+      "sequence_index": 110,
+      "kind": "DIALOGUE",
+      "text": "아 맞다.. 그럼 아저씨가 이야기 시작하기 전에 얼른 들어가자.",
+      "speaker": "별1",
+      "event_id": "evt_027_003",
+      "section_marker": "S#14 우현의 이별 고백 / 별1,2의 대화",
+      "locator": "docx:p497",
+      "source_quote": "별1 아 맞다.. 그럼 아저씨가 이야기 시작하기 전에 얼른 들어가자.",
+      "provenance": {
+        "fixture_segment_id": "script_110",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_111",
+      "sequence_index": 111,
+      "kind": "DIALOGUE",
+      "text": "(마루의 손을 꼭 쥐며, 이야기를 조심스럽게 꺼낸다) 내일? 음..내일은 안될 것 같은데..?",
+      "speaker": "우현",
+      "event_id": "evt_027_002",
+      "section_marker": "S#14 우현의 이별 고백 / 별1,2의 대화",
+      "locator": "docx:p504",
+      "source_quote": "우현 (마루의 손을 꼭 쥐며, 이야기를 조심스럽게 꺼낸다) 내일? 음..내일은 안될 것 같은데..?",
+      "provenance": {
+        "fixture_segment_id": "script_111",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_112",
+      "sequence_index": 112,
+      "kind": "DIALOGUE",
+      "text": "(마루의 눈을 따뜻하게 맞추며) 혼자 가는 게 아니라, 아빠가 먼저 가는 거야. 아빠가 먼저 저기 넓은 은하수로 가서, 우리 마루가 나중에 올 때 쓸 방 엄청엄청 예쁘게 꾸며놓으려고. 그러니까 마루가 다 큰 어른이 될 때까지 공부도 열심히 하고, 엄마 말도 잘 듣고 있으면… 나중에 엄마 손 꼭 잡고 아빠가 있는 우주로 오면 돼. 알았지?",
+      "speaker": "우현",
+      "event_id": "evt_027_002",
+      "section_marker": "S#14 우현의 이별 고백 / 별1,2의 대화",
+      "locator": "docx:p518",
+      "source_quote": "우현 (마루의 눈을 따뜻하게 맞추며) 혼자 가는 게 아니라, 아빠가 먼저 가는 거야. 아빠가 먼저 저기 넓은 은하수로 가서, 우리 마루가 나중에 올 때 쓸 방 엄청엄청 예쁘게 꾸며놓으려고. 그러니까 마루가 다 큰 어른이 될 때까지 공부도 열심히 하고, 엄마 말도 잘 듣고 있으면… 나중에 엄마 손 꼭 잡고 아빠가 있는 우주로 오면 돼. 알았지?",
+      "provenance": {
+        "fixture_segment_id": "script_112",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_113",
+      "sequence_index": 113,
+      "kind": "STAGE_DIRECTION",
+      "text": "(마루가 눈을 감는다.)",
+      "speaker": null,
+      "event_id": "evt_027_003",
+      "section_marker": "S#14 우현의 이별 고백 / 별1,2의 대화",
+      "locator": "docx:p531",
+      "source_quote": "(마루가 눈을 감는다.)",
+      "provenance": {
+        "fixture_segment_id": "script_113",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_114",
+      "sequence_index": 114,
+      "kind": "STAGE_DIRECTION",
+      "text": "S15 딸이 일어나보니 아빠가 없음. 애타게 찾아보지만 이미 간 이후였음. 엄마는 말없이 딸을 안아줌. 마루가 떠난 아빠보러 꼭 나중에 우주를 가겠다고 말함.. (이전에 열거했던 귀여운 요구들을 담담하게 이야기함)",
+      "speaker": null,
+      "event_id": "evt_029_001",
+      "section_marker": "S#15 마루와 수연의 대화",
+      "locator": "docx:p536",
+      "source_quote": "S15 딸이 일어나보니 아빠가 없음. 애타게 찾아보지만 이미 간 이후였음. 엄마는 말없이 딸을 안아줌. 마루가 떠난 아빠보러 꼭 나중에 우주를 가겠다고 말함.. (이전에 열거했던 귀여운 요구들을 담담하게 이야기함)",
+      "provenance": {
+        "fixture_segment_id": "script_114",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_115",
+      "sequence_index": 115,
+      "kind": "DIALOGUE",
+      "text": "(시무룩해하며) 치.. 빠빠이 하고 가지..",
+      "speaker": "마루",
+      "event_id": "evt_029_002",
+      "section_marker": "S#15 마루와 수연의 대화",
+      "locator": "docx:p543",
+      "source_quote": "마루 (시무룩해하며) 치.. 빠빠이 하고 가지..",
+      "provenance": {
+        "fixture_segment_id": "script_115",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_116",
+      "sequence_index": 116,
+      "kind": "DIALOGUE",
+      "text": "하늘? 왜, 오늘 하늘이 왜 그래?",
+      "speaker": "수연",
+      "event_id": "evt_029_002",
+      "section_marker": "S#15 마루와 수연의 대화",
+      "locator": "docx:p548",
+      "source_quote": "수연 하늘? 왜, 오늘 하늘이 왜 그래?",
+      "provenance": {
+        "fixture_segment_id": "script_116",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_117",
+      "sequence_index": 117,
+      "kind": "STAGE_DIRECTION",
+      "text": "(뜸을 들이며 가방끈을 만지작거리며 짐짓 의젓하게) 근데 엄마… 나 가끔 아빠가 진짜 많이 보고 싶을 땐… 그냥 이렇게 가방 꼭 안고 하늘 보면 되겠지? 그럼 아빠가 우주에서 망원경으로 나 보고 있겠지?",
+      "speaker": null,
+      "event_id": "evt_029_002",
+      "section_marker": "S#15 마루와 수연의 대화",
+      "locator": "docx:p553",
+      "source_quote": "(뜸을 들이며 가방끈을 만지작거리며 짐짓 의젓하게) 근데 엄마… 나 가끔 아빠가 진짜 많이 보고 싶을 땐… 그냥 이렇게 가방 꼭 안고 하늘 보면 되겠지? 그럼 아빠가 우주에서 망원경으로 나 보고 있겠지?",
+      "provenance": {
+        "fixture_segment_id": "script_117",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_118",
+      "sequence_index": 118,
+      "kind": "DIALOGUE",
+      "text": "(결국 터져 나오려는 울컥함을 삼키느라 잠시 목이 메지만, 마루의 곁으로 다가가 어깨를 꼭 감싸 안아준다) 그럼, 당연하지. 아빠는 마루가 씩씩하게 잘 지내고 있으면 저기 먼 우주에서도 다 보고 계실 거야.",
+      "speaker": "수연",
+      "event_id": "evt_029_001",
+      "section_marker": "S#15 마루와 수연의 대화",
+      "locator": "docx:p554",
+      "source_quote": "수연 (결국 터져 나오려는 울컥함을 삼키느라 잠시 목이 메지만, 마루의 곁으로 다가가 어깨를 꼭 감싸 안아준다) 그럼, 당연하지. 아빠는 마루가 씩씩하게 잘 지내고 있으면 저기 먼 우주에서도 다 보고 계실 거야.",
+      "provenance": {
+        "fixture_segment_id": "script_118",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_119",
+      "sequence_index": 119,
+      "kind": "DIALOGUE",
+      "text": "(수연의 품에 기대어 창밖의 하늘을 보며 조용히 웃는다) 웅… 나 아빠랑 약속했으니까, 진짜 매운 김치도 꾹 참고 다 먹는 멋진 어른이 될 거야. 그래서 나중에 엄마 손 꼭 잡고 아빠 방으로 놀러 갈 거야. 아빠 깜짝 놀라게 해주게!",
+      "speaker": "마루",
+      "event_id": "evt_029_002",
+      "section_marker": "S#15 마루와 수연의 대화",
+      "locator": "docx:p555",
+      "source_quote": "마루 (수연의 품에 기대어 창밖의 하늘을 보며 조용히 웃는다) 웅… 나 아빠랑 약속했으니까, 진짜 매운 김치도 꾹 참고 다 먹는 멋진 어른이 될 거야. 그래서 나중에 엄마 손 꼭 잡고 아빠 방으로 놀러 갈 거야. 아빠 깜짝 놀라게 해주게!",
+      "provenance": {
+        "fixture_segment_id": "script_119",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_120",
+      "sequence_index": 120,
+      "kind": "DIALOGUE",
+      "text": "(눈물을 닦고 담담하게 웃어 보이며 마루의 머리를 쓰다듬는다) …너 우주비행사 되려면 매운 김치도 잘먹어야하고, 공부 지금보다 훨씬 더 열심히 해야 해. 우주선 타는 거 진짜 엄청 어려운 일이거든. 다 잘 할 수 있겠어?",
+      "speaker": "수연",
+      "event_id": "evt_029_003",
+      "section_marker": "S#15 마루와 수연의 대화",
+      "locator": "docx:p556",
+      "source_quote": "수연 (눈물을 닦고 담담하게 웃어 보이며 마루의 머리를 쓰다듬는다) …너 우주비행사 되려면 매운 김치도 잘먹어야하고, 공부 지금보다 훨씬 더 열심히 해야 해. 우주선 타는 거 진짜 엄청 어려운 일이거든. 다 잘 할 수 있겠어?",
+      "provenance": {
+        "fixture_segment_id": "script_120",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_121",
+      "sequence_index": 121,
+      "kind": "DIALOGUE",
+      "text": "응, 진짜 열심히 해서 꼭 아빠 보러 갈 거야.",
+      "speaker": "마루",
+      "event_id": "evt_029_003",
+      "section_marker": "S#15 마루와 수연의 대화",
+      "locator": "docx:p558",
+      "source_quote": "마루 응, 진짜 열심히 해서 꼭 아빠 보러 갈 거야.",
+      "provenance": {
+        "fixture_segment_id": "script_121",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_122",
+      "sequence_index": 122,
+      "kind": "STAGE_DIRECTION",
+      "text": "N11 goodbye - 아빠에게 하는 작별 인사, 그리고 꼭 우주비행사가 되겠다고 아빠에게 하는 약속",
+      "speaker": null,
+      "event_id": "evt_030_001",
+      "section_marker": "N#11 Goodbye",
+      "locator": "docx:p560",
+      "source_quote": "N11 goodbye - 아빠에게 하는 작별 인사, 그리고 꼭 우주비행사가 되겠다고 아빠에게 하는 약속",
+      "provenance": {
+        "fixture_segment_id": "script_122",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_123",
+      "sequence_index": 123,
+      "kind": "STAGE_DIRECTION",
+      "text": "(10년뒤) -> 좀 긴 암전,, 동안 goodbye 벌스 반주 잔잔하게 깔다가 S20으로 넘어가는게 좋을듯",
+      "speaker": null,
+      "event_id": "evt_030_002",
+      "section_marker": "N#11 Goodbye",
+      "locator": "docx:p562",
+      "source_quote": "(10년뒤) -> 좀 긴 암전,, 동안 goodbye 벌스 반주 잔잔하게 깔다가 S20으로 넘어가는게 좋을듯",
+      "provenance": {
+        "fixture_segment_id": "script_123",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_124",
+      "sequence_index": 124,
+      "kind": "STAGE_DIRECTION",
+      "text": "S16 엄마 : “야! 넌 오늘 00호 발사 당일인데 우주비행사가 발사 당일까지 늦잠을 자냐!” 마루가 다급하게 나갈 채비를 하며, 어릴 때 아빠에게 받았던 가방을 멤. 엄마는 어릴때 메던 그 낡은 가방을 우주비행 하러가는 애가 왜 챙기니 라고 하지만 마루는 아빠한테 보여줄거라고 함. (S19 최소 1분)",
+      "speaker": null,
+      "event_id": "evt_032_001",
+      "section_marker": "S#17 우주비행사가 된 마루",
+      "locator": "docx:p563",
+      "source_quote": "S16 엄마 : “야! 넌 오늘 00호 발사 당일인데 우주비행사가 발사 당일까지 늦잠을 자냐!” 마루가 다급하게 나갈 채비를 하며, 어릴 때 아빠에게 받았던 가방을 멤. 엄마는 어릴때 메던 그 낡은 가방을 우주비행 하러가는 애가 왜 챙기니 라고 하지만 마루는 아빠한테 보여줄거라고 함. (S19 최소 1분)",
+      "provenance": {
+        "fixture_segment_id": "script_124",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_125",
+      "sequence_index": 125,
+      "kind": "DIALOGUE",
+      "text": "아 맞다. 다음 대사가 뭐였지?",
+      "speaker": "별1",
+      "event_id": "evt_032_001",
+      "section_marker": "S#17 우주비행사가 된 마루",
+      "locator": "docx:p574",
+      "source_quote": "별1 아 맞다. 다음 대사가 뭐였지?",
+      "provenance": {
+        "fixture_segment_id": "script_125",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_126",
+      "sequence_index": 126,
+      "kind": "DIALOGUE",
+      "text": "아! 어떻게 도와줄껀데?",
+      "speaker": "별1",
+      "event_id": "evt_032_001",
+      "section_marker": "S#17 우주비행사가 된 마루",
+      "locator": "docx:p582",
+      "source_quote": "별1 아! 어떻게 도와줄껀데?",
+      "provenance": {
+        "fixture_segment_id": "script_126",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_127",
+      "sequence_index": 127,
+      "kind": "DIALOGUE",
+      "text": "(안방 문을 향해 꽥 소리를 지르며) 야! 넌 오늘 마루호 발사 당일인데 우주비행사가 발사 당일까지 늦잠을 자냐! 얼른 안 일어나?! 대한민국 최연소 우주비행사 타이틀 달고 지각으로 뉴스 나오게 생겼어, 이 기지배야!",
+      "speaker": "수연",
+      "event_id": "evt_032_001",
+      "section_marker": "S#17 우주비행사가 된 마루",
+      "locator": "docx:p591",
+      "source_quote": "수연 (안방 문을 향해 꽥 소리를 지르며) 야! 넌 오늘 마루호 발사 당일인데 우주비행사가 발사 당일까지 늦잠을 자냐! 얼른 안 일어나?! 대한민국 최연소 우주비행사 타이틀 달고 지각으로 뉴스 나오게 생겼어, 이 기지배야!",
+      "provenance": {
+        "fixture_segment_id": "script_127",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_128",
+      "sequence_index": 128,
+      "kind": "DIALOGUE",
+      "text": "(엄마의 손을 꼭 쥐며 장난기 섞인 단단한 목소리로) 당연하지! 나 길우현씨 딸이잖아. 엄마, 나 다녀올게. 아빠 만나서 은하수 창문 잘 나 있는지, 솜사탕 침대 제일 큰 거로 놨는지 내가 똑똑히 감시하고 올 테니까 걱정하지 말고 기다리고 있어!",
+      "speaker": "마루",
+      "event_id": "evt_032_002",
+      "section_marker": "S#17 우주비행사가 된 마루",
+      "locator": "docx:p597",
+      "source_quote": "마루 (엄마의 손을 꼭 쥐며 장난기 섞인 단단한 목소리로) 당연하지! 나 길우현씨 딸이잖아. 엄마, 나 다녀올게. 아빠 만나서 은하수 창문 잘 나 있는지, 솜사탕 침대 제일 큰 거로 놨는지 내가 똑똑히 감시하고 올 테니까 걱정하지 말고 기다리고 있어!",
+      "provenance": {
+        "fixture_segment_id": "script_128",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_129",
+      "sequence_index": 129,
+      "kind": "DIALOGUE",
+      "text": "다녀오겠습니다!",
+      "speaker": "마루",
+      "event_id": "evt_032_002",
+      "section_marker": "S#17 우주비행사가 된 마루",
+      "locator": "docx:p599",
+      "source_quote": "마루 다녀오겠습니다!",
+      "provenance": {
+        "fixture_segment_id": "script_129",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_130",
+      "sequence_index": 130,
+      "kind": "STAGE_DIRECTION",
+      "text": "N12 Fantasy - 우주로 행하는 딸",
+      "speaker": null,
+      "event_id": "evt_033_001",
       "section_marker": "N#12 Fantasy",
       "locator": "docx:p601",
-      "source_quote": "S#17에서 N#12로 전환",
-      "provenance": { "fixture_segment_id": "script_012", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+      "source_quote": "N12 Fantasy - 우주로 행하는 딸",
+      "provenance": {
+        "fixture_segment_id": "script_130",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
+    },
+    {
+      "segment_id": "script_131",
+      "sequence_index": 131,
+      "kind": "STAGE_DIRECTION",
+      "text": "- 암전 -",
+      "speaker": null,
+      "event_id": "evt_033_001",
+      "section_marker": "N#12 Fantasy",
+      "locator": "docx:p615",
+      "source_quote": "- 암전 -",
+      "provenance": {
+        "fixture_segment_id": "script_131",
+        "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+      }
     }
   ],
   "created_at": "2026-08-23T00:00:00+09:00"
