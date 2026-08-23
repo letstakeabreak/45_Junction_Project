@@ -36,7 +36,7 @@ UUID 세션으로 case 소유권을 분리한다. 이 값은 사용자 신원을
 | 두 화면 라우팅 | **구현** | `/` 입력, `/workspace` 워크스페이스만 존재 |
 | KOR/ENG i18n | **구현** | 헤더 선택 메뉴로 M3 입력·review·workspace·2D 무대 카피를 전환하고 선택을 localStorage에 보존 |
 | UI 카피 정리 | **구현** | 설명형 슬로건·면책·중복 제목을 제거하고, 선택 화면은 선택지만 남김. 오류·제약·상태와 provenance/hash는 유지하되 provenance는 요청 시 펼침 |
-| 입력 | **구현** | MASTER_CUE는 다중 선택·드롭을 허용하되 단일 authority 계약에 따라 첫 번째 유효 XLSX/PDF/JSON만 정본으로 사용. 선택한 파일 수와 각 파일의 아이콘·이름·용량만 카드 목록으로 표시하며 내부 authority/ignored 분류는 노출하지 않음. `예시 큐시트 첨부`는 제품에 포함된 통제 JSON 샘플을 실제 파일처럼 로드하고 `CONTROLLED_FIXTURE` origin을 보존. 다중 선택은 실제 추출을 수행하면서 최소 12초 loading scene을 보장. STAGE_SPEC은 폼으로 받음 |
+| 입력 | **구현** | MASTER_CUE는 다중 선택·드롭을 허용하되 단일 authority 계약에 따라 첫 번째 유효 XLSX/PDF/JSON만 정본으로 사용. 선택한 파일 수와 각 파일의 아이콘·이름·용량만 카드 목록으로 표시하며 내부 authority/ignored 분류는 노출하지 않음. `예시 큐시트 첨부`는 제품에 포함된 통제 JSON 샘플을 실제 파일처럼 로드하고 `CONTROLLED_FIXTURE` origin을 보존. 첫 방문의 `90초 둘러보기`는 같은 통제 예시를 로컬 Editor에 즉시 여는 미리보기와, 기존 Upstage 추출·검토 경로를 분리해 제공하며 세션 동안 닫힘 상태를 기억함. 다중 선택은 실제 추출을 수행하면서 최소 12초 loading scene을 보장. STAGE_SPEC은 폼으로 받음 |
 | Script Sidebar | **case·RAW JSON 구현** | DOCX 우선·PDF 보조. verified case에서는 `SCRIPT` source와 review queue에 통합한다. RAW JSON Editor에서는 standalone Upstage projection을 만들고 exact event ID·유일한 장면명은 자동 연결한다. 나머지는 장면·화자·대사/트리거·공연 순서 기반 추천과 신뢰도·근거를 표시하며, 개별 적용 또는 사람이 누르는 `추천 모두 적용`으로 확정한다 |
 | 로컬 파일 방어 | **구현** | 확장자·signature·50 MiB·SHA-256 검사. 미리 정한 파일명 없음 |
 | XLSX 호환성 | **구현** | 병합 원본이 사라진 빈 셀은 Excel 표시와 같이 빈칸으로 읽고, revision 변환 성공 전에 source slot을 저장하지 않는다. Upstage 응답에 근거 없는 행이 일부 섞이면 그 행만 authority에서 제외하고 locator·quote가 완전한 fact는 유지한다 |
