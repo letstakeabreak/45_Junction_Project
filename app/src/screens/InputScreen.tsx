@@ -14,13 +14,15 @@ import {
   createStandbyBrowserApi,
   type SourceOrigin,
 } from '@/lib/standby-api';
-import exampleMasterCueText from '../../../cue-sheet-example.json?raw';
+import demoMasterCueText from '@/assets/standby-demo-cue-sheet.json?raw';
+import demoScriptProjectionText from '@/assets/standby-demo-script-projection.json?raw';
 import { useCueSheetStore, useReviewFlowStore, useStandbyWorkspaceStore } from '@/store';
 import { parseCueSheetJson } from '@/lib/cue-sheet-json';
 import { useI18n, type Locale } from '@/lib/i18n';
 import { cn } from '@/lib/utils';
 import { useNavigate } from '@tanstack/react-router';
 import type { CueSheet } from '@/types/cue-sheet';
+import type { ScriptProjection } from '@/types/script';
 
 const MAX_SOURCE_BYTES = 50 * 1024 * 1024;
 const SOURCE_ORIGIN: SourceOrigin = 'USER_PROVIDED';
@@ -146,6 +148,7 @@ export function InputScreen() {
   const { locale, t } = useI18n();
   const navigate = useNavigate();
   const clearWorkspace = useStandbyWorkspaceStore((state) => state.clear);
+  const setScriptProjection = useStandbyWorkspaceStore((state) => state.setScriptProjection);
   const loadCueSheet = useCueSheetStore((state) => state.loadCueSheet);
   const clearCueSheet = useCueSheetStore((state) => state.clearCueSheet);
   const setReviewFlowContext = useReviewFlowStore((state) => state.setReviewContext);
@@ -274,21 +277,16 @@ export function InputScreen() {
     }
   };
 
-  const attachExampleMasterCue = async () => {
-    const file = new File(
-      [exampleMasterCueText],
-      'cue-sheet-example.json',
-      { type: 'application/json', lastModified: 0 },
-    );
-    await selectSources('MASTER_CUE', [file], 'CONTROLLED_FIXTURE');
-  };
-
   const openExampleWorkspace = async () => {
     clearReviewFlow();
     clearWorkspace();
     clearCueSheet();
-    const cueSheet = parseCueSheetJson(exampleMasterCueText, locale);
+    const cueSheet = parseCueSheetJson(demoMasterCueText, locale);
+    const scriptProjection = JSON.parse(demoScriptProjectionText) as ScriptProjection;
+    setScriptProjection(scriptProjection);
     loadCueSheet(cueSheet);
+    window.sessionStorage.setItem(JUDGE_TOUR_DISMISSED_KEY, '1');
+    setJudgeTourOpen(false);
     await navigate({ to: '/workspace' });
   };
 
@@ -327,7 +325,6 @@ export function InputScreen() {
   };
 
   const ready = Boolean(masterCue);
-  const exampleReady = masterCue?.origin === 'CONTROLLED_FIXTURE';
 
   const apiClient = () => {
     return createStandbyBrowserApi();
@@ -426,10 +423,7 @@ export function InputScreen() {
 
         {judgeTourOpen && (
           <JudgeQuickTour
-            exampleReady={exampleReady}
             onPreview={() => void openExampleWorkspace()}
-            onPrepare={() => void attachExampleMasterCue()}
-            onStart={() => void startExtraction()}
             onClose={dismissJudgeTour}
           />
         )}
@@ -442,7 +436,7 @@ export function InputScreen() {
               error={sourceErrors.MASTER_CUE}
               batchFiles={masterCueBatchFiles}
               onFiles={(files) => void selectSources('MASTER_CUE', files)}
-              onUseExample={() => void attachExampleMasterCue()}
+              onUseExample={() => void openExampleWorkspace()}
             />
             <RawJsonCard
               error={sourceErrors.RAW_JSON}
@@ -486,16 +480,10 @@ export function InputScreen() {
 }
 
 function JudgeQuickTour({
-  exampleReady,
   onPreview,
-  onPrepare,
-  onStart,
   onClose,
 }: {
-  exampleReady: boolean;
   onPreview: () => void;
-  onPrepare: () => void;
-  onStart: () => void;
   onClose: () => void;
 }) {
   const { t } = useI18n();
@@ -535,14 +523,7 @@ function JudgeQuickTour({
         ))}
       </div>
 
-      <div className="flex flex-col gap-2 border-t border-border p-4 sm:flex-row sm:justify-end">
-        <button
-          type="button"
-          onClick={exampleReady ? onStart : onPrepare}
-          className="border border-border px-4 py-2.5 text-xs font-medium hover:border-foreground"
-        >
-          {exampleReady ? t('input.tour.start') : t('input.tour.prepare')}
-        </button>
+      <div className="flex border-t border-border p-4 sm:justify-end">
         <button
           type="button"
           onClick={onPreview}

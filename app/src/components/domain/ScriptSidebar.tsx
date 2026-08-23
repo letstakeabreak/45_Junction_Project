@@ -166,7 +166,7 @@ export function ScriptSidebar({
                 {script.source.filename}
               </p>
               <p className="mono mt-1 text-[9px] text-muted-foreground" title={script.source.sha256}>
-                UPSTAGE · {script.authority} · SHA-256 {script.source.sha256.slice(0, 12)}…
+                {script.provenance.provider === 'UPSTAGE_AGENT' ? 'UPSTAGE' : 'CONTROLLED FIXTURE'} · {script.authority} · SHA-256 {script.source.sha256.slice(0, 12)}…
               </p>
               {error && <p className="mt-2 text-xs leading-5 text-violation" role="alert">{error}</p>}
             </div>

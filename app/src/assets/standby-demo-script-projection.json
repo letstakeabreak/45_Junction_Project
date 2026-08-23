@@ -1,0 +1,165 @@
+{
+  "contract_version": "standby.script-projection.v1",
+  "projection_id": "fixture_byeolmaru_s16_s17_v1",
+  "case_id": null,
+  "authority": "NON_AUTHORITATIVE",
+  "source": {
+    "filename": "별마루.docx",
+    "media_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+  },
+  "provenance": {
+    "provider": "CONTROLLED_FIXTURE",
+    "source_role": "SCRIPT",
+    "origin": "CONTROLLED_FIXTURE",
+    "fixture_id": "byeolmaru-s16-s17-v1",
+    "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b"
+  },
+  "segments": [
+    {
+      "segment_id": "script_001",
+      "sequence_index": 1,
+      "kind": "STAGE_DIRECTION",
+      "text": "N#11이 끝나고 무대가 긴 암전에 들어간다.",
+      "speaker": null,
+      "event_id": "evt_001_n11_end",
+      "section_marker": "N#11 Goodbye",
+      "locator": "docx:p568",
+      "source_quote": "N#11 종료 후 긴 암전으로 전환",
+      "provenance": { "fixture_segment_id": "script_001", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+    },
+    {
+      "segment_id": "script_002",
+      "sequence_index": 2,
+      "kind": "STAGE_DIRECTION",
+      "text": "암전 중 마루는 하수로 퇴장하고 무대의 침대와 가방이 반출된다.",
+      "speaker": null,
+      "event_id": "evt_002_blackout",
+      "section_marker": "S#16 긴 암전",
+      "locator": "docx:p569",
+      "source_quote": "긴 암전 전환 지문을 큐시트와 함께 구조화",
+      "provenance": { "fixture_segment_id": "script_002", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+    },
+    {
+      "segment_id": "script_003",
+      "sequence_index": 3,
+      "kind": "DIALOGUE",
+      "text": "다음에 태어날 때는 더 오래 함께할 수 있으면 좋겠다.",
+      "speaker": "별1",
+      "event_id": "evt_003_star_dialogue",
+      "section_marker": "S#16 긴 암전",
+      "locator": "docx:p574",
+      "source_quote": "별1의 암전 대사",
+      "provenance": { "fixture_segment_id": "script_003", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+    },
+    {
+      "segment_id": "script_004",
+      "sequence_index": 4,
+      "kind": "DIALOGUE",
+      "text": "같이 보낸 시간은 사라지지 않을 거야.",
+      "speaker": "별2",
+      "event_id": "evt_003_star_dialogue",
+      "section_marker": "S#16 긴 암전",
+      "locator": "docx:p580",
+      "source_quote": "별2의 암전 대사",
+      "provenance": { "fixture_segment_id": "script_004", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+    },
+    {
+      "segment_id": "script_005",
+      "sequence_index": 5,
+      "kind": "STAGE_DIRECTION",
+      "text": "별들의 대사가 끝나고 뉴스 음성이 이어진다. 마루는 다음 장면을 준비한다.",
+      "speaker": null,
+      "event_id": "evt_004_news_change",
+      "section_marker": "S#16 긴 암전",
+      "locator": "docx:p587",
+      "source_quote": "별 대사 종료 뒤 뉴스 음성",
+      "provenance": { "fixture_segment_id": "script_005", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+    },
+    {
+      "segment_id": "script_006",
+      "sequence_index": 6,
+      "kind": "STAGE_DIRECTION",
+      "text": "조명이 켜지고 엄마가 성인이 된 마루를 깨운다.",
+      "speaker": null,
+      "event_id": "evt_005_lights_in",
+      "section_marker": "S#17 우주비행사가 된 마루",
+      "locator": "docx:p590",
+      "source_quote": "조명 in 후 엄마가 마루를 깨우는 장면",
+      "provenance": { "fixture_segment_id": "script_006", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+    },
+    {
+      "segment_id": "script_007",
+      "sequence_index": 7,
+      "kind": "DIALOGUE",
+      "text": "엄마, 나 지금 나가요! 지금 나가!!",
+      "speaker": "마루",
+      "event_id": "evt_006_maru_entrance",
+      "section_marker": "S#17 우주비행사가 된 마루",
+      "locator": "docx:p592",
+      "source_quote": "엄마, 나 지금 나가요! 지금 나가!!",
+      "provenance": { "fixture_segment_id": "script_007", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+    },
+    {
+      "segment_id": "script_008",
+      "sequence_index": 8,
+      "kind": "STAGE_DIRECTION",
+      "text": "성인 마루가 우주비행사 유니폼을 이미 착용한 채, 아빠가 준 가방을 메고 방에서 뛰어나온다.",
+      "speaker": null,
+      "event_id": "evt_007_spacesuit_change",
+      "section_marker": "S#17 우주비행사가 된 마루",
+      "locator": "docx:p593",
+      "source_quote": "마루의 등장 의상 상태를 보존한 통제 projection",
+      "provenance": { "fixture_segment_id": "script_008", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+    },
+    {
+      "segment_id": "script_009",
+      "sequence_index": 9,
+      "kind": "DIALOGUE",
+      "text": "그 가방도 들고 가니?",
+      "speaker": "엄마",
+      "event_id": "evt_007_spacesuit_change",
+      "section_marker": "S#17 우주비행사가 된 마루",
+      "locator": "docx:p594",
+      "source_quote": "그 가방도 들고 가니?",
+      "provenance": { "fixture_segment_id": "script_009", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+    },
+    {
+      "segment_id": "script_010",
+      "sequence_index": 10,
+      "kind": "DIALOGUE",
+      "text": "응. 아빠가 준 거잖아.",
+      "speaker": "마루",
+      "event_id": "evt_007_spacesuit_change",
+      "section_marker": "S#17 우주비행사가 된 마루",
+      "locator": "docx:p595",
+      "source_quote": "응. 아빠가 준 거잖아.",
+      "provenance": { "fixture_segment_id": "script_010", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+    },
+    {
+      "segment_id": "script_011",
+      "sequence_index": 11,
+      "kind": "DIALOGUE",
+      "text": "마루, 다녀오겠습니다!",
+      "speaker": "마루",
+      "event_id": "evt_008_departure",
+      "section_marker": "S#17 우주비행사가 된 마루",
+      "locator": "docx:p599",
+      "source_quote": "마루, 다녀오겠습니다!",
+      "provenance": { "fixture_segment_id": "script_011", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+    },
+    {
+      "segment_id": "script_012",
+      "sequence_index": 12,
+      "kind": "STAGE_DIRECTION",
+      "text": "마루가 떠날 준비를 마치고 N#12 Fantasy로 이어진다.",
+      "speaker": null,
+      "event_id": "evt_008_departure",
+      "section_marker": "N#12 Fantasy",
+      "locator": "docx:p601",
+      "source_quote": "S#17에서 N#12로 전환",
+      "provenance": { "fixture_segment_id": "script_012", "source_sha256": "98a21a1e3d8c5c06857ff2c942774f3d5ed2d8a41485ec461ef94e990b3a0e1b" }
+    }
+  ],
+  "created_at": "2026-08-23T00:00:00+09:00"
+}

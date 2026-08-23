@@ -24,7 +24,8 @@ import {
   unlinkedScriptSegments,
 } from '@/lib/script-projection';
 import { cueSheetCsv } from '@/lib/cue-sheet-csv';
-import type { ScriptEventLinks, ScriptProjection } from '@/types/script';
+import type { ScriptEventLinks } from '@/types/script';
+import { validateScriptCueAlignment } from '@/validator';
 
 // ─── Helpers ───────────────────────────────────────────────
 
@@ -162,10 +163,11 @@ export function WorkspaceScreen() {
   const loadRevision = useCueSheetStore((s) => s.loadRevision);
   const clearVerifiedWorkspace = useStandbyWorkspaceStore((state) => state.clear);
   const setVerifiedWorkspace = useStandbyWorkspaceStore((state) => state.setWorkspace);
+  const script = useStandbyWorkspaceStore((state) => state.scriptProjection);
+  const setScript = useStandbyWorkspaceStore((state) => state.setScriptProjection);
   const setReviewFlowContext = useReviewFlowStore((state) => state.setReviewContext);
   const [stageMotion, setStageMotion] = useState<StageMotion>();
   const [storyboardState, setStoryboardState] = useState<StoryboardAgentState>({ status: 'IDLE' });
-  const [script, setScript] = useState<ScriptProjection | null>(null);
   const [scriptLinks, setScriptLinks] = useState<ScriptEventLinks>({});
   const [scriptBusy, setScriptBusy] = useState(false);
   const [scriptError, setScriptError] = useState<string | null>(null);
@@ -176,6 +178,18 @@ export function WorkspaceScreen() {
   const [stageFirst, setStageFirst] = useState(true);
   const storyboardRequestVersion = useRef(0);
   const editorCueSheet = draftCueSheet ?? cueSheet;
+  const displayedValidationResult = useMemo(() => {
+    if (!validationResult || !cueSheet) return validationResult;
+    const scriptContradictions = validateScriptCueAlignment(cueSheet, script);
+    const contradictions = [...validationResult.contradictions, ...scriptContradictions];
+    return {
+      ...validationResult,
+      total_contradictions: contradictions.length,
+      errors: contradictions.filter((item) => item.severity === 'ERROR').length,
+      warnings: contradictions.filter((item) => item.severity === 'WARNING').length,
+      contradictions,
+    };
+  }, [cueSheet, script, validationResult]);
 
   useEffect(() => {
     setDraftCueSheet(cueSheet ? structuredClone(cueSheet) : null);
@@ -499,7 +513,7 @@ export function WorkspaceScreen() {
   const cueSheetPanel = (
     <CueSheetEditorPanel
       cueSheet={currentCueSheet}
-      contradictions={validationResult?.contradictions ?? []}
+      contradictions={displayedValidationResult?.contradictions ?? []}
       selectedEventId={selectedEventId}
       focusTarget={focusTarget}
       editedKeys={new Set(Object.keys(cueChanges))}
@@ -526,7 +540,7 @@ export function WorkspaceScreen() {
         cue={popupCue}
         event={popupTarget.event}
         cueSheet={currentCueSheet}
-        contradictions={validationResult?.contradictions.filter(
+        contradictions={displayedValidationResult?.contradictions.filter(
           (item) => item.event_id === popupTarget.event.event_id,
         ) ?? []}
         onClose={() => setPopupEventId(null)}
@@ -557,19 +571,19 @@ export function WorkspaceScreen() {
           >
             {locale === 'ko' ? '패널 전환' : 'Swap panels'}
           </button>
-          {validationResult && (
+          {displayedValidationResult && (
             <>
-            {validationResult.errors > 0 && (
+            {displayedValidationResult.errors > 0 && (
               <span className="mono border border-violation bg-violation-bg px-2 py-0.5 text-violation">
-                ERROR {validationResult.errors}
+                ERROR {displayedValidationResult.errors}
               </span>
             )}
-            {validationResult.warnings > 0 && (
+            {displayedValidationResult.warnings > 0 && (
               <span className="mono border border-review bg-review-bg px-2 py-0.5 text-review">
-                ACTION REQUIRED {validationResult.warnings}
+                ACTION REQUIRED {displayedValidationResult.warnings}
               </span>
             )}
-            {validationResult.total_contradictions === 0 && (
+            {displayedValidationResult.total_contradictions === 0 && (
               <span className="mono border border-consistent/50 px-2 py-0.5 text-consistent">OK</span>
             )}
             </>
@@ -610,7 +624,7 @@ export function WorkspaceScreen() {
           <Timeline
             cueSheet={currentCueSheet}
             selectedEventId={selectedEventId}
-            contradictions={validationResult?.contradictions ?? []}
+            contradictions={displayedValidationResult?.contradictions ?? []}
             onSelectEvent={(cueId, eventId) => {
               handleSelectEvent(cueId, eventId);
               setPopupEventId(eventId);

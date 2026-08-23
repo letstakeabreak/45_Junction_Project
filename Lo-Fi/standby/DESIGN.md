@@ -91,10 +91,12 @@ P0는 화면 **두 개**뿐이다.
 - 각 카드: 파일명, revision/hash, origin 배지(`REAL_REFERENCE` / `CONTROLLED_FIXTURE` / `MUTATED_FIXTURE`), `REVIEWED | UNREVIEWED`
 - `STAGE_SPEC` 카드는 파일 업로드 대신 **폼 입력**을 허용한다 (아래 무대 최소 입력 참조)
 - Primary CTA: `Upstage 추출 시작` → 완료되면 화면 2로 전환
-- `MASTER_CUE` 카드에 보조 액션 `예시 큐시트 첨부`를 둔다. 클릭 시 제품 내 통제 JSON 샘플을
-  실제 파일처럼 선택하고 파일명·용량·`CONTROLLED_FIXTURE` origin을 같은 UI에서 보존한다
-- 첫 방문에는 입력 카드 위에 닫을 수 있는 `90초 둘러보기` 한 줄 블록을 둔다. 통제 예시의 Editor·이벤트·
-  2D 무대를 즉시 여는 CTA와 기존 Upstage 전체 흐름 CTA만 제공하고, 닫은 상태는 현재 브라우저 세션에만 보존한다
+- `MASTER_CUE` 카드에 보조 액션 `별마루 예시 프로젝트 열기`를 둔다. 클릭 시 허가받은 원본의 S#16→S#17을
+  대조해 만든 8-event CueSheet와 event-linked Script Projection을 로컬에서 함께 연다. 원본 DOCX/XLSX는
+  번들하지 않고 source hash·locator·`CONTROLLED_FIXTURE` provenance만 보존한다
+- 첫 방문에는 입력 카드 위에 닫을 수 있는 `90초 둘러보기` 한 줄 블록을 둔다. 통제 예시 워크스페이스를
+  즉시 여는 CTA 하나만 제공하고, 닫은 상태는 현재 브라우저 세션에만 보존한다. 실제 Upstage 흐름은 사용자가
+  자신의 파일을 첨부한 뒤 기본 CTA로 시작한다
 - 즉시 미리보기는 `CONTROLLED EXAMPLE`로 표시하며 AI 검증 완료처럼 표현하지 않는다. 별도 화면·전역 사이드바·
   단계별 overlay를 만들지 않고, 닫은 뒤에는 헤더의 작은 `90초 둘러보기` 버튼으로만 다시 연다
 - **제외**: 입력 계약 체크리스트, `Source 교체`, `EXPORT LOG`, revision lineage, 5단계 진행 표시

@@ -6,7 +6,8 @@ export type RuleId =
   | 'prop_location_contradiction'
   | 'prop_already_on_stage'
   | 'prop_not_on_stage'
-  | 'exit_without_enter';
+  | 'exit_without_enter'
+  | 'script_costume_state_conflict';
 
 export interface Contradiction {
   severity: Severity;

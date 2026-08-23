@@ -1,4 +1,5 @@
 import type { CueSheet, Direction } from '../types/cue-sheet';
+import type { ScriptProjection } from '../types/script';
 import type { Contradiction, ValidationResult } from '../types/validation';
 
 interface CharacterTracking {
@@ -215,4 +216,45 @@ export function validateCueSheet(data: CueSheet): ValidationResult {
     warnings: contradictions.filter(c => c.severity === 'WARNING').length,
     contradictions,
   };
+}
+
+const ALREADY_WEARING_PATTERN = /갖춰\s*입|착용한\s*채|입은\s*채|already\s+(?:wearing|dressed)/iu;
+
+export function validateScriptCueAlignment(
+  data: CueSheet,
+  script: ScriptProjection | null,
+): Contradiction[] {
+  if (!script) return [];
+
+  const stageDirectionsByEvent = new Map<string, string>();
+  for (const segment of script.segments) {
+    if (segment.kind !== 'STAGE_DIRECTION' || !segment.event_id) continue;
+    const current = stageDirectionsByEvent.get(segment.event_id) ?? '';
+    stageDirectionsByEvent.set(segment.event_id, `${current} ${segment.text}`.trim());
+  }
+
+  const contradictions: Contradiction[] = [];
+  for (const cue of data.cues) {
+    for (const event of cue.events) {
+      const stageDirection = stageDirectionsByEvent.get(event.event_id);
+      if (!stageDirection || !ALREADY_WEARING_PATTERN.test(stageDirection)) continue;
+      for (const action of event.actions) {
+        if (action.type !== 'costume_change') continue;
+        contradictions.push({
+          severity: 'WARNING',
+          rule: 'script_costume_state_conflict',
+          cue_id: cue.cue_id,
+          scene_number: cue.scene_number,
+          event_id: event.event_id,
+          description: '대본은 이미 의상을 착용한 상태로 등장하지만 큐시트는 같은 이벤트에서 환복을 지시합니다.',
+          details: {
+            character_id: action.character_id ?? '',
+            costume_description: action.costume_description ?? '',
+            script_direction: stageDirection,
+          },
+        });
+      }
+    }
+  }
+  return contradictions;
 }
