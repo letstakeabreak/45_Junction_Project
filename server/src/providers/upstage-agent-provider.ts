@@ -219,6 +219,21 @@ function parseRolePayload(role: SourceRole, job: JsonObject): JsonObject {
   });
   if (evidencedPayload) return evidencedPayload;
 
+  // A real extraction may contain one blank or decorative row without a quote.
+  // Prefer that final, partially evidenced result over an earlier Parse payload
+  // whose rows have no source evidence at all; decodeFacts will discard only
+  // the unsupported rows.
+  const partiallyEvidencedPayload = findResponseObject(job, (object) => {
+    const rawFacts = object[key];
+    return Array.isArray(rawFacts) && rawFacts.some((rawFact) => (
+      rawFact !== null &&
+      typeof rawFact === "object" &&
+      !Array.isArray(rawFact) &&
+      factEvidence(rawFact as JsonObject) !== null
+    ));
+  });
+  if (partiallyEvidencedPayload) return partiallyEvidencedPayload;
+
   // Keep the precise fail-closed error for a genuine malformed extraction.
   // The strict pass above only prevents an intermediate include=all payload
   // from shadowing a later, fully evidenced Extract result.

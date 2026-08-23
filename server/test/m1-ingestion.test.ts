@@ -596,12 +596,15 @@ test("Upstage adapter keeps evidenced facts when an extraction also contains an 
     return Response.json({
       id: "job-mixed-evidence",
       status: "completed",
-      output: [{ content: [{ text: JSON.stringify({
-        cue_facts: [
-          { fact_type: "CUE_ROW", locator: "Cue!A2", source_quote_raw: "E1 GO" },
-          { fact_type: "CUE_ROW", locator: "Cue!A3" },
-        ],
-      }) }] }],
+      output: [{
+        additional_values: { cue_facts: [{ fact_type: "INTERMEDIATE_ROW" }] },
+        content: [{ text: JSON.stringify({
+          cue_facts: [
+            { fact_type: "CUE_ROW", locator: "Cue!A2", source_quote_raw: "E1 GO" },
+            { fact_type: "CUE_ROW", locator: "Cue!A3" },
+          ],
+        }) }],
+      }],
     });
   };
   const provider = new UpstageAgentProvider({
