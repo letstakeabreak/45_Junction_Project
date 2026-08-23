@@ -13,6 +13,9 @@ export type ScriptProjectionSegment = {
   provenance: {
     raw_fact_id: string;
     raw_fact_sha256: string;
+  } | {
+    fixture_segment_id: string;
+    source_sha256: string;
   };
 };
 
@@ -35,6 +38,12 @@ export type ScriptProjection = {
     config_id: string | null;
     adapter_version: string;
     raw_response_sha256: string;
+  } | {
+    provider: 'CONTROLLED_FIXTURE';
+    source_role: 'SCRIPT';
+    origin: 'CONTROLLED_FIXTURE';
+    fixture_id: string;
+    source_sha256: string;
   };
   segments: ScriptProjectionSegment[];
   created_at: string;

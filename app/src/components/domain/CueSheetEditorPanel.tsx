@@ -99,6 +99,7 @@ function aiCurationFor(contradictions: Contradiction[], locale: 'ko' | 'en'): st
       if (item.rule === 'prop_location_contradiction') return 'Assign a crew handoff or align the prop entrance side.';
       if (item.rule === 'prop_already_on_stage') return 'Remove the duplicate prop entry or confirm the previous removal.';
       if (item.rule === 'prop_not_on_stage') return 'Add the missing prop preset or confirm its current location.';
+      if (item.rule === 'script_costume_state_conflict') return 'Align whether the costume is worn before entrance or changed on stage.';
       return 'Confirm the matching entrance event before this exit.';
     }
     if (item.rule === 'duplicate_enter') return '이전 등장 큐를 유지할지 확인하세요.';
@@ -106,6 +107,7 @@ function aiCurationFor(contradictions: Contradiction[], locale: 'ko' | 'en'): st
     if (item.rule === 'prop_location_contradiction') return '소품 전달 담당자를 지정하거나 반입 방향을 맞추세요.';
     if (item.rule === 'prop_already_on_stage') return '중복 반입을 제거하거나 이전 반출 여부를 확인하세요.';
     if (item.rule === 'prop_not_on_stage') return '누락된 소품 프리셋을 추가하거나 현재 위치를 확인하세요.';
+    if (item.rule === 'script_costume_state_conflict') return '등장 전 착용인지 무대 위 환복인지 대본과 큐시트를 맞추세요.';
     return '이 퇴장 전에 대응하는 등장 큐가 있는지 확인하세요.';
   });
   return [...new Set(suggestions)].join(' ');
