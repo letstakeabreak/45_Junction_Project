@@ -165,6 +165,8 @@ fact별 승인·거절 기록은 그대로 보존한다.
 - timeline에서 event를 고르면 해당 발췌가 보이도록 스크롤하고 강조한다
 - 발췌를 누르면 같은 event의 timeline·stage snapshot으로 이동한다
 - 발췌는 편집할 수 없고 localStorage에 남지 않으며 fact·review·snapshot·verdict authority를 갖지 않는다
+- 대본 구조화가 10초 이상 지속될 때만 주의색 안내를 추가한다. 파일 크기·페이지 수에 따른 지연 가능성,
+  탭 유지, 새로고침 금지, 완료 후 event 자동 연결을 설명하되 예상 시간이나 가짜 진행률은 표시하지 않는다
 
 ### 패널 — 무대 시뮬레이터
 

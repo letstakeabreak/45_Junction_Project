@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
-import { FileText, Link2, PanelLeftClose, PanelLeftOpen, Upload } from 'lucide-react';
+import { Clock3, FileText, Link2, PanelLeftClose, PanelLeftOpen, Upload } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useI18n, type MessageKey } from '@/lib/i18n';
 import type {
@@ -307,6 +307,13 @@ function ScriptLine({ line }: { line: ScriptExcerptLine }) {
 
 function ScriptLoading() {
   const { t } = useI18n();
+  const [isSlow, setIsSlow] = useState(false);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setIsSlow(true), 10_000);
+    return () => window.clearTimeout(timer);
+  }, []);
+
   return (
     <div className="flex min-h-full flex-col justify-center px-5 py-8" role="status" aria-live="polite">
       <div className="script-loading-wordmark brand-mono" aria-label="STANDBY">
@@ -322,6 +329,16 @@ function ScriptLoading() {
         ))}
       </div>
       <p className="mt-2 text-xs text-muted-foreground">{t('workspace.scriptParsing')}</p>
+      {isSlow && (
+        <div className="mt-5 border border-review bg-review-bg p-3 text-left text-review">
+          <div className="flex items-center gap-2">
+            <Clock3 size={14} aria-hidden="true" />
+            <p className="text-xs font-semibold">{t('workspace.scriptParsingSlowTitle')}</p>
+          </div>
+          <p className="mt-2 text-[11px] leading-5">{t('workspace.scriptParsingSlowBody')}</p>
+          <p className="mt-2 text-[10px] font-medium">{t('workspace.scriptParsingSlowElapsed')}</p>
+        </div>
+      )}
     </div>
   );
 }
