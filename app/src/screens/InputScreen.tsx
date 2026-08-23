@@ -14,7 +14,7 @@ import {
   createStandbyBrowserApi,
   type SourceOrigin,
 } from '@/lib/standby-api';
-import exampleMasterCueText from '@/assets/standby-example-master-cue.json?raw';
+import exampleMasterCueText from '../../../cue-sheet-example.json?raw';
 import { useCueSheetStore, useReviewFlowStore, useStandbyWorkspaceStore } from '@/store';
 import { parseCueSheetJson } from '@/lib/cue-sheet-json';
 import { useI18n, type Locale } from '@/lib/i18n';
@@ -277,7 +277,7 @@ export function InputScreen() {
   const attachExampleMasterCue = async () => {
     const file = new File(
       [exampleMasterCueText],
-      'STANDBY_example_master_cue.json',
+      'cue-sheet-example.json',
       { type: 'application/json', lastModified: 0 },
     );
     await selectSources('MASTER_CUE', [file], 'CONTROLLED_FIXTURE');
